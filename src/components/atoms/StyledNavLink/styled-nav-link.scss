@@ -1,0 +1,18 @@
+@use '../../../assets/styles/theme/colors' as colors;
+@use '../../../assets/styles/theme/fonts' as fonts;
+
+.nav-link {
+  color: colors.$light-white;
+  text-decoration: none;
+  font-family: fonts.$cosima;
+  font-size: 1rem;
+  font-weight: 600;
+
+  &.active {
+    color: colors.$white;
+  }
+
+  &:hover {
+    color: colors.$white;
+  }
+}
