@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getEarthBenders 1`] = `
+[
+  {
+    "name": "Aang",
+    "power": [
+      "water",
+      "fire",
+      "earth",
+      "air",
+    ],
+  },
+  {
+    "name": "Toph",
+    "power": [
+      "earth",
+      "metal",
+    ],
+  },
+]
+`;
