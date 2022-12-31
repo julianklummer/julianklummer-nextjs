@@ -4,11 +4,11 @@ import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div>
+    <>
       <header>
         <Navigation />
       </header>
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
