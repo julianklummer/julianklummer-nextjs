@@ -1,0 +1,7 @@
+@use "../../../../styles/theme/colors" as colors;
+
+.iconLink {
+  color: colors.$light-white;
+  width: 2rem;
+  height: 2rem;
+}
