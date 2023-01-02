@@ -3,14 +3,14 @@ import styles from "./iconLink.module.scss";
 
 interface Props {
   title: string;
-  iconPath: string;
   href: string;
+  icon: React.ReactNode;
 }
 
-export const IconLink: React.FC<Props> = ({ href, title, iconPath }) => {
+export const IconLink: React.FC<Props> = ({ href, title, icon }) => {
   return (
     <Link href={href} className={styles.iconLink} title={title}>
-      <img src={iconPath} alt="" />
+      {icon}
     </Link>
   );
 };
