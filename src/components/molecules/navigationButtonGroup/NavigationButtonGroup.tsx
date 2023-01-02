@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LinkedInSvg from "public/icons/navigation/button/linkedin.svg";
 import { IconLink } from "src/components/atoms/IconLink/IconLink";
 import { LanguageToggle } from "src/components/atoms/LanguageToggle/LanguageToggle";
 import styles from "./navigationButtonGroup.module.scss";
@@ -11,16 +11,7 @@ export const NavigationButtonGroup: React.FC = () => {
           <IconLink
             title="Open LinkedIn Profile"
             href="https://www.linkedin.com/in/julian-klummer-515a78170/"
-            icon={
-              <Image
-                alt=""
-                src="/icons/navigation/button/linkedin.svg"
-                fill
-                sizes="(max-width: 768px) 100vw,
-                      (max-width: 1200px) 50vw,
-                      33vw"
-              />
-            }
+            icon={<LinkedInSvg />}
           />
         </li>
         <li>

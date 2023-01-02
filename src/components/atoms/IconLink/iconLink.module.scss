@@ -2,6 +2,9 @@
 
 .iconLink {
   color: colors.$light-white;
-  width: 2rem;
-  height: 2rem;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
 }
