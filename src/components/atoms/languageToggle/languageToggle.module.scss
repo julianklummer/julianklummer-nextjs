@@ -1,0 +1,13 @@
+@use "../../../../styles/theme/colors" as colors;
+
+.languageToggle {
+  background: transparent;
+  border: none;
+  color: colors.$light-white;
+  cursor: pointer;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}

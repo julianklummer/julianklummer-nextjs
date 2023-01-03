@@ -1,4 +1,4 @@
-import { NavigationButtonGroup } from "src/components/molecules/navigationButtonGroup/navigationButtonGroup";
+import { NavigationButtonGroup } from "src/components/molecules/navigationButtonGroup/NavigationButtonGroup";
 import { NavigationMenu } from "../../molecules/navigationMenu/NavigationMenu";
 import styles from "./navigation.module.scss";
 
