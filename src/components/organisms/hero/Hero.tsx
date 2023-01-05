@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
         alt="Profilbild"
         width={355}
       />
-      <h1>
+      <h1 className={styles.heroH1}>
         <span className={styles.heroHeadline}>Julian Klummer</span>
         <small className={styles.heroSubline}>
           Ambitious web specialist passionated about frontend development and

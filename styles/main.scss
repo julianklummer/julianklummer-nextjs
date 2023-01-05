@@ -1,7 +1,9 @@
 @use "./theme/colors" as colors;
+@use "./theme/breakpoints" as breakpoints;
 
 body {
-  min-width: 100vw;
+  width: 100vw;
+  min-width: breakpoints.$xs;
   min-height: 100vh;
   background: rgb(1 4 4);
   color: colors.$light-white;

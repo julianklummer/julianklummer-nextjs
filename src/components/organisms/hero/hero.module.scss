@@ -6,12 +6,17 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 4rem;
-  padding: 0 6%;
+  gap: 2rem;
+  padding: 0 5%;
   margin: 6% auto;
 
   @include utils.container-query(lg) {
     flex-direction: row;
+    gap: 2rem;
+  }
+
+  @include utils.container-query(xl) {
+    gap: 4rem;
   }
 }
 
@@ -20,16 +25,26 @@
   width: $size;
   height: $size;
   border-radius: 50%;
+}
 
-  aspect-ratio: 1/1;
+.heroH1 {
+  width: min-content;
+  text-align: center;
+
+  @include utils.container-query(lg) {
+    text-align: left;
+  }
+
+  * {
+    display: block;
+  }
 }
 
 .heroHeadline {
   @include typography.h1;
-  display: block;
+  width: max-content;
 }
 
 .heroSubline {
   @include typography.subline;
-  display: block;
 }

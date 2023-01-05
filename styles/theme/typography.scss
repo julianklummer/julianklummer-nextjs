@@ -6,10 +6,22 @@
   font-family: fonts.$newake;
   font-style: normal;
   font-weight: 400;
-  font-size: calc(6rem + 2vw);
+  font-size: calc(2rem + 4vw);
+
+  @include utils.media-breakpoint-up(sm) {
+    font-size: calc(4rem + 1.6vw);
+  }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: 6rem;
+    font-size: calc(4rem + 1.6vw);
+  }
+
+  @include utils.media-breakpoint-up(lg) {
+    font-size: calc(4rem + 1.6vw);
+  }
+
+  @include utils.media-breakpoint-up(xl) {
+    font-size: calc(4rem + 2vw);
   }
 }
 
@@ -20,6 +32,14 @@
 @mixin subline {
   font-family: fonts.$cosima;
   font-weight: 400;
-  font-size: 2rem;
   line-height: 2.5rem;
+  font-size: calc(1rem + 1vw);
+
+  @include utils.media-breakpoint-up(lg) {
+    font-size: calc(1rem + 0.8vw);
+  }
+
+  @include utils.media-breakpoint-up(xl) {
+    font-size: calc(1rem + 1vw);
+  }
 }
