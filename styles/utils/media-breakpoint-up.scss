@@ -1,0 +1,7 @@
+@use "get-breakpoint-width-by-name" as *;
+
+@mixin media-breakpoint-up($breakpointName) {
+  @media (min-width: get-breakpoint-width-by-name($breakpointName)) {
+    @content;
+  }
+}

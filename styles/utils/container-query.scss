@@ -1,0 +1,7 @@
+@use "get-breakpoint-width-by-name" as *;
+
+@mixin container-query($breakpointName) {
+  @container (min-width: #{get-breakpoint-width-by-name($breakpointName)}) {
+    @content;
+  }
+}

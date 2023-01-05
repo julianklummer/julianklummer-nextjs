@@ -4,14 +4,20 @@ import styles from "./hero.module.scss";
 
 export const Hero: React.FC = () => {
   return (
-    <div>
+    <div className={styles.hero}>
       <Image
         className={styles.heroImage}
         src={profilePic}
-        alt="Picture of the author"
+        alt="Profilbild"
         width={355}
       />
-      <h1 className={styles.heroTitle}>Julian Klummer</h1>
+      <h1>
+        <span className={styles.heroHeadline}>Julian Klummer</span>
+        <small className={styles.heroSubline}>
+          Ambitious web specialist passionated about frontend development and
+          beyond.
+        </small>
+      </h1>
     </div>
   );
 };

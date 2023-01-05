@@ -1,9 +1,35 @@
-@use "../../../../styles/theme/colors" as colors;
+@use "../../../../styles/theme/typography" as typography;
+@use "../../../../styles/theme/breakpoints" as breakpoints;
+@use "../../../../styles/utils" as utils;
 
-.heroImage {
-  border-radius: 50%;
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 0 6%;
+  margin: 6% auto;
+
+  @include utils.container-query(lg) {
+    flex-direction: row;
+  }
 }
 
-.heroTitle {
-  color: colors.$light-white;
+.heroImage {
+  $size: calc(14rem + 10vw);
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+
+  aspect-ratio: 1/1;
+}
+
+.heroHeadline {
+  @include typography.h1;
+  display: block;
+}
+
+.heroSubline {
+  @include typography.subline;
+  display: block;
 }

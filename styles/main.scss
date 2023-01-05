@@ -1,5 +1,9 @@
+@use "./theme/colors" as colors;
+
 body {
   min-width: 100vw;
   min-height: 100vh;
   background: rgb(1 4 4);
+  color: colors.$light-white;
+  container-type: inline-size;
 }

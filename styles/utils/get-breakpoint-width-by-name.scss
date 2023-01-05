@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../theme/breakpoints" as breakpoints;
+
+@function get-breakpoint-width-by-name($breakpointName) {
+  $minWidth: map.get(breakpoints.$breakpointMap, $breakpointName);
+
+  @if $minWidth != null {
+    @return $minWidth;
+  } @else {
+    @error "Breakpoint #{$breakpointName} not found in breakpointMap.";
+  }
+}
