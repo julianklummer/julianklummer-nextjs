@@ -1,15 +1,14 @@
 import { routeList } from "../../../utils/routeList/routeList";
-import { StyledNavLink } from "../../atoms/StyledNavLink/StyledNavLink";
+import { NavigationLink } from "../../atoms/NavigationLink/NavigationLink";
+import styles from "./navigationMenu.module.scss";
 
-interface NavigationMenuProps {}
-
-export const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
+export const NavigationMenu: React.FC = () => {
   return (
     <nav>
-      <ul className="navigation-menu">
+      <ul className={styles.navigationMenu}>
         {routeList.map((route) => (
           <li key={route.title}>
-            <StyledNavLink href={route.to} title={route.title} />
+            <NavigationLink href={route.to} title={route.title} />
           </li>
         ))}
       </ul>

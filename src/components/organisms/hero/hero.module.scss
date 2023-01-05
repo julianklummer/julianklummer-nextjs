@@ -1,0 +1,9 @@
+@use "../../../../styles/theme/colors" as colors;
+
+.heroImage {
+  border-radius: 50%;
+}
+
+.heroTitle {
+  color: colors.$light-white;
+}
