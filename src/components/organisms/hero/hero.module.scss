@@ -1,9 +1,50 @@
-@use "../../../../styles/theme/colors" as colors;
+@use "../../../../styles/theme/typography" as typography;
+@use "../../../../styles/theme/breakpoints" as breakpoints;
+@use "../../../../styles/utils" as utils;
+
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 5%;
+  margin: 6% auto;
+
+  @include utils.container-query(lg) {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  @include utils.container-query(xl) {
+    gap: 4rem;
+  }
+}
 
 .heroImage {
+  $size: calc(14rem + 10vw);
+  width: $size;
+  height: $size;
   border-radius: 50%;
 }
 
-.heroTitle {
-  color: colors.$light-white;
+.heroH1 {
+  width: min-content;
+  text-align: center;
+
+  @include utils.container-query(lg) {
+    text-align: left;
+  }
+
+  * {
+    display: block;
+  }
+}
+
+.heroHeadline {
+  @include typography.h1;
+  width: max-content;
+}
+
+.heroSubline {
+  @include typography.subline;
 }
