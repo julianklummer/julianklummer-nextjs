@@ -2,14 +2,13 @@ import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
 import { Hero } from "src/components/organisms/hero/Hero";
+import { indexDataSchema } from "staticContent/pages/index/schemas";
 import { indexData } from "staticContent/pages/index/types";
-
 interface Props {
   data: indexData;
 }
 
 export default function Home({ data }: Props) {
-  console.log(data);
   return (
     <>
       <Head>
@@ -30,13 +29,6 @@ export async function getStaticProps() {
     "utf8"
   );
   const { data } = matter(fileContents);
+  indexDataSchema.parse(data);
   return { props: { data } };
-  /*
-
-
-  const fileContents = fs.readFileSync(, "utf8");
-  const { data, content } = matter(fileContents);
-
-  console.log(matter(data));
-  */
 }

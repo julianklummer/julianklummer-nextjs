@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Props } from "next/script";
 import profilePic from "../../../../public/images/business-2022.png";
 import styles from "./hero.module.scss";
 
