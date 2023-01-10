@@ -25,7 +25,7 @@ export default function Home({ data }: Props) {
 
 export async function getStaticProps() {
   const fileContents = fs.readFileSync(
-    "staticContent/pages/index/index.en.md",
+    "staticContent/pages/index/index.en.mdx",
     "utf8"
   );
   const { data } = matter(fileContents);
