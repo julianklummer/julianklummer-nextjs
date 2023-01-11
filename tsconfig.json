@@ -4,7 +4,7 @@
     "paths": {
       "@/components/*": ["components/*"]
     },
-    "target": "es5",
+    "target": "es2017"17",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
