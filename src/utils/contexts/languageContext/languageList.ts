@@ -1,9 +1,10 @@
 import translationsEN from "staticContent/app/translations.en.json";
 import translationsDE from "staticContent/app/translations.de.json";
 import { translationsSchema } from "staticContent/app/schemas";
+import { Locale } from "./types";
 
 type language = {
-  identifier: string;
+  identifier: Locale;
   name: {
     en: string;
     de: string;

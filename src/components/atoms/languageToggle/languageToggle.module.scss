@@ -19,3 +19,13 @@
   padding: unset;
   list-style: none;
 }
+
+.languageToggleListboxItem {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: colors.$rich-black;
+
+  &:hover {
+    color: colors.$white;
+  }
+}

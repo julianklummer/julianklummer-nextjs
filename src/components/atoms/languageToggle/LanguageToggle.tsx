@@ -3,6 +3,8 @@ import TranslationIcon from "public/icons/navigation/button/translation.svg";
 import { useContext, useState } from "react";
 import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import { languageList } from "src/utils/contexts/languageContext/languageList";
+import { Locale } from "src/utils/contexts/languageContext/types";
+
 import styles from "./languageToggle.module.scss";
 
 export const LanguageToggle: React.FC = () => {
@@ -12,14 +14,17 @@ export const LanguageToggle: React.FC = () => {
 
   if (!languageContext) throw new Error("LanguageContext not found.");
 
-  // console.log(router.asPath);
-
-  const handleClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  const handleLanguageSelect = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent>,
+    locale: Locale
   ): void => {
     e.preventDefault();
-    router.push(`/de/${router.asPath}`);
-    languageContext.setLanguage("de");
+    console.log(router.asPath);
+    if (locale != languageContext.language) {
+      router.push(router.asPath, router.asPath, { locale: locale });
+      languageContext.setLanguage(locale);
+    }
+    setIsOpen(false);
   };
 
   return (
@@ -46,8 +51,12 @@ export const LanguageToggle: React.FC = () => {
               <li
                 key={`language-${language.identifier}`}
                 id={language.identifier}
+                className={styles.languageToggleListboxItem}
                 role="option"
                 aria-selected={languageContext.language === language.identifier}
+                onClick={(event) =>
+                  handleLanguageSelect(event, language.identifier)
+                }
               >
                 {language.name[languageContext.language]}
               </li>
