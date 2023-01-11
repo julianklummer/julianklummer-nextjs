@@ -11,3 +11,11 @@
     height: 2rem;
   }
 }
+
+.languageToggleListbox {
+  position: absolute;
+  border: 1px solid colors.$light-white;
+  color: colors.$light-white;
+  padding: unset;
+  list-style: none;
+}

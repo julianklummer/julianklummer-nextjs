@@ -7,6 +7,11 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  i18n: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en',
+    localeDetection: false
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

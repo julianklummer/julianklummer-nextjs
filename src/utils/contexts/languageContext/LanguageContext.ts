@@ -1,12 +1,11 @@
-import { createContext } from 'react'
-
-export type language = 'en' | 'de'
+import { createContext } from "react";
+import { Locale } from "./types";
 
 interface LanguageContextInterface {
-  language: language
-  setLanguage: Function
+  language: Locale;
+  setLanguage: Function;
 }
 
 export const LanguageContext = createContext<LanguageContextInterface | null>(
   null
-)
+);

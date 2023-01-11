@@ -1,14 +1,23 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
+import { useContext } from "react";
 import { Hero } from "src/components/organisms/hero/Hero";
+import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
+import { Locale } from "src/utils/contexts/languageContext/types";
 import { indexDataSchema } from "staticContent/pages/index/schemas";
 import { indexData } from "staticContent/pages/index/types";
+
 interface Props {
   data: indexData;
+  locale: Locale;
+  locales: Locale[];
 }
 
-export default function Home({ data }: Props) {
+export default function Home({ data, locale, locales }: Props) {
+  const languageContext = useContext(LanguageContext);
+  if (!languageContext) throw new Error("LanguageContext not found.");
+  if (languageContext.language !== locale) languageContext?.setLanguage(locale);
   return (
     <>
       <Head>
@@ -23,12 +32,22 @@ export default function Home({ data }: Props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({
+  locale,
+  locales,
+}: Pick<Props, "locale" | "locales">) {
   const fileContents = fs.readFileSync(
-    "staticContent/pages/index/index.en.mdx",
+    `staticContent/pages/index/index.${locale}.mdx`,
     "utf8"
   );
   const { data } = matter(fileContents);
   indexDataSchema.parse(data);
-  return { props: { data } };
+
+  return {
+    props: {
+      data,
+      locale,
+      locales,
+    },
+  };
 }

@@ -1,9 +1,10 @@
 import { useMemo, useState } from "react";
 import type { language } from "./LanguageContext";
 import { LanguageContext } from "./LanguageContext";
+import { Locale } from "./types";
 
-export interface LanguageHelperInterface {
-  language?: language;
+interface LanguageHelperInterface {
+  language?: Locale;
   children?: React.ReactNode;
 }
 
