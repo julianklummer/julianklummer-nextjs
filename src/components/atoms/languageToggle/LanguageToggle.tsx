@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import TranslationIcon from "public/icons/navigation/button/translation.svg";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import { languageList } from "src/utils/contexts/languageContext/languageList";
 import { Locale } from "src/utils/contexts/languageContext/types";
@@ -11,20 +11,34 @@ export const LanguageToggle: React.FC = () => {
   const languageContext = useContext(LanguageContext);
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   if (!languageContext) throw new Error("LanguageContext not found.");
 
-  const handleLanguageSelect = (
-    e: React.MouseEvent<HTMLLIElement, MouseEvent>,
-    locale: Locale
-  ): void => {
-    e.preventDefault();
-    console.log(router.asPath);
-    if (locale != languageContext.language) {
+  const changeLanguage = (locale: Locale): void => {
+    if (locale !== languageContext.language) {
       router.push(router.asPath, router.asPath, { locale: locale });
       languageContext.setLanguage(locale);
     }
     setIsOpen(false);
+  };
+
+  const handleOptionClick = (
+    event: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ): void => {
+    event.preventDefault();
+    changeLanguage(event.currentTarget.dataset.option as Locale);
+  };
+
+  const handleOptionKeydown = (
+    event: React.KeyboardEvent<HTMLLIElement>
+  ): void => {
+    if (event.key === "Enter") {
+      changeLanguage(event.currentTarget.dataset.option as Locale);
+    } else if (event.key === "Escape") {
+      setIsOpen(false);
+      toggleRef.current?.focus();
+    }
   };
 
   return (
@@ -35,6 +49,7 @@ export const LanguageToggle: React.FC = () => {
         aria-haspopup="listbox"
         className={styles.languageToggle}
         onClick={() => setIsOpen(!isOpen)}
+        ref={toggleRef}
       >
         <TranslationIcon />
       </button>
@@ -54,9 +69,10 @@ export const LanguageToggle: React.FC = () => {
                 className={styles.languageToggleListboxItem}
                 role="option"
                 aria-selected={languageContext.language === language.identifier}
-                onClick={(event) =>
-                  handleLanguageSelect(event, language.identifier)
-                }
+                data-option={language.identifier}
+                onClick={handleOptionClick}
+                onKeyDown={handleOptionKeydown}
+                tabIndex={0}
               >
                 {language.name[languageContext.language]}
               </li>
