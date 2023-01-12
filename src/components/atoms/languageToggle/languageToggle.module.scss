@@ -11,3 +11,21 @@
     height: 2rem;
   }
 }
+
+.languageToggleListbox {
+  position: absolute;
+  border: 1px solid colors.$light-white;
+  color: colors.$light-white;
+  padding: unset;
+  list-style: none;
+}
+
+.languageToggleListboxItem {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: colors.$rich-black;
+
+  &:hover {
+    color: colors.$white;
+  }
+}
