@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import type { language } from "./LanguageContext";
 import { LanguageContext } from "./LanguageContext";
 import { Locale } from "./types";
 
@@ -9,7 +8,7 @@ interface LanguageHelperInterface {
 }
 
 export const LanguageProvider: React.FC<LanguageHelperInterface> = (props) => {
-  const [language, setLanguage] = useState<language>(
+  const [language, setLanguage] = useState<Locale>(
     props.language ? props.language : "en"
   );
 
