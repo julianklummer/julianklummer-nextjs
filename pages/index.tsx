@@ -11,10 +11,9 @@ import { indexData } from "staticContent/pages/index/types";
 interface Props {
   data: indexData;
   locale: Locale;
-  locales: Locale[];
 }
 
-export default function Home({ data, locale, locales }: Props) {
+export default function Home({ data, locale }: Props) {
   const languageContext = useContext(LanguageContext);
   if (!languageContext) throw new Error("LanguageContext not found.");
   if (languageContext.language !== locale) languageContext?.setLanguage(locale);
@@ -32,10 +31,7 @@ export default function Home({ data, locale, locales }: Props) {
   );
 }
 
-export async function getStaticProps({
-  locale,
-  locales,
-}: Pick<Props, "locale" | "locales">) {
+export async function getStaticProps({ locale }: Pick<Props, "locale">) {
   const fileContents = fs.readFileSync(
     `staticContent/pages/index/index.${locale}.mdx`,
     "utf8"
@@ -47,7 +43,6 @@ export async function getStaticProps({
     props: {
       data,
       locale,
-      locales,
     },
   };
 }
