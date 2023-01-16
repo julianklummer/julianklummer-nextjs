@@ -1,11 +1,9 @@
 import { createContext } from "react";
 import { Locale } from "./types";
 
-interface LanguageContextInterface {
+interface LanguageContext {
   language: Locale;
   setLanguage: Function;
 }
 
-export const LanguageContext = createContext<LanguageContextInterface | null>(
-  null
-);
+export const LanguageContext = createContext<LanguageContext | null>(null);
