@@ -11,7 +11,7 @@ export const routeList: RouteList = [
     title: "Start",
   },
   {
-    to: "/cv",
-    title: "CV",
+    to: "/blog",
+    title: "Blog",
   },
 ];

@@ -17,6 +17,7 @@ export default function Index({ data, locale }: Props) {
   const languageContext = useContext(LanguageContext);
   if (!languageContext) throw new Error("LanguageContext not found.");
   if (languageContext.language !== locale) languageContext?.setLanguage(locale);
+
   return (
     <>
       <Head>
