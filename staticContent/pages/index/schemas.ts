@@ -1,3 +1,4 @@
+import { tabCategorylSchema } from "src/components/sections/skillBox/schema";
 import { z } from "zod";
 
 export const indexDataSchema = z.object({
@@ -10,3 +11,5 @@ export const indexDataSchema = z.object({
     subline: z.string(),
   }),
 });
+
+export const skillBoxSchema = z.array(tabCategorylSchema);

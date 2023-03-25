@@ -4,18 +4,23 @@ import Head from "next/head";
 import { useContext } from "react";
 import { Hero } from "src/components/sections/hero/Hero";
 import { SkillBox } from "src/components/sections/skillBox/organisms/skillBox/SkillBox";
-import { testData } from "src/components/sections/skillBox/testData";
 import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import { Locale } from "src/utils/contexts/languageContext/types";
-import { indexDataSchema } from "staticContent/pages/index/schemas";
-import { indexData } from "staticContent/pages/index/types";
+import {
+  indexDataSchema,
+  skillBoxSchema,
+} from "staticContent/pages/index/schemas";
+import { skillBox as skillBoxDE } from "staticContent/pages/index/skillBox.de";
+import { skillBox as skillBoxEN } from "staticContent/pages/index/skillBox.en";
+import { indexData, skillList } from "staticContent/pages/index/types";
 
 interface Props {
   data: indexData;
+  skillList: skillList;
   locale: Locale;
 }
 
-export default function Index({ data, locale }: Props) {
+export default function Index({ data, skillList, locale }: Props) {
   const languageContext = useContext(LanguageContext);
   if (!languageContext) throw new Error("LanguageContext not found.");
   if (languageContext.language !== locale) languageContext?.setLanguage(locale);
@@ -29,7 +34,7 @@ export default function Index({ data, locale }: Props) {
       </Head>
       <div>
         <Hero headline={data.hero.headline} subline={data.hero.subline} />
-        <SkillBox data={testData} />
+        <SkillBox data={skillList} />
       </div>
     </>
   );
@@ -43,9 +48,13 @@ export async function getStaticProps({ locale }: Pick<Props, "locale">) {
   const { data } = matter(fileContents);
   indexDataSchema.parse(data);
 
+  const skillList = locale === "en" ? await skillBoxEN : await skillBoxDE;
+  skillBoxSchema.parse(skillList);
+
   return {
     props: {
       data,
+      skillList,
       locale,
     },
   };
