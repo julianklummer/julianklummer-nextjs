@@ -1,4 +1,4 @@
-import { routeList } from "../../../utils/routeList/routeList";
+import { routeList } from "src/utils/routeList/routeList";
 import { NavigationLink } from "../../atoms/NavigationLink/NavigationLink";
 import styles from "./navigationMenu.module.scss";
 

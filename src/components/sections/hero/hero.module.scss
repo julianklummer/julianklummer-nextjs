@@ -2,6 +2,8 @@
 @use "../../../../styles/theme/breakpoints" as breakpoints;
 @use "../../../../styles/utils" as utils;
 
+$max-width: 82rem;
+
 .hero {
   display: flex;
   align-items: center;
@@ -9,6 +11,7 @@
   gap: 2rem;
   padding: 0 5%;
   margin: 6% auto;
+  max-width: $max-width;
 
   @include utils.container-query(lg) {
     flex-direction: row;

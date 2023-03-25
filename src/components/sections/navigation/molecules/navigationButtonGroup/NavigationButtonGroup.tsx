@@ -1,6 +1,6 @@
 import LinkedInSvg from "public/icons/navigation/button/linkedin.svg";
-import { IconLink } from "src/components/atoms/IconLink/IconLink";
-import { LanguageToggle } from "src/components/atoms/LanguageToggle/LanguageToggle";
+import { IconLink } from "src/components/library/atoms/IconLink/IconLink";
+import { LanguageToggle } from "src/components/library/atoms/LanguageToggle/LanguageToggle";
 import styles from "./navigationButtonGroup.module.scss";
 
 export const NavigationButtonGroup: React.FC = () => {
