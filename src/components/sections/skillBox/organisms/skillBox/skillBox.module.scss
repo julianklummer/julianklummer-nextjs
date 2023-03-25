@@ -1,0 +1,14 @@
+@use "../../../hero/hero.module.scss" as hero;
+@use "../../../navigation/organisms/navigation/navigation.module.scss" as
+  navigation;
+@use "../../../../../../styles/theme/typography" as typography;
+@use "../../../../../../styles/theme/breakpoints" as breakpoints;
+@use "../../../../../../styles/theme/colors" as colors;
+
+.skillBox {
+  max-width: hero.$max-width;
+  margin: hero.$margin-y navigation.$padding-x;
+  height: 10rem;
+  background-color: colors.$dark-gray;
+  border: 1px solid colors.$medium-turquoise;
+}

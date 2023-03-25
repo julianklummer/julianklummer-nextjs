@@ -1,6 +1,8 @@
+$padding-x: 5%;
+
 .navigation {
   display: flex;
-  padding: 2% 5%;
+  padding: 2% $padding-x;
   justify-content: space-between;
   align-items: center;
 }

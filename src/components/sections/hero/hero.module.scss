@@ -3,6 +3,7 @@
 @use "../../../../styles/utils" as utils;
 
 $max-width: 82rem;
+$margin-y: 6%;
 
 .hero {
   display: flex;
@@ -10,7 +11,7 @@ $max-width: 82rem;
   flex-direction: column;
   gap: 2rem;
   padding: 0 5%;
-  margin: 6% auto;
+  margin: $margin-y auto;
   max-width: $max-width;
 
   @include utils.container-query(lg) {

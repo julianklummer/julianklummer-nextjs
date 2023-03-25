@@ -3,6 +3,8 @@ import matter from "gray-matter";
 import Head from "next/head";
 import { useContext } from "react";
 import { Hero } from "src/components/sections/hero/Hero";
+import { SkillBox } from "src/components/sections/skillBox/organisms/skillBox/SkillBox";
+import { testData } from "src/components/sections/skillBox/testData";
 import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import { Locale } from "src/utils/contexts/languageContext/types";
 import { indexDataSchema } from "staticContent/pages/index/schemas";
@@ -27,6 +29,7 @@ export default function Index({ data, locale }: Props) {
       </Head>
       <div>
         <Hero headline={data.hero.headline} subline={data.hero.subline} />
+        <SkillBox data={testData} />
       </div>
     </>
   );
