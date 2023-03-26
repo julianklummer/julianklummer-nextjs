@@ -1,4 +1,5 @@
 @use "styles/theme/colors" as colors;
+@use "styles/utils" as utils;
 
 .tab {
   background-color: colors.$dark-gray;
@@ -12,17 +13,37 @@
 }
 
 .iconList {
+  --list-gap: 2rem;
   list-style: none;
   padding: unset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--list-gap);
+  padding-top: var(--list-gap);
+  padding-left: var(--list-gap);
+  padding-bottom: var(--list-gap);
 }
 
 .iconListItem {
+  --list-items-per-row: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  width: calc(calc(100% / var(--list-items-per-row)) - var(--list-gap));
+
+  @include utils.container-query(lg) {
+  }
 }
 
 .skillIcon {
-  color: colors.$medium-turquoise;
+  display: grid;
+  place-content: center;
+  color: colors.$light-white;
 }
 
 .skillTitle {
+  display: grid;
+  place-content: center;
   // display: none;
 }

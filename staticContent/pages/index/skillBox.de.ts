@@ -65,7 +65,7 @@ export const skillBox: skillList = [
     skillList: [
       { title: "Scrum", icon: "scrum" },
       { title: "Test Driven Development", icon: "tdd" },
-      { title: "Design Thinking", icon: "designthinking" },
+      { title: "Design Thinking", icon: "design-thinking" },
     ],
   },
   {

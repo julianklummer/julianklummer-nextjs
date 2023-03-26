@@ -20,7 +20,7 @@ export const Tab: React.FC<Props> = ({ tabCategory, active }) => {
         {tabCategory.skillList.map((skill, index) => (
           <li
             key={`${index}-icon-list-${skill.title}`}
-            className={styles.iconList}
+            className={styles.iconListItem}
           >
             <span className={styles.skillIcon}>
               <SkillIcon name={skill.icon} />
