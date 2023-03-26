@@ -1,5 +1,27 @@
+@use "styles/theme/typography" as typography;
+@use "styles/theme/colors" as colors;
+@use "styles/theme/breakpoints" as breakpoints;
+
 .tabMenuItem {
+  @include typography.tab-menu-item;
+  color: colors.$light-white;
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.2rem 1rem 0.2rem 0;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+  }
 }
 
 ._active {
+  color: colors.$medium-turquoise;
 }

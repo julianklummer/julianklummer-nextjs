@@ -1,2 +1,5 @@
+@use "styles/theme/colors" as colors;
 .tab {
+  background-color: colors.$dark-gray;
+  border: 1px solid colors.$medium-turquoise;
 }

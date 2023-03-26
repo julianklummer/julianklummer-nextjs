@@ -5,5 +5,6 @@ export type Skill = {
 
 export type TabCategory = {
   title: string;
+  id: string;
   skillList: Skill[];
 };

@@ -34,7 +34,7 @@ export default function Index({ data, skillList, locale }: Props) {
       </Head>
       <div>
         <Hero headline={data.hero.headline} subline={data.hero.subline} />
-        <SkillBox data={skillList} />
+        <SkillBox tabCategoryList={skillList} />
       </div>
     </>
   );

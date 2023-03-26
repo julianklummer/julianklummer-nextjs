@@ -1,6 +1,6 @@
-@use "../../../../styles/theme/typography" as typography;
-@use "../../../../styles/theme/breakpoints" as breakpoints;
-@use "../../../../styles/utils" as utils;
+@use "styles/theme/typography" as typography;
+@use "styles/theme/breakpoints" as breakpoints;
+@use "styles/utils" as utils;
 
 $max-width: 82rem;
 $margin-y: 6%;

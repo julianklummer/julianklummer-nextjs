@@ -9,4 +9,18 @@
   margin: hero.$margin-y auto;
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
+  display: flex;
+  padding: 5%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sidebarHeadline {
+  @include typography.h2;
 }

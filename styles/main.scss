@@ -2,7 +2,7 @@
 @use "./theme/breakpoints" as breakpoints;
 
 body {
-  width: 100vw;
+  width: 100%;
   min-width: breakpoints.$xs;
   min-height: 100vh;
   background: rgb(1 4 4);

@@ -3,6 +3,7 @@ import { skillList } from "./types";
 export const skillBox: skillList = [
   {
     title: "Sprachen",
+    id: "languages",
     skillList: [
       { title: "TypeScript", icon: "typescript" },
       { title: "JavaScript", icon: "javascript" },
@@ -16,7 +17,8 @@ export const skillBox: skillList = [
     ],
   },
   {
-    title: "Frameworks & Bibliotheken",
+    title: "Frameworks",
+    id: "frameworks-libraries",
     skillList: [
       { title: "React", icon: "react" },
       { title: "MUI", icon: "mui" },
@@ -33,6 +35,7 @@ export const skillBox: skillList = [
   },
   {
     title: "Werkzeuge",
+    id: "tools",
     skillList: [
       { title: "Webpack", icon: "webpack" },
       { title: "Babel", icon: "babel" },
@@ -45,6 +48,7 @@ export const skillBox: skillList = [
   },
   {
     title: "Prinzipien",
+    id: "principles",
     skillList: [
       { title: "Object Oriented Programming", icon: "oop" },
       { title: "Functional Programming", icon: "fp" },
@@ -57,6 +61,7 @@ export const skillBox: skillList = [
   },
   {
     title: "Methoden",
+    id: "methologies",
     skillList: [
       { title: "Scrum", icon: "scrum" },
       { title: "Test Driven Development", icon: "tdd" },
@@ -65,6 +70,7 @@ export const skillBox: skillList = [
   },
   {
     title: "Andere",
+    id: "other",
     skillList: [
       { title: "Affinity Designer", icon: "affinity" },
       { title: "Logic Pro X", icon: "logic" },
