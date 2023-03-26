@@ -1,7 +1,7 @@
-@use "../../../hero/hero.module.scss" as hero;
-@use "../../../../../../styles/theme/typography" as typography;
-@use "../../../../../../styles/theme/breakpoints" as breakpoints;
-@use "../../../../../../styles/theme/colors" as colors;
+@use "src/components/sections/hero/hero.module.scss" as hero;
+@use "styles/theme/typography" as typography;
+@use "styles/theme/breakpoints" as breakpoints;
+@use "styles/theme/colors" as colors;
 
 .skillBox {
   width: 100%;
