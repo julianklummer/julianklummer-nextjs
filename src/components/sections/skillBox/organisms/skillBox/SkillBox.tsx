@@ -10,9 +10,8 @@ interface Props {
 
 export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
   if (!tabCategoryList.length) throw new Error("missing items in data");
-  const [activeTabCategory, setActiveTabCategory] = useState<TabCategory>(
-    tabCategoryList[0]
-  );
+  const [activeTabCategoryIndex, setActiveTabCategoryKeyIndex] =
+    useState<number>(0);
 
   return (
     <div className={styles.skillBox}>
@@ -20,9 +19,9 @@ export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
         <h2 className={styles.sidebarHeadline}>Skills</h2>
         <TabMenu
           tabCategoryList={tabCategoryList}
-          activeTabCategory={activeTabCategory}
-          setActiveTabCategory={(data: TabCategory) =>
-            setActiveTabCategory(data)
+          activeTabCategory={tabCategoryList[activeTabCategoryIndex]}
+          setActiveTabCategory={(index: number) =>
+            setActiveTabCategoryKeyIndex(index)
           }
         />
       </div>
@@ -30,7 +29,7 @@ export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
         <Tab
           key={`${index}-tab-${tabCategory.id}`}
           tabCategory={tabCategory}
-          active={tabCategory === activeTabCategory}
+          active={index === activeTabCategoryIndex}
         />
       ))}
     </div>

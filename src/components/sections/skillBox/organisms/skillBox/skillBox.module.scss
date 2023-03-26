@@ -4,7 +4,7 @@
 @use "styles/theme/colors" as colors;
 
 .skillBox {
-  width: 100%;
+  width: 90%;
   max-width: hero.$max-width;
   margin: hero.$margin-y auto;
   background-color: colors.$dark-gray;

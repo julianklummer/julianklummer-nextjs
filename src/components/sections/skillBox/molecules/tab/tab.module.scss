@@ -1,5 +1,28 @@
 @use "styles/theme/colors" as colors;
+
 .tab {
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
+  width: 90%;
+  display: none;
+}
+
+._active {
+  display: block;
+}
+
+.iconList {
+  list-style: none;
+  padding: unset;
+}
+
+.iconListItem {
+}
+
+.skillIcon {
+  color: colors.$medium-turquoise;
+}
+
+.skillTitle {
+  // display: none;
 }

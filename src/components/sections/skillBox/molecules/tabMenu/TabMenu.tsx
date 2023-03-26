@@ -5,7 +5,7 @@ import styles from "./tabMenu.module.scss";
 interface Props {
   tabCategoryList: TabCategory[];
   activeTabCategory: TabCategory;
-  setActiveTabCategory: (data: TabCategory) => void;
+  setActiveTabCategory: (index: number) => void;
 }
 
 export const TabMenu: React.FC<Props> = ({
@@ -20,7 +20,7 @@ export const TabMenu: React.FC<Props> = ({
           <TabMenuItem
             tabCategory={tabCategory}
             active={tabCategory === activeTabCategory}
-            onClick={() => setActiveTabCategory(tabCategory)}
+            onClick={() => setActiveTabCategory(index)}
           />
         </li>
       ))}
