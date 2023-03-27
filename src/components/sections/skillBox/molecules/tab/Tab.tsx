@@ -22,10 +22,12 @@ export const Tab: React.FC<Props> = ({ tabCategory, active }) => {
             key={`${index}-icon-list-${skill.title}`}
             className={styles.iconListItem}
           >
-            <span className={styles.skillIcon}>
-              <SkillIcon name={skill.icon} />
-            </span>
-            <span className={styles.skillTitle}>{skill.title}</span>
+            <div className={styles.skill}>
+              <span className={styles.skillIcon}>
+                <SkillIcon name={skill.icon} />
+              </span>
+              <span className={styles.skillTitle}>{skill.title}</span>
+            </div>
           </li>
         ))}
       </ul>

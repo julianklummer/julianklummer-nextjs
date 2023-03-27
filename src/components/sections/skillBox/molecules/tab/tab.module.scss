@@ -1,9 +1,11 @@
 @use "styles/theme/colors" as colors;
+@use "styles/theme/typography" as typography;
 @use "styles/utils" as utils;
 
 .tab {
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
+  border-radius: 4px;
   width: 90%;
   display: none;
 }
@@ -26,11 +28,11 @@
 
 .iconListItem {
   --list-items-per-row: 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  place-content: center;
   gap: 0.2rem;
   width: calc(calc(100% / var(--list-items-per-row)) - var(--list-gap));
+  height: 10rem;
 
   @include utils.container-query(lg) {
   }
@@ -39,11 +41,31 @@
 .skillIcon {
   display: grid;
   place-content: center;
-  color: colors.$light-white;
+  color: colors.$white;
+  width: 6rem;
+  height: 6rem;
 }
 
 .skillTitle {
   display: grid;
   place-content: center;
-  // display: none;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5%;
+
+  @include typography.skill-title;
+
+  svg {
+    filter: drop-shadow(1px 3px 3px colors.$medium-turquoise);
+  }
 }

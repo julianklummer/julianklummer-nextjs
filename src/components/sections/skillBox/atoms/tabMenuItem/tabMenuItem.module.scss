@@ -4,7 +4,7 @@
 
 .tabMenuItem {
   @include typography.tab-menu-item;
-  color: colors.$light-white;
+  color: colors.$white;
   background-color: unset;
   border: unset;
   cursor: pointer;
