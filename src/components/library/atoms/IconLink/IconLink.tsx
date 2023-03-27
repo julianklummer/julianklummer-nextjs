@@ -4,12 +4,18 @@ import styles from "./iconLink.module.scss";
 interface Props {
   title: string;
   href: string;
+  target?: string;
   icon: React.ReactNode;
 }
 
-export const IconLink: React.FC<Props> = ({ href, title, icon }) => {
+export const IconLink: React.FC<Props> = ({ href, title, target, icon }) => {
   return (
-    <Link href={href} className={styles.iconLink} title={title}>
+    <Link
+      href={href}
+      target={target ? target : "_self"}
+      className={styles.iconLink}
+      title={title}
+    >
       {icon}
     </Link>
   );
