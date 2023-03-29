@@ -8,6 +8,7 @@
   border: 1px solid colors.$medium-turquoise;
   width: 90%;
   display: none;
+  overflow: hidden;
 }
 
 ._active {
@@ -48,15 +49,16 @@
   height: 10rem;
   @include typography.skill-title;
 
-  /*
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 5%;
-  border: 1px solid white;
-  color: colors.$dark-gray;
-  */
-
-  //filter: drop-shadow(1px 1px 1px var(--shadow-color));
-  //animation: svg-shadow-breath 9s ease-in calc(var(--index) * 1s) infinite;
+  --animation-duration: 0.3;
+  --animation-stagger: 0.2;
+  animation-name: fade-in;
+  animation-duration: calc(var(--animation-duration) * 1s);
+  animation-delay: calc(
+    var(--index) * (var(--animation-duration) - var(--animation-stagger)) * 1s
+  );
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+  opacity: 0;
 
   .skillTitle {
     display: grid;
@@ -94,5 +96,16 @@
       grid-area: main;
       color: rgb(var(--color-r), var(--color-g), var(--color-b));
     }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    transform: translate(-250px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
