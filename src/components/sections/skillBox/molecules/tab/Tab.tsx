@@ -22,7 +22,15 @@ export const Tab: React.FC<Props> = ({ tabCategory, active }) => {
             key={`${index}-icon-list-${skill.title}`}
             className={styles.iconListItem}
           >
-            <div className={styles.skill} style={{ "--index": index }}>
+            <div
+              className={styles.skill}
+              style={{
+                "--index": index,
+                "--color-r": skill.iconColorRGB?.r,
+                "--color-g": skill.iconColorRGB?.g,
+                "--color-b": skill.iconColorRGB?.b,
+              }}
+            >
               <span className={styles.skillIcon}>
                 <SkillIcon name={skill.icon} />
               </span>

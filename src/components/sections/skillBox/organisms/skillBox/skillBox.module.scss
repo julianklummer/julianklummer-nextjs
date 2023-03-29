@@ -10,9 +10,18 @@
   margin: hero.$margin-y auto;
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
-  border-radius: 8px;
   display: flex;
   padding: 5%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background: url(/images/grain.png) repeat;
+    pointer-events: none;
+  }
 }
 
 .sidebar {

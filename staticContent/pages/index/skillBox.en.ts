@@ -5,16 +5,56 @@ export const skillBox: skillList = [
     title: "Languages",
     id: "languages",
     skillList: [
-      { title: "TypeScript", icon: "typescript" },
-      { title: "JavaScript", icon: "javascript" },
-      { title: "HTML", icon: "html" },
-      { title: "SASS", icon: "sass" },
-      { title: "CSS", icon: "css" },
-      { title: "PHP", icon: "php" },
-      { title: "Python", icon: "python" },
-      { title: "SQL", icon: "sql" },
-      { title: "GraphQL", icon: "graphql" },
-      { title: "Markdown", icon: "markdown" },
+      {
+        title: "TypeScript",
+        icon: "typescript",
+        iconColorRGB: { r: "63", g: "204", b: "222" },
+      },
+      {
+        title: "JavaScript",
+        icon: "javascript",
+        iconColorRGB: { r: "255", g: "196", b: "69" },
+      },
+      {
+        title: "HTML",
+        icon: "html",
+        iconColorRGB: { r: "255", g: "158", b: "69" },
+      },
+      {
+        title: "SASS",
+        icon: "sass",
+        iconColorRGB: { r: "255", g: "83", b: "69" },
+      },
+      {
+        title: "CSS",
+        icon: "css",
+        iconColorRGB: { r: "63", g: "204", b: "222" },
+      },
+      {
+        title: "PHP",
+        icon: "php",
+        iconColorRGB: { r: "63", g: "204", b: "222" },
+      },
+      {
+        title: "Python",
+        icon: "python",
+        iconColorRGB: { r: "255", g: "83", b: "69" },
+      },
+      {
+        title: "SQL",
+        icon: "sql",
+        iconColorRGB: { r: "255", g: "83", b: "69" },
+      },
+      {
+        title: "GraphQL",
+        icon: "graphql",
+        iconColorRGB: { r: "63", g: "204", b: "222" },
+      },
+      {
+        title: "Markdown",
+        icon: "markdown",
+        iconColorRGB: { r: "255", g: "83", b: "69" },
+      },
     ],
   },
   {

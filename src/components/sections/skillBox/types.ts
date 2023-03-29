@@ -1,6 +1,7 @@
 export type Skill = {
   title: string;
   icon: string;
+  iconColorRGB?: { r: string; g: string; b: string };
 };
 
 export type TabCategory = {
