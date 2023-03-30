@@ -1,0 +1,60 @@
+import { stationList } from "./types";
+
+export const stationBox: stationList = [
+  {
+    title: "FULLTIME: JUNIOR FRONTEND DEVELOPER ",
+    institution: "SIRUP GmbH",
+    duration: "since 03/2022",
+    location: "Berlin",
+    icon: "WorkIcon",
+    link: "https://www.sirup.com/",
+    linkTitle: "SIRUP Website",
+    infos: ["Frontend Development"],
+  },
+  {
+    title: "WORKING STUDENT: FRONTEND DEVELOPMENT ",
+    institution: "SIRUP GmbH",
+    duration: "02/2021 - 02/2022",
+    location: "Berlin",
+    icon: "WorkIcon",
+    link: "https://www.sirup.com/",
+    linkTitle: "SIRUP Website",
+    infos: ["Frontend Development"],
+  },
+  {
+    title: "BACHELOR OF ARTS: ONLINE-MEDIEN-MANAGEMENT",
+    institution: "Stuttgart Media University",
+    duration: "2017 - 2022",
+    location: "Stuttgart",
+    icon: "SchoolIcon",
+    link: "https://www.omm.hdm-stuttgart.de/",
+    linkTitle: "Online media management website",
+    infos: [
+      "Online technologies, webdesign & programming",
+      "Digital marketing & data analytics",
+      "Digital content creation",
+    ],
+  },
+  {
+    title: "FREELANCE: EVENT-MANAGEMENT AGENCY",
+    institution: "inPulse | Klummer und Tondera GbR",
+    duration: "2018 - 2022",
+    location: "Heilbronn",
+    icon: "WorkIcon",
+    infos: ["Event- und brandmanagement", "Online & offline marketing"],
+  },
+  {
+    title: "INTERNSHIP: E-COMMERCE CRM MARKETING",
+    institution: "Wein & Vinos GmbH",
+    duration: "09/2019 - 02/2020",
+    location: "Berlin",
+    icon: "WorkIcon",
+    link: "https://www.vinos.de/",
+    linkTitle: "Wein & Vinos online shop",
+    infos: [
+      "Customer relationship management",
+      "E-Mail Marketing & analytics",
+      "E-Commerce",
+    ],
+  },
+];

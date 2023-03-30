@@ -18,13 +18,10 @@
 .iconList {
   --list-gap: 2rem;
   list-style: none;
-  padding: unset;
   display: flex;
   flex-wrap: wrap;
   gap: var(--list-gap);
-  padding-top: var(--list-gap);
-  padding-left: var(--list-gap);
-  padding-bottom: var(--list-gap);
+  padding: var(--list-gap);
 }
 
 .iconListItem {
@@ -32,7 +29,10 @@
   display: grid;
   place-content: center;
   gap: 0.2rem;
-  width: calc(calc(100% / var(--list-items-per-row)) - var(--list-gap));
+  width: calc(
+    (100% - (var(--list-gap) * (var(--list-items-per-row) - 1)) - 1px) /
+      var(--list-items-per-row)
+  );
   height: 10rem;
 
   @include utils.container-query(lg) {
@@ -45,8 +45,8 @@
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   @include typography.skill-title;
 
   --animation-duration: 0.3;
