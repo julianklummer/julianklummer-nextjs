@@ -26,14 +26,14 @@
 
 .iconListItem {
   --list-items-per-row: 4;
-  display: grid;
-  place-content: center;
-  gap: 0.2rem;
   width: calc(
     (100% - (var(--list-gap) * (var(--list-items-per-row) - 1)) - 1px) /
       var(--list-items-per-row)
   );
-  height: 10rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  gap: 0.2rem;
 
   @include utils.container-query(lg) {
   }
@@ -45,8 +45,6 @@
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
-  width: 8rem;
-  height: 8rem;
   @include typography.skill-title;
 
   --animation-duration: 0.3;
@@ -72,8 +70,7 @@
 
   .skillIcon {
     display: grid;
-    place-content: center;
-    grid-template-areas: "main";
+    place-content: initial;
     width: 5rem;
     height: 5rem;
 
@@ -82,18 +79,16 @@
       width: 150%;
       height: 150%;
       transform: translate(-15%, -15%);
-      grid-area: main;
-      border-radius: 50%;
-      opacity: 0.8;
+      grid-area: 1/1;
       background: radial-gradient(
         circle,
-        rgba(var(--color-r), var(--color-g), var(--color-b), 0.3) 0%,
+        rgba(var(--color-r), var(--color-g), var(--color-b), 0.2) 0%,
         rgba(0, 0, 0, 0) 50%
       );
     }
 
     svg {
-      grid-area: main;
+      grid-area: 1/1;
       color: rgb(var(--color-r), var(--color-g), var(--color-b));
     }
   }
