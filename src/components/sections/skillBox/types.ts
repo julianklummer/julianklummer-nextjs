@@ -9,3 +9,5 @@ export type TabCategory = {
   id: string;
   skillList: Skill[];
 };
+
+export type skillList = TabCategory[];

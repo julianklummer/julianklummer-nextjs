@@ -1,0 +1,25 @@
+@use "src/components/sections/hero/hero.module.scss" as hero;
+@use "styles/theme/typography" as typography;
+@use "styles/theme/breakpoints" as breakpoints;
+@use "styles/theme/colors" as colors;
+
+.stationBox {
+  width: 90%;
+  height: 780px;
+  max-width: hero.$max-width;
+  margin: hero.$margin-y auto;
+  background-color: colors.$dark-gray;
+  border: 1px solid rgb(52 56 65);
+  display: flex;
+  padding: 5%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    background: url(/images/grain.png) repeat;
+    pointer-events: none;
+  }
+}
