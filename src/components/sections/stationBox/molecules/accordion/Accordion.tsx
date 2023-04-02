@@ -1,3 +1,4 @@
+import { StationIcon } from "../../atoms/stationIcon/StationIcon";
 import { station } from "../../types";
 import styles from "./accordion.module.scss";
 
@@ -21,12 +22,26 @@ export const Accordion: React.FC<Props> = ({
   active && panelClassList.push(styles._active);
 
   const renderAccordionContent = () => {
-    return <div>{JSON.stringify(station)}</div>;
+    return (
+      <>
+        <ul>
+          {station.infos?.map((info, index) => (
+            <li key={index}>{info}</li>
+          ))}
+        </ul>
+      </>
+    );
   };
 
   return (
     <div className={styles.accordion}>
       <h3 className={styles.accordionHeader}>
+        <div className={styles.row}>
+          <span className={styles.stationIcon}>
+            {station.icon ? <StationIcon name={station.icon} /> : null}
+          </span>
+          <span>{station.duration}</span>
+        </div>
         <button
           id={getTabId(station) + "-header"}
           aria-expanded={active}
@@ -35,6 +50,11 @@ export const Accordion: React.FC<Props> = ({
         >
           {station.title}
         </button>
+        <div className={styles.row}>
+          <span>{station.institution}</span>
+          <span>{station.location}</span>
+          <span>{active ? "close" : "open"}</span>
+        </div>
       </h3>
       <div
         className={panelClassList.join(" ")}

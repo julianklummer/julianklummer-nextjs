@@ -4,8 +4,7 @@
 @use "styles/theme/colors" as colors;
 
 .stationBox {
-  width: 45%;
-  height: 780px;
+  width: 55%;
   max-width: hero.$max-width;
   margin: hero.$margin-y auto;
   background-color: colors.$dark-gray;

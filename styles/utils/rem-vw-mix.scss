@@ -14,8 +14,8 @@
   $minimum-size: $size;
   $rem-part: rem((strip-unit($size) - (strip-unit($size) * $dynamic-portion)));
   $vw-part: vw(
-    (strip-unit($size) * strip-unit($dynamic-portion)),
-    get-breakpoint-width-by-name($breakpoint)
+    (strip-unit($size) * $dynamic-portion),
+    (strip-unit(get-breakpoint-width-by-name($breakpoint)) * 16)
   );
   $rem-vw-mix: calc(#{$rem-part} + #{$vw-part});
 

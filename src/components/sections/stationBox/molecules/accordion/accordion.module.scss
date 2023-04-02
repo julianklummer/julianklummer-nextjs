@@ -5,14 +5,43 @@
 .accordion {
   background-color: colors.$dark-gray;
   background: radial-gradient(circle, rgb(53, 53, 53) 19%, rgb(43, 43, 43) 92%);
-  border: 1px solid rgb(36, 39, 46);
-  overflow: hidden;
+  border: 1px solid colors.$dark-gray-adjacent;
 }
 
 .accordionHeader {
+  position: relative;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   button {
     background: transparent;
     border: unset;
+    color: colors.$white;
+    padding: unset;
+    text-align: left;
+    @include typography.tab-menu-item;
+
+    &::after {
+      content: "";
+      inset: 0;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+
+  .stationIcon {
+    display: block;
+    width: 6vw;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: colors.$white;
+    display: grid;
+    place-items: center;
+    padding: 2%;
   }
 }
 
