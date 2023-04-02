@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const stationSchema = z.object({
+  id: z.string(),
   title: z.string(),
   institution: z.string().optional(),
   duration: z.string().optional(),

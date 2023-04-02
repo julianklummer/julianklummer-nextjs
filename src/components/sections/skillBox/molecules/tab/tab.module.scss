@@ -9,10 +9,10 @@
   width: 90%;
   display: none;
   overflow: hidden;
-}
 
-._active {
-  display: block;
+  &._active {
+    display: block;
+  }
 }
 
 .iconList {

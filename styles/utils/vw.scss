@@ -1,0 +1,6 @@
+@use "sass:math";
+@use "styles/utils/strip-unit" as *;
+
+@function vw($target, $vw-context) {
+  @return math.div(strip-unit($target), strip-unit($vw-context)) * 100vw;
+}

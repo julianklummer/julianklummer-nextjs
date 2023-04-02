@@ -53,6 +53,30 @@
   }
 }
 
+@mixin h3 {
+  font-family: fonts.$cosima;
+  font-style: normal;
+  font-weight: 800;
+  font-size: calc(1rem + 2vw);
+  margin: unset;
+
+  @include utils.media-breakpoint-up(sm) {
+    font-size: calc(2rem + 2vw);
+  }
+
+  @include utils.media-breakpoint-up(lg) {
+    font-size: calc(2rem + 2vw);
+  }
+
+  @include utils.media-breakpoint-up(lg) {
+    font-size: calc(2rem + 2vw);
+  }
+
+  @include utils.media-breakpoint-up(xl) {
+    font-size: calc(2rem + 2vw);
+  }
+}
+
 @mixin subline {
   font-family: fonts.$cosima;
   font-weight: 400;

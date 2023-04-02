@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "styles/utils/get-breakpoint-width-by-name" as *;
+@use "styles/utils/vw" as *;
+@use "styles/utils/rem" as *;
+@use "styles/utils/strip-unit" as *;
+@use "styles/theme/breakpoints" as *;
+
+@function rem-vw-mix(
+  $size,
+  $dynamic-portion,
+  $breakpoint,
+  $size-maximum: null
+) {
+  $minimum-size: $size;
+  $rem-part: rem((strip-unit($size) - (strip-unit($size) * $dynamic-portion)));
+  $vw-part: vw(
+    (strip-unit($size) * strip-unit($dynamic-portion)),
+    get-breakpoint-width-by-name($breakpoint)
+  );
+  $rem-vw-mix: calc(#{$rem-part} + #{$vw-part});
+
+  @if $vw-part != 0vw and $size-maximum == null {
+    @return max(#{$rem-vw-mix}, #{$minimum-size});
+  }
+  @elseif $vw-part != 0vw and $size-maximum != null {
+    @return clamp($minimum-size, $rem-vw-mix, $size-maximum);
+  }
+  @elseif $size-maximum != null and $size > $size-maximum {
+    @return $size-maximum;
+  } @else {
+    @return $size;
+  }
+}

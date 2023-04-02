@@ -1,4 +1,5 @@
 export type station = {
+  id: string;
   title: string;
   institution?: string;
   duration?: string;

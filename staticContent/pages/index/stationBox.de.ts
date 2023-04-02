@@ -2,6 +2,7 @@ import { stationList } from "./types";
 
 export const stationBox: stationList = [
   {
+    id: "sirup-2",
     title: "VOLLZEIT: JUNIOR FRONTEND DEVELOPER ",
     institution: "SIRUP GmbH",
     duration: "seit 03/2022",
@@ -12,6 +13,7 @@ export const stationBox: stationList = [
     infos: ["Frontend Development"],
   },
   {
+    id: "sirup-1",
     title: "WERKSSTUDENT: FRONTEND DEVELOPMENT ",
     institution: "SIRUP GmbH",
     duration: "02/2021 - 02/2022",
@@ -22,6 +24,7 @@ export const stationBox: stationList = [
     infos: ["Frontend Development"],
   },
   {
+    id: "hdm-1",
     title: "BACHELOR OF ARTS: ONLINE-MEDIEN-MANAGEMENT",
     institution: "Hochschule der Medien Stuttgart",
     duration: "2017 - 2022",
@@ -37,6 +40,7 @@ export const stationBox: stationList = [
     ],
   },
   {
+    id: "inpulse",
     title: "SELBSTÄNDIG: EVENT-MANAGEMENT AGENTUR",
     institution: "inPulse | Klummer und Tondera GbR",
     duration: "2018 - 2022",
@@ -45,6 +49,7 @@ export const stationBox: stationList = [
     infos: ["Event- and brandmanagement", "Online & Offline Marketing"],
   },
   {
+    id: "vinos",
     title: "PRAKTIKUM: E-COMMERCE CRM MARKETING",
     institution: "Wein & Vinos GmbH",
     duration: "09/2019 - 02/2020",

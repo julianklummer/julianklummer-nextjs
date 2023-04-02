@@ -2,6 +2,7 @@
 @use "styles/theme/typography" as typography;
 @use "styles/theme/breakpoints" as breakpoints;
 @use "styles/theme/colors" as colors;
+@use "styles/utils" as *;
 
 .skillBox {
   width: 90%;
@@ -29,7 +30,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: rem(32px);
 }
 
 .sidebarHeadline {
