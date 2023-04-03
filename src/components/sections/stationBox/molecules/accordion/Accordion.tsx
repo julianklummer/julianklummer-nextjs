@@ -35,27 +35,29 @@ export const Accordion: React.FC<Props> = ({
 
   return (
     <div className={styles.accordion}>
-      <h3 className={styles.accordionHeader}>
+      <div className={styles.accordionHeader}>
         <div className={styles.row}>
           <span className={styles.stationIcon}>
             {station.icon ? <StationIcon name={station.icon} /> : null}
           </span>
           <span>{station.duration}</span>
         </div>
-        <button
-          id={getTabId(station) + "-header"}
-          aria-expanded={active}
-          aria-controls={getTabId(station) + "-panel"}
-          onClick={() => (active ? close() : open())}
-        >
-          {station.title}
-        </button>
+        <h3>
+          <button
+            id={getTabId(station) + "-header"}
+            aria-expanded={active}
+            aria-controls={getTabId(station) + "-panel"}
+            onClick={() => (active ? close() : open())}
+          >
+            {station.title}
+          </button>
+        </h3>
         <div className={styles.row}>
           <span>{station.institution}</span>
           <span>{station.location}</span>
           <span>{active ? "close" : "open"}</span>
         </div>
-      </h3>
+      </div>
       <div
         className={panelClassList.join(" ")}
         id={getTabId(station) + "-panel"}
