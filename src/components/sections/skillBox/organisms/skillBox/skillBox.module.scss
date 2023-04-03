@@ -2,24 +2,29 @@
 @use "styles/theme/typography" as typography;
 @use "styles/theme/breakpoints" as breakpoints;
 @use "styles/theme/colors" as colors;
-@use "styles/utils" as *;
+@use "styles/utils" as utils;
 
 .skillBox {
   width: 90%;
-  height: 780px;
   max-width: hero.$max-width;
   margin: hero.$margin-y auto;
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
   display: flex;
   padding: 5%;
+  flex-direction: column;
+  position: relative;
+
+  @include utils.container-query(md) {
+    flex-direction: row;
+  }
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
     opacity: 0.3;
-    mix-blend-mode: overlay;
+    mix-blend-mode: saturation;
     background: url(/images/grain.png) repeat;
     pointer-events: none;
   }

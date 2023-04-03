@@ -1,4 +1,5 @@
 import { SkillIcon } from "../../atoms/skillIcon/SkillIcon";
+import { iconColorList } from "../../atoms/skillIcon/iconColorList";
 import { TabCategory } from "../../types";
 import styles from "./tab.module.scss";
 
@@ -17,27 +18,35 @@ export const Tab: React.FC<Props> = ({ tabCategory, active }) => {
   const renderTabContent = () => {
     return (
       <ul className={styles.iconList}>
-        {tabCategory.skillList.map((skill, index) => (
-          <li
-            key={`${index}-icon-list-${skill.title}`}
-            className={styles.iconListItem}
-          >
-            <div
-              className={styles.skill}
-              style={{
-                "--index": index,
-                "--color-r": skill.iconColorRGB?.r,
-                "--color-g": skill.iconColorRGB?.g,
-                "--color-b": skill.iconColorRGB?.b,
-              }}
+        {tabCategory.skillList.map((skill, index) => {
+          const iconEntry = iconColorList.filter(
+            (entry) => entry.id === skill.icon
+          );
+          let colorList = iconEntry.length
+            ? iconEntry[0]?.colorList
+            : [{ r: 63, g: 204, b: 222 }];
+          return (
+            <li
+              key={`${index}-icon-list-${skill.title}`}
+              className={styles.iconListItem}
             >
-              <span className={styles.skillIcon}>
-                <SkillIcon name={skill.icon} />
-              </span>
-              <span className={styles.skillTitle}>{skill.title}</span>
-            </div>
-          </li>
-        ))}
+              <div
+                className={styles.skill}
+                style={{
+                  "--index": index,
+                  "--color-r": colorList[0].r,
+                  "--color-g": colorList[0].g,
+                  "--color-b": colorList[0].b,
+                }}
+              >
+                <span className={styles.skillIcon}>
+                  <SkillIcon name={skill.icon} />
+                </span>
+                <span className={styles.skillTitle}>{skill.title}</span>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     );
   };

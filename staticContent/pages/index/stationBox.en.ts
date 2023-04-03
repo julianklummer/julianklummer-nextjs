@@ -1,4 +1,4 @@
-import { stationList } from "./types";
+import { stationList } from "src/components/sections/stationBox/types";
 
 export const stationBox: stationList = [
   {

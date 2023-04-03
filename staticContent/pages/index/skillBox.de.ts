@@ -1,4 +1,4 @@
-import { skillList } from "./types";
+import { skillList } from "src/components/sections/skillBox/types";
 
 export const skillBox: skillList = [
   {

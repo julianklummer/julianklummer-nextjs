@@ -1,4 +1,4 @@
-import { skillList } from "./types";
+import { skillList } from "src/components/sections/skillBox/types";
 
 export const skillBox: skillList = [
   {
@@ -8,52 +8,42 @@ export const skillBox: skillList = [
       {
         title: "TypeScript",
         icon: "typescript",
-        iconColorRGB: { r: "63", g: "204", b: "222" },
       },
       {
         title: "JavaScript",
         icon: "javascript",
-        iconColorRGB: { r: "255", g: "196", b: "69" },
       },
       {
         title: "HTML",
         icon: "html",
-        iconColorRGB: { r: "255", g: "158", b: "69" },
       },
       {
         title: "SASS",
         icon: "sass",
-        iconColorRGB: { r: "255", g: "83", b: "69" },
       },
       {
         title: "CSS",
         icon: "css",
-        iconColorRGB: { r: "63", g: "204", b: "222" },
       },
       {
         title: "PHP",
         icon: "php",
-        iconColorRGB: { r: "63", g: "204", b: "222" },
       },
       {
         title: "Python",
         icon: "python",
-        iconColorRGB: { r: "255", g: "83", b: "69" },
       },
       {
         title: "SQL",
         icon: "sql",
-        iconColorRGB: { r: "255", g: "83", b: "69" },
       },
       {
         title: "GraphQL",
         icon: "graphql",
-        iconColorRGB: { r: "63", g: "204", b: "222" },
       },
       {
         title: "Markdown",
         icon: "markdown",
-        iconColorRGB: { r: "255", g: "83", b: "69" },
       },
     ],
   },

@@ -92,10 +92,14 @@
   font-family: fonts.$cosima;
   font-style: normal;
   font-weight: 200;
-  font-size: utils.rem-vw-mix(14px, 0.5, xs);
+  font-size: utils.rem-vw-mix(12px, 0.5, xs);
+
+  @include utils.media-breakpoint-up(sm) {
+    font-size: utils.rem-vw-mix(12px, 0.5, sm);
+  }
 
   @include utils.media-breakpoint-up(md) {
-    font-size: utils.rem-vw-mix(14px, 0.5, md);
+    font-size: utils.rem-vw-mix(12px, 0.5, md);
   }
 
   @include utils.media-breakpoint-up(lg) {
@@ -117,8 +121,6 @@
 }
 
 @mixin skill-title {
-  font-family: fonts.$cosima;
+  @include p;
   font-weight: 400;
-  line-height: 1rem;
-  font-size: utils.rem-vw-mix(4px, 0.5, xs);
 }
