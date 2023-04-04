@@ -6,15 +6,51 @@
   background-color: colors.$dark-gray;
   background: radial-gradient(circle, rgb(53, 53, 53) 19%, rgb(43, 43, 43) 92%);
   border: 1px solid colors.$dark-gray-adjacent;
+  padding: 5%;
+
+  @include typography.p;
 }
 
 .accordionHeader {
   position: relative;
+  display: flex;
+  gap: 0.4vw;
+  flex-direction: column;
 
   .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  h3 {
+    margin: unset;
+  }
+
+  .durationLocation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2vw;
+    align-items: flex-end;
+
+    svg {
+      display: inline-block;
+      margin-right: 0.2vw;
+
+      width: utils.rem-vw-mix(12px, 0.5, xs);
+
+      @include utils.media-breakpoint-up(sm) {
+        width: utils.rem-vw-mix(12px, 0.5, sm);
+      }
+
+      @include utils.media-breakpoint-up(md) {
+        width: utils.rem-vw-mix(12px, 0.5, md);
+      }
+
+      @include utils.media-breakpoint-up(lg) {
+        width: utils.rem-vw-mix(12px, 0.5, lg);
+      }
+    }
   }
 
   button {
@@ -23,7 +59,7 @@
     color: colors.$white;
     padding: unset;
     text-align: left;
-    @include typography.tab-menu-item;
+    @include typography.h6;
 
     &::after {
       content: "";
@@ -35,13 +71,13 @@
 
   .stationIcon {
     display: block;
-    width: 6vw;
+    width: 12%;
+    padding: 1%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: colors.$white;
     display: grid;
     place-items: center;
-    padding: 2%;
   }
 }
 

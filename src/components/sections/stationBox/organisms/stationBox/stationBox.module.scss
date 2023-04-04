@@ -4,14 +4,13 @@
 @use "styles/theme/colors" as colors;
 
 .stationBox {
-  width: 55%;
+  width: 30%;
   max-width: hero.$max-width;
   margin: hero.$margin-y auto;
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
   display: flex;
   flex-direction: column;
-  padding: 5%;
 
   &::before {
     content: "";

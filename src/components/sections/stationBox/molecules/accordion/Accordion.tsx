@@ -1,3 +1,4 @@
+import Region from "../../../../../../public/icons/stationList/region.svg";
 import { StationIcon } from "../../atoms/stationIcon/StationIcon";
 import { station } from "../../types";
 import styles from "./accordion.module.scss";
@@ -40,7 +41,13 @@ export const Accordion: React.FC<Props> = ({
           <span className={styles.stationIcon}>
             {station.icon ? <StationIcon name={station.icon} /> : null}
           </span>
-          <span>{station.duration}</span>
+          <span className={styles.durationLocation}>
+            <span>{station.duration}</span>
+            <span>
+              <Region />
+              {station.location}
+            </span>
+          </span>
         </div>
         <h3>
           <button
@@ -54,7 +61,6 @@ export const Accordion: React.FC<Props> = ({
         </h3>
         <div className={styles.row}>
           <span>{station.institution}</span>
-          <span>{station.location}</span>
           <span>{active ? "close" : "open"}</span>
         </div>
       </div>

@@ -103,7 +103,7 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(16px, 0.5, lg);
+    font-size: utils.rem-vw-mix(12px, 0.5, lg);
   }
 }
 
