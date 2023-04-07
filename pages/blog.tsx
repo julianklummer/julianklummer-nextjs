@@ -1,7 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
-import { TypographyShuffle } from "src/components/library/atoms/typoshuffle/TypographyShuffle";
 import { LanguageProvider } from "src/utils/contexts/languageContext/LanguageProvider";
 import { Locale } from "src/utils/contexts/languageContext/types";
 import { indexDataSchema } from "staticContent/pages/index/schemas";
@@ -26,12 +25,7 @@ export default function Index({ data, locale }: Props) {
         <header className={styles.appHeader}>
           <Navigation />
         </header>
-        <div>
-          <TypographyShuffle
-            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ratione corrupti cupiditate nihil accusantium quos deleniti laudantium perferendis sequi, unde itaque et praesentium, adipisci aperiam eius! Est, deleniti sunt recusandae neque corporis corrupti. Exercitationem assumenda sint consequuntur, sit, minus rerum eaque esse odit corporis voluptatibus totam cupiditate odio dolorum vitae!
-            "
-          />
-        </div>
+        <div></div>
       </LanguageProvider>
     </>
   );
