@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import TranslationIcon from "public/icons/navigation/button/translation.svg";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import { languageList } from "src/utils/contexts/languageContext/languageList";
 import { Locale } from "src/utils/contexts/languageContext/types";
@@ -40,6 +40,18 @@ export const LanguageToggle: React.FC = () => {
       toggleRef.current?.focus();
     }
   };
+
+  const handleClickoutSide = () => setIsOpen(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.addEventListener("mouseup", handleClickoutSide);
+    } else {
+      document.body.removeEventListener("mouseup", handleClickoutSide);
+    }
+    return () =>
+      document.body.removeEventListener("mouseup", handleClickoutSide);
+  }, [isOpen]);
 
   return (
     <>

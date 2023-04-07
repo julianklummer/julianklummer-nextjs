@@ -1,39 +1,49 @@
 @use "styles/theme/typography" as typography;
 @use "styles/theme/breakpoints" as breakpoints;
+@use "styles/theme/sizes" as sizes;
 @use "styles/utils" as utils;
 
 $max-width: 82rem;
-$margin-y: 5%;
 
 .hero {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
-  padding: 0 5%;
-  margin: $margin-y auto;
-  max-width: $max-width;
+  gap: utils.vw-clamp(32px, xs, 40px);
+  margin: sizes.$section-margin-y auto;
+  max-width: sizes.$section-max-width;
 
-  @include utils.container-query(lg) {
+  @include utils.container-query(md) {
+    gap: utils.vw-clamp(32px, md, 64px);
     flex-direction: row;
-    gap: 2rem;
   }
 
-  @include utils.container-query(xl) {
-    gap: 4rem;
+  @include utils.container-query(lg) {
+    gap: utils.vw-clamp(32px, lg, 64px);
   }
 }
 
 .heroImage {
-  $size: calc(14rem + 10vw);
-  width: $size;
-  height: $size;
+  --size: #{utils.rem-vw-mix(220px, 0.8, xs)};
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
+
+  @include utils.container-query(sm) {
+    --size: #{utils.rem-vw-mix(300px, 0.3, sm)};
+  }
+
+  @include utils.container-query(md) {
+    --size: #{utils.rem-vw-mix(300px, 0.5, md, 480px)};
+  }
+  // utils.vw-clamp(220px, xs, 420px);
 }
 
 .heroH1 {
   width: min-content;
   text-align: center;
+  margin: unset;
 
   @include utils.container-query(lg) {
     text-align: left;
@@ -45,10 +55,10 @@ $margin-y: 5%;
 }
 
 .heroHeadline {
-  @include typography.h1;
+  @include typography.heroHeadline;
   width: max-content;
 }
 
 .heroSubline {
-  @include typography.subline;
+  @include typography.heroSubline;
 }

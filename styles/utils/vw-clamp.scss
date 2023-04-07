@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "styles/utils/get-breakpoint-width-by-name" as *;
+@use "styles/utils/vw" as *;
+@use "styles/utils/rem" as *;
+@use "styles/utils/strip-unit" as *;
+@use "styles/theme/breakpoints" as *;
+
+@function vw-clamp($size, $breakpoint, $maximum-size: null) {
+  $minimum-size: $size;
+  $vw-size: vw(
+    $size,
+    strip-unit(get-breakpoint-width-by-name($breakpoint)) * 16
+  );
+
+  @if $vw-size != 0vw and $maximum-size == null {
+    @return max(#{$vw-size}, #{rem($minimum-size)});
+  }
+  @elseif $vw-size != 0vw and $maximum-size != null {
+    @return clamp(#{rem($minimum-size)}, #{$vw-size}, #{rem($maximum-size)});
+  }
+  @elseif $maximum-size != null and $size > $maximum-size {
+    @return rem($maximum-size);
+  } @else {
+    @return rem($size);
+  }
+}

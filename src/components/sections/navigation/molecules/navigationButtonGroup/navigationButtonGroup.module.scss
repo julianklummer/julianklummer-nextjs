@@ -1,8 +1,10 @@
+@use "styles/utils" as utils;
+
 .navigationButtonGroup {
   list-style: none;
   display: flex;
   padding: 0;
-  gap: 1vw;
+  gap: utils.vw-clamp(8px, xs, 20px);
 }
 
 .navigationButtonGroupItem {

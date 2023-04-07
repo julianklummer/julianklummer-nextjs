@@ -2,11 +2,12 @@
 @use "styles/theme/typography" as typography;
 @use "styles/theme/breakpoints" as breakpoints;
 @use "styles/theme/colors" as colors;
+@use "styles/theme/sizes" as sizes;
 
 .stationBox {
   width: 30%;
   max-width: hero.$max-width;
-  margin: hero.$margin-y auto;
+  margin: sizes.$section-margin-y auto;
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
   display: flex;

@@ -4,6 +4,7 @@ $md: 48em; // 768px
 $lg: 62em; // 992px
 $xl: 80em; // 1280px
 $xxl: 96em; // 1536px
+$xxxl: 120em; // 1920px
 
 $breakpointMap: (
   "xs": $xs,
@@ -12,4 +13,5 @@ $breakpointMap: (
   "lg": $lg,
   "xl": $xl,
   "xxl": $xxl,
+  "xxxl": $xxxl,
 );

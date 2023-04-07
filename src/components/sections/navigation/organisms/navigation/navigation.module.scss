@@ -1,3 +1,5 @@
+@use "styles/theme/sizes" as sizes;
+
 $padding-x: 5%;
 
 .navigation {
@@ -5,4 +7,5 @@ $padding-x: 5%;
   padding: 2% $padding-x;
   justify-content: space-between;
   align-items: center;
+  max-width: sizes.$max-site-width;
 }

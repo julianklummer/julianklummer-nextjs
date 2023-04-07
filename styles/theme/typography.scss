@@ -14,7 +14,7 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(48px, 0.5, lg);
+    font-size: utils.rem-vw-mix(48px, 0.5, lg, 70px);
   }
 }
 
@@ -33,7 +33,7 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(40px, 0.5, lg);
+    font-size: utils.rem-vw-mix(40px, 0.5, lg, 60px);
   }
 }
 
@@ -46,7 +46,7 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(32px, 0.5, lg);
+    font-size: utils.rem-vw-mix(32px, 0.5, lg, 46px);
   }
 }
 
@@ -55,11 +55,11 @@
   font-size: utils.rem-vw-mix(16px, 0.5, xs);
 
   @include utils.media-breakpoint-up(md) {
-    font-size: utils.rem-vw-mix(16px, 0.5, md);
+    font-size: utils.rem-vw-mix(20px, 0.5, md);
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(24px, 0.5, lg);
+    font-size: utils.rem-vw-mix(24px, 0.5, lg, 36px);
   }
 }
 
@@ -68,11 +68,11 @@
   font-size: utils.rem-vw-mix(16px, 0.5, xs);
 
   @include utils.media-breakpoint-up(md) {
-    font-size: utils.rem-vw-mix(16px, 0.5, md);
+    font-size: utils.rem-vw-mix(18px, 0.5, md);
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(20px, 0.5, lg);
+    font-size: utils.rem-vw-mix(20px, 0.5, lg, 30px);
   }
 }
 
@@ -85,7 +85,7 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(16px, 0.5, lg);
+    font-size: utils.rem-vw-mix(16px, 0.5, lg, 24px);
   }
 }
 
@@ -104,14 +104,8 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(12px, 0.5, lg);
+    font-size: utils.rem-vw-mix(12px, 0.5, lg, 18px);
   }
-}
-
-@mixin subline {
-  font-family: fonts.$cosima;
-  font-weight: 400;
-  font-size: utils.rem-vw-mix(12px, 0.5, xs);
 }
 
 @mixin navigationItem {
@@ -120,17 +114,48 @@
   @include hover.standard;
 
   @include utils.media-breakpoint-up(sm) {
-    font-size: utils.rem-vw-mix(16px, 0.5, sm);
+    font-size: utils.rem-vw-mix(14px, 0.5, sm);
   }
 
   @include utils.media-breakpoint-up(md) {
-    font-size: utils.rem-vw-mix(16px, 0.5, md);
+    font-size: utils.rem-vw-mix(14px, 0.5, md);
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(16px, 0.5, lg);
+    font-size: utils.rem-vw-mix(14px, 0.5, lg, 24px);
   }
 }
+
+@mixin heroHeadline {
+  @include h1;
+  line-height: 0.8;
+  font-size: utils.rem-vw-mix(40px, 0.5, xs);
+
+  @include utils.media-breakpoint-up(md) {
+    font-size: utils.rem-vw-mix(56px, 0.5, md);
+  }
+
+  @include utils.media-breakpoint-up(lg) {
+    font-size: utils.rem-vw-mix(80px, 0.5, lg, 120px);
+  }
+}
+
+@mixin heroSubline {
+  @include h4;
+  font-weight: 400;
+}
+
+/*
+
+
+
+
+
+
+
+
+
+*/
 
 @mixin tab-menu-item {
   font-family: fonts.$cosima;

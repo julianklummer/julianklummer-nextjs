@@ -20,7 +20,7 @@ import { stationBox as stationListDE } from "staticContent/pages/index/stationBo
 import { stationBox as stationListEN } from "staticContent/pages/index/stationBox.en";
 import { indexData } from "staticContent/pages/index/types";
 import { Navigation } from "../src/components/sections/navigation/organisms/navigation/Navigation";
-import styles from "./_app.module.scss";
+import styles from "./index.module.scss";
 interface Props {
   data: indexData;
   skillList: skillList;

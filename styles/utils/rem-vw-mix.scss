@@ -9,7 +9,7 @@
   $size,
   $dynamic-portion,
   $breakpoint,
-  $size-maximum: null
+  $maximum-size: null
 ) {
   $minimum-size: $size;
   $rem-part: rem((strip-unit($size) - (strip-unit($size) * $dynamic-portion)));
@@ -19,15 +19,15 @@
   );
   $rem-vw-mix: calc(#{$rem-part} + #{$vw-part});
 
-  @if $vw-part != 0vw and $size-maximum == null {
-    @return max(#{$rem-vw-mix}, #{$minimum-size});
+  @if $vw-part != 0vw and $maximum-size == null {
+    @return max(#{$rem-vw-mix}, #{rem($minimum-size)});
   }
-  @elseif $vw-part != 0vw and $size-maximum != null {
-    @return clamp($minimum-size, $rem-vw-mix, $size-maximum);
+  @elseif $vw-part != 0vw and $maximum-size != null {
+    @return clamp(#{rem($minimum-size)}, #{$rem-vw-mix}, #{rem($maximum-size)});
   }
-  @elseif $size-maximum != null and $size > $size-maximum {
-    @return $size-maximum;
+  @elseif $maximum-size != null and $size > $maximum-size {
+    @return rem($maximum-size);
   } @else {
-    @return $size;
+    @return rem($size);
   }
 }

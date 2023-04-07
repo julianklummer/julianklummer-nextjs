@@ -5,46 +5,16 @@ export const skillBox: skillList = [
     title: "Languages",
     id: "languages",
     skillList: [
-      {
-        title: "TypeScript",
-        icon: "typescript",
-      },
-      {
-        title: "JavaScript",
-        icon: "javascript",
-      },
-      {
-        title: "HTML",
-        icon: "html",
-      },
-      {
-        title: "SASS",
-        icon: "sass",
-      },
-      {
-        title: "CSS",
-        icon: "css",
-      },
-      {
-        title: "PHP",
-        icon: "php",
-      },
-      {
-        title: "Python",
-        icon: "python",
-      },
-      {
-        title: "SQL",
-        icon: "sql",
-      },
-      {
-        title: "GraphQL",
-        icon: "graphql",
-      },
-      {
-        title: "Markdown",
-        icon: "markdown",
-      },
+      { title: "TypeScript", icon: "typescript" },
+      { title: "JavaScript", icon: "javascript" },
+      { title: "HTML", icon: "html" },
+      { title: "SASS", icon: "sass" },
+      { title: "CSS", icon: "css" },
+      { title: "PHP", icon: "php" },
+      { title: "Python", icon: "python" },
+      { title: "SQL", icon: "sql" },
+      { title: "GraphQL", icon: "graphql" },
+      { title: "Markdown", icon: "markdown" },
     ],
   },
   {
@@ -76,7 +46,7 @@ export const skillBox: skillList = [
     ],
   },
   {
-    title: "Principles",
+    title: "Principles & paradigms",
     id: "principles",
     skillList: [
       { title: "Object Oriented Programming", icon: "oop" },
@@ -90,7 +60,7 @@ export const skillBox: skillList = [
     ],
   },
   {
-    title: "Methologies & paradigms",
+    title: "Methologies",
     id: "methologies",
     skillList: [
       { title: "Scrum", icon: "scrum" },

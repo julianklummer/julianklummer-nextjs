@@ -19,7 +19,7 @@ export const NavigationButtonGroup: React.FC = () => {
         <li className={styles.navigationButtonGroupItem}>
           <IconLink
             title="Open Github Profile"
-            href="https://github.com/Julian-Kl"
+            href="https://github.com/julianklummer"
             target="_blank"
             icon={<GithubSvg />}
           />

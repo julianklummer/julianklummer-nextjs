@@ -1,6 +1,8 @@
+@use "styles/utils" as utils;
+
 .navigationMenu {
   list-style: none;
   display: flex;
   padding: 0;
-  gap: 2vw;
+  gap: utils.vw-clamp(16px, xs, 40px);
 }
