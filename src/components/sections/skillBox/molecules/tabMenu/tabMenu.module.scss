@@ -1,8 +1,23 @@
-.tabMenu {
+@use "styles/utils" as utils;
+
+.tabMenuMobile {
   list-style: none;
   padding: unset;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: flex-end;
+
+  @include utils.media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.tabMenuDesktop {
+  display: none;
+
+  @include utils.media-breakpoint-up(md) {
+    list-style: none;
+    padding: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+  }
 }

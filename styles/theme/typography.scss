@@ -116,8 +116,20 @@
 @mixin tab-menu-item {
   font-family: fonts.$cosima;
   font-weight: 400;
-  line-height: 1rem;
-  font-size: utils.rem-vw-mix(8px, 0.5, xs);
+  line-height: 1;
+  font-size: utils.rem-vw-mix(16px, 0.5, xs);
+
+  @include utils.media-breakpoint-up(sm) {
+    font-size: utils.rem-vw-mix(18px, 0.5, sm);
+  }
+
+  @include utils.media-breakpoint-up(md) {
+    font-size: utils.rem-vw-mix(18px, 0.5, md);
+  }
+
+  @include utils.media-breakpoint-up(lg) {
+    font-size: utils.rem-vw-mix(18px, 0.5, lg);
+  }
 }
 
 @mixin skill-title {

@@ -1,6 +1,7 @@
 @use "styles/theme/typography" as typography;
 @use "styles/theme/colors" as colors;
 @use "styles/theme/breakpoints" as breakpoints;
+@use "styles/utils" as utils;
 
 .tabMenuItem {
   @include typography.tab-menu-item;
@@ -12,13 +13,16 @@
   align-items: center;
   gap: 1rem;
   padding: 0.2rem 1rem 0.2rem 0;
+  text-align: right;
 
-  &::after {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 1px;
-    background-color: currentColor;
+  @include utils.media-breakpoint-up(md) {
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 1px;
+      background-color: currentColor;
+    }
   }
 }
 

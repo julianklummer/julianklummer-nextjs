@@ -48,7 +48,7 @@ export const skillBox: skillList = [
     ],
   },
   {
-    title: "Frameworks",
+    title: "Frameworks & libraries",
     id: "frameworks-libraries",
     skillList: [
       { title: "React", icon: "react" },
@@ -90,7 +90,7 @@ export const skillBox: skillList = [
     ],
   },
   {
-    title: "Methologies",
+    title: "Methologies & paradigms",
     id: "methologies",
     skillList: [
       { title: "Scrum", icon: "scrum" },
