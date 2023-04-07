@@ -1,0 +1,9 @@
+.appHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+._scrolled {
+  backdrop-filter: blur(20px);
+}

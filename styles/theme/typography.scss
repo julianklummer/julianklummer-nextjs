@@ -1,6 +1,7 @@
 @use "./fonts" as fonts;
 @use "./breakpoints" as breakpoints;
-@use "./utils" as utils;
+@use "./hover" as hover;
+@use "../utils" as utils;
 
 @mixin h1 {
   font-family: fonts.$newake;
@@ -111,6 +112,24 @@
   font-family: fonts.$cosima;
   font-weight: 400;
   font-size: utils.rem-vw-mix(12px, 0.5, xs);
+}
+
+@mixin navigationItem {
+  font-family: fonts.$cosima;
+  font-size: utils.rem-vw-mix(12px, 0.5, xs);
+  @include hover.standard;
+
+  @include utils.media-breakpoint-up(sm) {
+    font-size: utils.rem-vw-mix(16px, 0.5, sm);
+  }
+
+  @include utils.media-breakpoint-up(md) {
+    font-size: utils.rem-vw-mix(16px, 0.5, md);
+  }
+
+  @include utils.media-breakpoint-up(lg) {
+    font-size: utils.rem-vw-mix(16px, 0.5, lg);
+  }
 }
 
 @mixin tab-menu-item {

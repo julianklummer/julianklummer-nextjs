@@ -1,31 +1,61 @@
 @use "styles/theme/colors" as colors;
+@use "styles/theme/hover" as hover;
+@use "styles/utils" as utils;
+@use "../IconLink/iconLink.module.scss" as iconLink;
+@use "styles/theme/typography" as typography;
 
 .languageToggle {
+  @include iconLink.style;
   background: transparent;
   border: none;
-  color: colors.$light-white;
-  cursor: pointer;
+  position: relative;
 
-  svg {
-    width: 2rem;
-    height: 2rem;
+  &[aria-expanded="true"] {
+    color: colors.$medium-turquoise;
   }
 }
 
 .languageToggleListbox {
   position: absolute;
-  border: 1px solid colors.$light-white;
+  margin-top: utils.rem(6px);
+  left: 50%;
+  border: 1px solid colors.$medium-turquoise;
   color: colors.$light-white;
   padding: unset;
   list-style: none;
+  animation: listBoxOpen 0.2s ease-in-out forwards;
+
+  &:hover {
+    .languageToggleListboxItem[aria-selected="true"]:not(:hover) {
+      color: colors.$white;
+    }
+  }
+}
+
+@keyframes listBoxOpen {
+  0% {
+    transform: translate(-50%, -10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
 }
 
 .languageToggleListboxItem {
-  padding: 0.5rem 1rem;
   cursor: pointer;
   background: colors.$rich-black;
+  @include typography.navigationItem;
+  @include iconLink.style;
+  border: 1px solid colors.$dark-gray-adjacent;
+  padding: utils.rem(8px) utils.rem(8px);
 
-  &:hover {
-    color: colors.$white;
+  @include utils.media-breakpoint-up(md) {
+    padding: utils.rem(10px) utils.rem(16px);
+  }
+
+  &[aria-selected="true"] {
+    color: colors.$medium-turquoise;
   }
 }

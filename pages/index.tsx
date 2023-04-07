@@ -1,14 +1,14 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
-import { useContext } from "react";
+import { useEffect } from "react";
 import { Hero } from "src/components/sections/hero/Hero";
 import { SkillBox } from "src/components/sections/skillBox/organisms/skillBox/SkillBox";
 import { skillList } from "src/components/sections/skillBox/types";
 import { StationBox } from "src/components/sections/stationBox/organisms/stationBox/StationBox";
 import { stationListSchema } from "src/components/sections/stationBox/schema";
 import { stationList } from "src/components/sections/stationBox/types";
-import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
+import { LanguageProvider } from "src/utils/contexts/languageContext/LanguageProvider";
 import { Locale } from "src/utils/contexts/languageContext/types";
 import {
   indexDataSchema,
@@ -19,7 +19,8 @@ import { skillBox as skillBoxEN } from "staticContent/pages/index/skillBox.en";
 import { stationBox as stationListDE } from "staticContent/pages/index/stationBox.de";
 import { stationBox as stationListEN } from "staticContent/pages/index/stationBox.en";
 import { indexData } from "staticContent/pages/index/types";
-
+import { Navigation } from "../src/components/sections/navigation/organisms/navigation/Navigation";
+import styles from "./_app.module.scss";
 interface Props {
   data: indexData;
   skillList: skillList;
@@ -28,9 +29,17 @@ interface Props {
 }
 
 export default function Index({ data, skillList, stationList, locale }: Props) {
-  const languageContext = useContext(LanguageContext);
-  if (!languageContext) throw new Error("LanguageContext not found.");
-  if (languageContext.language !== locale) languageContext?.setLanguage(locale);
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      document.querySelector("header")?.classList.add(styles._scrolled);
+    } else {
+      document.querySelector("header")?.classList.remove(styles._scrolled);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -39,11 +48,16 @@ export default function Index({ data, skillList, stationList, locale }: Props) {
         <meta name="description" content={data.meta.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Hero headline={data.hero.headline} subline={data.hero.subline} />
-        <SkillBox tabCategoryList={skillList} />
-        <StationBox stationList={stationList} />
-      </div>
+      <LanguageProvider language={locale}>
+        <header className={styles.appHeader}>
+          <Navigation />
+        </header>
+        <div>
+          <Hero headline={data.hero.headline} subline={data.hero.subline} />
+          <SkillBox tabCategoryList={skillList} />
+          <StationBox stationList={stationList} />
+        </div>
+      </LanguageProvider>
     </>
   );
 }

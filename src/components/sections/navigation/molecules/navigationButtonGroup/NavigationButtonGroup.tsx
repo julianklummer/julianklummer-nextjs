@@ -8,7 +8,7 @@ export const NavigationButtonGroup: React.FC = () => {
   return (
     <nav>
       <ul className={styles.navigationButtonGroup}>
-        <li>
+        <li className={styles.navigationButtonGroupItem}>
           <IconLink
             title="Open LinkedIn Profile"
             href="https://www.linkedin.com/in/julian-klummer-515a78170/"
@@ -16,7 +16,7 @@ export const NavigationButtonGroup: React.FC = () => {
             icon={<LinkedInSvg />}
           />
         </li>
-        <li>
+        <li className={styles.navigationButtonGroupItem}>
           <IconLink
             title="Open Github Profile"
             href="https://github.com/Julian-Kl"
@@ -24,7 +24,7 @@ export const NavigationButtonGroup: React.FC = () => {
             icon={<GithubSvg />}
           />
         </li>
-        <li>
+        <li className={styles.navigationButtonGroupItem}>
           <LanguageToggle />
         </li>
       </ul>

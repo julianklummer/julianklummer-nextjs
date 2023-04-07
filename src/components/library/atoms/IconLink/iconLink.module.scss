@@ -1,10 +1,30 @@
 @use "styles/theme/colors" as colors;
+@use "styles/theme/hover" as hover;
+@use "styles/utils" as utils;
 
-.iconLink {
-  color: colors.$light-white;
+@mixin style {
+  color: colors.$white;
+  cursor: pointer;
+  @include hover.standard;
 
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: utils.rem-vw-mix(24px, 0.5, xs);
+    aspect-ratio: 1 / 1;
+
+    @include utils.media-breakpoint-up(sm) {
+      width: utils.rem-vw-mix(28px, 0.5, sm);
+    }
+
+    @include utils.media-breakpoint-up(md) {
+      width: utils.rem-vw-mix(32px, 0.5, md);
+    }
+
+    @include utils.media-breakpoint-up(lg) {
+      width: utils.rem-vw-mix(32px, 0.5, lg);
+    }
   }
+}
+
+.iconLink {
+  @include style;
 }

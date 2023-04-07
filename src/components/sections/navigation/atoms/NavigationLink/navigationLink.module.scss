@@ -1,18 +1,9 @@
 @use "styles/theme/colors" as colors;
-@use "styles/theme/fonts" as fonts;
+@use "styles/theme/typography" as typography;
 
 .navigationLink {
-  color: colors.$light-white;
+  color: colors.$white;
   text-decoration: none;
-  font-family: fonts.$cosima;
-  font-size: 1rem;
-  font-weight: 600;
 
-  &.active {
-    color: colors.$white;
-  }
-
-  &:hover {
-    color: colors.$white;
-  }
+  @include typography.navigationItem;
 }
