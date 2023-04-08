@@ -24,7 +24,7 @@ export const TabMenuItem: React.FC<Props> = ({
       aria-selected={active}
       aria-controls={getTabId(tabCategory)}
     >
-      <span>{tabCategory.title}</span>
+      {tabCategory.title}
     </button>
   );
 };

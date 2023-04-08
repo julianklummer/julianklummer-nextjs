@@ -42,7 +42,7 @@ export const LanguageToggle: React.FC = () => {
     }
   };
 
-  const handleClickoutSide = (event: React.MouseEvent): void => {
+  const handleClickoutSide = (event: MouseEvent): void => {
     if (!dropdownRef.current?.contains(event.target as Node)) setIsOpen(false);
   };
 
@@ -60,6 +60,9 @@ export const LanguageToggle: React.FC = () => {
     <>
       <button
         id="language-toggle"
+        // TODO: add translation
+        title="Switch language"
+        aria-label="Language toggle"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         className={styles.languageToggle}

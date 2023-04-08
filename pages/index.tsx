@@ -58,6 +58,7 @@ export default function Index({
   };
 
   useEffect(() => {
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
   }, []);

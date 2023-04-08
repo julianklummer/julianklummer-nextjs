@@ -14,15 +14,13 @@
   display: none;
 
   @include utils.media-breakpoint-up(md) {
-    list-style: none;
-    padding: unset;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: utils.vw-clamp(16px, md);
+    gap: utils.vw-clamp(12px, md);
 
     @include utils.media-breakpoint-up(lg) {
-      gap: utils.vw-clamp(16px, lg);
+      gap: utils.vw-clamp(12px, lg);
     }
   }
 }

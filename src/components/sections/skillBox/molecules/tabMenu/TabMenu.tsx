@@ -16,13 +16,12 @@ export const TabMenu: React.FC<Props> = ({
     return (
       <>
         {tabCategoryList.map((tabCategory, index) => (
-          <li key={`${index}-tabmenu-${tabCategory.id}`}>
-            <TabMenuItem
-              tabCategory={tabCategory}
-              active={tabCategory === activeTabCategory}
-              onClick={() => setActiveTabCategory(index)}
-            />
-          </li>
+          <TabMenuItem
+            key={`${index}-tabmenu-${tabCategory.id}`}
+            tabCategory={tabCategory}
+            active={tabCategory === activeTabCategory}
+            onClick={() => setActiveTabCategory(index)}
+          />
         ))}
       </>
     );
@@ -30,8 +29,12 @@ export const TabMenu: React.FC<Props> = ({
 
   return (
     <>
-      <ul className={styles.tabMenuMobile}>{renderMenuItems()}</ul>
-      <ul className={styles.tabMenuDesktop}>{renderMenuItems()}</ul>
+      <div className={styles.tabMenuMobile} role="tablist">
+        {renderMenuItems()}
+      </div>
+      <div className={styles.tabMenuDesktop} role="tablist">
+        {renderMenuItems()}
+      </div>
     </>
   );
 };

@@ -40,12 +40,14 @@ export const Tab = forwardRef(function Tab(
             >
               <div
                 className={styles.skill}
-                style={{
-                  "--index": index,
-                  "--color-r": colorList[0].r,
-                  "--color-g": colorList[0].g,
-                  "--color-b": colorList[0].b,
-                }}
+                style={
+                  {
+                    "--index": index,
+                    "--color-r": colorList[0].r,
+                    "--color-g": colorList[0].g,
+                    "--color-b": colorList[0].b,
+                  } as React.CSSProperties
+                }
               >
                 <span className={styles.skillIcon}>
                   <SkillIcon name={skill.icon} />

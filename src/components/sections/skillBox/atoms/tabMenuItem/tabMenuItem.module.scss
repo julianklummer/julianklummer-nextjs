@@ -14,6 +14,8 @@
   padding: 0.2rem 1rem 0.2rem 0;
   text-align: right;
   color: colors.$white;
+  min-height: 48px;
+  min-width: 48px;
 
   @include utils.media-breakpoint-up(md) {
     &::after {
