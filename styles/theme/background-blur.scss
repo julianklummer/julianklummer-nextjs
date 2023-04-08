@@ -1,0 +1,7 @@
+@mixin darken-blur {
+  backdrop-filter: blur(20px) brightness(60%);
+}
+
+@mixin light-blur {
+  backdrop-filter: blur(1px);
+}

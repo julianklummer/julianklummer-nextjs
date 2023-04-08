@@ -1,0 +1,11 @@
+@use "styles/theme/colors" as colors;
+@use "styles/theme/typography" as typography;
+@use "styles/theme/sizes" as sizes;
+
+.copyright {
+  position: sticky;
+  bottom: 0;
+  @include typography.p;
+  color: colors.$white;
+  padding: sizes.$sticky-padding-y sizes.$sticky-padding-x;
+}

@@ -3,6 +3,7 @@
 .tabMenuMobile {
   list-style: none;
   padding: unset;
+  z-index: 1;
 
   @include utils.media-breakpoint-up(md) {
     display: none;

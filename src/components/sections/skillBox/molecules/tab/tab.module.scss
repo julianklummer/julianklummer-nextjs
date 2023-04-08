@@ -4,10 +4,12 @@
 
 .tab {
   background-color: colors.$dark-gray;
-  background: radial-gradient(circle, rgb(53, 53, 53) 19%, rgb(43, 43, 43) 92%);
+  background: radial-gradient(circle, rgb(65, 65, 65) 19%, rgb(43, 43, 43) 92%);
   border: 1px solid colors.$medium-turquoise;
   display: none;
   overflow: hidden;
+  z-index: 1;
+  position: relative;
 
   @include utils.container-query(md) {
     width: 90%;
@@ -15,6 +17,16 @@
 
   &._active {
     display: block;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    mix-blend-mode: multiply;
+    background: url(/images/grain.png) repeat;
+    pointer-events: none;
   }
 }
 
@@ -48,6 +60,8 @@
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
+  isolation: isolate;
+
   @include typography.skill-title;
 
   --animation-duration: 0.3;

@@ -14,24 +14,26 @@ export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
     useState<number>(0);
 
   return (
-    <div className={styles.skillBox}>
-      <div className={styles.sidebar}>
-        <h2 className={styles.sidebarHeadline}>Skills</h2>
-        <TabMenu
-          tabCategoryList={tabCategoryList}
-          activeTabCategory={tabCategoryList[activeTabCategoryIndex]}
-          setActiveTabCategory={(index: number) =>
-            setActiveTabCategoryKeyIndex(index)
-          }
-        />
+    <div className={styles.skillBoxSection}>
+      <div className={styles.skillBox}>
+        <div className={styles.sidebar}>
+          <h2 className={styles.sidebarHeadline}>Skills</h2>
+          <TabMenu
+            tabCategoryList={tabCategoryList}
+            activeTabCategory={tabCategoryList[activeTabCategoryIndex]}
+            setActiveTabCategory={(index: number) =>
+              setActiveTabCategoryKeyIndex(index)
+            }
+          />
+        </div>
+        {tabCategoryList.map((tabCategory, index) => (
+          <Tab
+            key={`${index}-tab-${tabCategory.id}`}
+            tabCategory={tabCategory}
+            active={index === activeTabCategoryIndex}
+          />
+        ))}
       </div>
-      {tabCategoryList.map((tabCategory, index) => (
-        <Tab
-          key={`${index}-tab-${tabCategory.id}`}
-          tabCategory={tabCategory}
-          active={index === activeTabCategoryIndex}
-        />
-      ))}
     </div>
   );
 };

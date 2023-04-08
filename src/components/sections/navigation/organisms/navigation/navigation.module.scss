@@ -1,10 +1,8 @@
 @use "styles/theme/sizes" as sizes;
 
-$padding-x: 5%;
-
 .navigation {
   display: flex;
-  padding: 2% $padding-x;
+  padding: sizes.$sticky-padding-y sizes.$sticky-padding-x;
   justify-content: space-between;
   align-items: center;
   max-width: sizes.$max-site-width;

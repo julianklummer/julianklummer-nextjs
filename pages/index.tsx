@@ -2,7 +2,9 @@ import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
 import { useEffect } from "react";
+import { Copyright } from "src/components/library/atoms/Copyright/Copyright";
 import { Hero } from "src/components/sections/hero/Hero";
+import { Navigation } from "src/components/sections/navigation/organisms/navigation/Navigation";
 import { SkillBox } from "src/components/sections/skillBox/organisms/skillBox/SkillBox";
 import { skillList } from "src/components/sections/skillBox/types";
 import { StationBox } from "src/components/sections/stationBox/organisms/stationBox/StationBox";
@@ -19,7 +21,6 @@ import { skillBox as skillBoxEN } from "staticContent/pages/index/skillBox.en";
 import { stationBox as stationListDE } from "staticContent/pages/index/stationBox.de";
 import { stationBox as stationListEN } from "staticContent/pages/index/stationBox.en";
 import { indexData } from "staticContent/pages/index/types";
-import { Navigation } from "../src/components/sections/navigation/organisms/navigation/Navigation";
 import styles from "./index.module.scss";
 interface Props {
   data: indexData;
@@ -57,6 +58,7 @@ export default function Index({ data, skillList, stationList, locale }: Props) {
           <SkillBox tabCategoryList={skillList} />
           <StationBox stationList={stationList} />
         </div>
+        <Copyright />
       </LanguageProvider>
     </>
   );

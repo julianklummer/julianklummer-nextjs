@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
+import { Copyright } from "src/components/library/atoms/Copyright/Copyright";
 import { LanguageProvider } from "src/utils/contexts/languageContext/LanguageProvider";
 import { Locale } from "src/utils/contexts/languageContext/types";
 import { indexDataSchema } from "staticContent/pages/index/schemas";
@@ -26,6 +27,7 @@ export default function Index({ data, locale }: Props) {
           <Navigation />
         </header>
         <div></div>
+        <Copyright />
       </LanguageProvider>
     </>
   );

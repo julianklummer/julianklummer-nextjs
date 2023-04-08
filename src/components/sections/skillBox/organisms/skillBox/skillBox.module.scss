@@ -3,7 +3,23 @@
 @use "styles/theme/breakpoints" as breakpoints;
 @use "styles/theme/colors" as colors;
 @use "styles/theme/sizes" as sizes;
+@use "styles/theme/background-blur" as background-blur;
 @use "styles/utils" as utils;
+
+.skillBoxSection {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 200vw;
+    height: 100%;
+    top: 0;
+    transform: translateX(-50%);
+    @include background-blur.light-blur;
+  }
+}
 
 .skillBox {
   width: 90%;
@@ -15,17 +31,18 @@
   padding: 3% 5%;
   flex-direction: column;
   position: relative;
+  z-index: 1;
 
   @include utils.container-query(md) {
     flex-direction: row;
   }
 
-  &::before {
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
-    opacity: 0.3;
-    mix-blend-mode: saturation;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
     background: url(/images/grain.png) repeat;
     pointer-events: none;
   }

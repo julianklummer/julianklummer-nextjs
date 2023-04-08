@@ -1,3 +1,5 @@
+@use "styles/theme/background-blur" as *;
+
 .appHeader {
   position: sticky;
   top: 0;
@@ -5,5 +7,5 @@
 }
 
 ._scrolled {
-  backdrop-filter: blur(20px) brightness(60%);
+  @include darken-blur;
 }

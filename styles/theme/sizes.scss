@@ -5,3 +5,5 @@ $min-site-width: breakpoints.$xs;
 $max-site-width: breakpoints.$xxxl;
 $section-max-width: breakpoints.$xl;
 $section-margin-y: utils.vw-clamp(32px, xs, 100px);
+$sticky-padding-x: 5%;
+$sticky-padding-y: 2%;
