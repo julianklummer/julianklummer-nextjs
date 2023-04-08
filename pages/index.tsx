@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import Head from "next/head";
 import { useEffect } from "react";
 import { Copyright } from "src/components/library/atoms/Copyright/Copyright";
+import { SectionRow } from "src/components/library/morphGrid/sectionRow/SectionRow";
 import { Hero } from "src/components/sections/hero/Hero";
 import { Navigation } from "src/components/sections/navigation/organisms/navigation/Navigation";
 import { SkillBox } from "src/components/sections/skillBox/organisms/skillBox/SkillBox";
@@ -10,6 +11,7 @@ import { skillList } from "src/components/sections/skillBox/types";
 import { StationBox } from "src/components/sections/stationBox/organisms/stationBox/StationBox";
 import { stationListSchema } from "src/components/sections/stationBox/schema";
 import { stationList } from "src/components/sections/stationBox/types";
+import { TextBox } from "src/components/sections/textBox/TextBox";
 import { LanguageProvider } from "src/utils/contexts/languageContext/LanguageProvider";
 import { Locale } from "src/utils/contexts/languageContext/types";
 import {
@@ -26,10 +28,17 @@ interface Props {
   data: indexData;
   skillList: skillList;
   stationList: stationList;
+  aboutContent: string;
   locale: Locale;
 }
 
-export default function Index({ data, skillList, stationList, locale }: Props) {
+export default function Index({
+  data,
+  skillList,
+  stationList,
+  aboutContent,
+  locale,
+}: Props) {
   const handleScroll = () => {
     if (window.scrollY > 0) {
       document.body.classList.add(styles._scrolled);
@@ -67,7 +76,10 @@ export default function Index({ data, skillList, stationList, locale }: Props) {
         <div>
           <Hero headline={data.hero.headline} subline={data.hero.subline} />
           <SkillBox tabCategoryList={skillList} />
-          <StationBox stationList={stationList} />
+          <SectionRow>
+            <TextBox text={aboutContent} />
+            <StationBox stationList={stationList} />
+          </SectionRow>
         </div>
         <Copyright />
       </LanguageProvider>
@@ -83,6 +95,12 @@ export async function getStaticProps({ locale }: Pick<Props, "locale">) {
   const { data } = matter(fileContents);
   indexDataSchema.parse(data);
 
+  const aboutContents = fs.readFileSync(
+    `staticContent/pages/index/about.${locale}.mdx`,
+    "utf8"
+  );
+  const aboutContent = matter(aboutContents).content;
+
   const skillList = locale === "en" ? await skillBoxEN : await skillBoxDE;
   skillBoxSchema.parse(skillList);
   const stationList =
@@ -94,6 +112,7 @@ export async function getStaticProps({ locale }: Pick<Props, "locale">) {
       data,
       skillList,
       stationList,
+      aboutContent,
       locale,
     },
   };

@@ -1,0 +1,51 @@
+@use "styles/theme/sizes" as sizes;
+@use "styles/theme/background-blur" as background-blur;
+@use "styles/utils" as utils;
+
+.sectionRow {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    @include background-blur.light-blur;
+  }
+
+  &[data-flip="invert"] {
+    transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
+      scale(var(--dw), var(--dh));
+  }
+
+  &[data-flip="play"] {
+    transition: transform 0.5s;
+    transform: none;
+  }
+}
+
+.row {
+  position: relative;
+  width: sizes.$section-width;
+  max-width: sizes.$section-max-width;
+  margin: sizes.$section-margin-y auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 1;
+  gap: utils.vw-clamp(64px, xs, 80px);
+
+  @include utils.container-query(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include utils.container-query(md) {
+    gap: utils.vw-clamp(64px, md, 128px);
+    flex-direction: row;
+  }
+
+  @include utils.container-query(lg) {
+    grid-template-columns: 1fr 30%;
+
+    gap: utils.vw-clamp(64px, lg, 128px);
+  }
+}

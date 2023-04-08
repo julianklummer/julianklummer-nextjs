@@ -71,13 +71,30 @@
 
   .stationIcon {
     display: block;
-    width: 12%;
     padding: 1%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: colors.$white;
     display: grid;
     place-items: center;
+
+    width: utils.vw-clamp(40px, xs);
+
+    @include utils.container-query(sm) {
+      width: utils.vw-clamp(40px, sm);
+    }
+
+    @include utils.container-query(md) {
+      width: utils.vw-clamp(40px, md);
+    }
+
+    @include utils.container-query(lg) {
+      width: utils.vw-clamp(40px, lg);
+    }
+
+    @include utils.container-query(xl) {
+      width: utils.vw-clamp(40px, xl);
+    }
   }
 }
 

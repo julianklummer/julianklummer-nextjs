@@ -41,13 +41,13 @@
 }
 
 .skillBox {
-  width: 90%;
+  position: relative;
+  width: sizes.$section-width;
   max-width: sizes.$section-max-width;
   margin: sizes.$section-margin-y auto;
   display: flex;
   padding: 3% 5%;
   flex-direction: column;
-  position: relative;
   z-index: 1;
 
   @include utils.container-query(md) {

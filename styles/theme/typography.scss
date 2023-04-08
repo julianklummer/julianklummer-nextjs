@@ -92,19 +92,20 @@
 @mixin p {
   font-family: fonts.$cosima;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 300;
+  letter-spacing: 0.03em;
   font-size: utils.rem-vw-mix(12px, 0.5, xs);
 
   @include utils.media-breakpoint-up(sm) {
-    font-size: utils.rem-vw-mix(12px, 0.5, sm);
+    font-size: utils.rem-vw-mix(14px, 0.5, sm);
   }
 
   @include utils.media-breakpoint-up(md) {
-    font-size: utils.rem-vw-mix(12px, 0.5, md);
+    font-size: utils.rem-vw-mix(14px, 0.5, md);
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(12px, 0.5, lg, 18px);
+    font-size: utils.rem-vw-mix(14px, 0.5, lg, 18px);
   }
 }
 

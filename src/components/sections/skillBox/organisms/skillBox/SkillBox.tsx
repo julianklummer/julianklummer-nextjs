@@ -25,7 +25,13 @@ export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
     };
     const handleTransitionEnd = () => {
       if (elementRef.current) {
-        flip(updateActiveTabCategory, [elementRef.current]);
+        const relatedElements: HTMLElement[] = [];
+        if (elementRef.current.nextElementSibling) {
+          relatedElements.push(
+            elementRef.current.nextElementSibling as HTMLElement
+          );
+        }
+        flip(updateActiveTabCategory, [elementRef.current, ...relatedElements]);
       } else {
         throw new Error("skillbox ref or skillbox sidebar ref not found");
       }

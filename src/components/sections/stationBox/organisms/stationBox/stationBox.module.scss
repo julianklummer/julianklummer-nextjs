@@ -3,15 +3,15 @@
 @use "styles/theme/breakpoints" as breakpoints;
 @use "styles/theme/colors" as colors;
 @use "styles/theme/sizes" as sizes;
+@use "styles/utils" as utils;
 
 .stationBox {
-  width: 30%;
-  max-width: hero.$max-width;
-  margin: sizes.$section-margin-y auto;
+  position: relative;
   background-color: colors.$dark-gray;
   border: 1px solid colors.$medium-turquoise;
   display: flex;
   flex-direction: column;
+  height: fit-content;
 
   &::before {
     content: "";
