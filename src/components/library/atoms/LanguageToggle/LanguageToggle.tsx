@@ -12,6 +12,7 @@ export const LanguageToggle: React.FC = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const dropdownRef = useRef<HTMLUListElement>(null);
 
   if (!languageContext) throw new Error("LanguageContext not found.");
 
@@ -41,7 +42,9 @@ export const LanguageToggle: React.FC = () => {
     }
   };
 
-  const handleClickoutSide = () => setIsOpen(false);
+  const handleClickoutSide = (event: React.MouseEvent): void => {
+    if (!dropdownRef.current?.contains(event.target as Node)) setIsOpen(false);
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -72,6 +75,7 @@ export const LanguageToggle: React.FC = () => {
           className={styles.languageToggleListbox}
           aria-hidden={!isOpen}
           role="listbox"
+          ref={dropdownRef}
         >
           {languageList.map((language) => {
             return (

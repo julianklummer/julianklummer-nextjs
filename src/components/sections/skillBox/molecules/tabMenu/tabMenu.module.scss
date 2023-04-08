@@ -18,7 +18,11 @@
     padding: unset;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: flex-end;
+    gap: utils.vw-clamp(16px, md);
+
+    @include utils.media-breakpoint-up(lg) {
+      gap: utils.vw-clamp(16px, lg);
+    }
   }
 }

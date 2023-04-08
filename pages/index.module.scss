@@ -6,6 +6,14 @@
   z-index: 1000;
 }
 
-._scrolled {
-  @include darken-blur;
+body._scrolled {
+  .appHeader {
+    @include darken-blur;
+  }
+}
+
+body._resizing {
+  * {
+    transition: all 1s;
+  }
 }

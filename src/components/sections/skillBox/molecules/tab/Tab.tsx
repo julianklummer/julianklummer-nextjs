@@ -1,3 +1,4 @@
+import { ForwardedRef, forwardRef } from "react";
 import { SkillIcon } from "../../atoms/skillIcon/SkillIcon";
 import { iconColorList } from "../../atoms/skillIcon/iconColorList";
 import { TabCategory } from "../../types";
@@ -9,11 +10,17 @@ export const getTabId = (tabCategory: TabCategory) => {
 interface Props {
   tabCategory: TabCategory;
   active?: boolean;
+  prevActive?: boolean;
 }
 
-export const Tab: React.FC<Props> = ({ tabCategory, active }) => {
+export const Tab = forwardRef(function Tab(
+  props: Props,
+  ref: ForwardedRef<HTMLLIElement>
+) {
+  const { tabCategory, active, prevActive } = props;
   const classList = [styles.tab];
-  active && classList.push(styles._active);
+  if (active) classList.push(styles._active);
+  if (prevActive) classList.push(styles._prevActive);
 
   const renderTabContent = () => {
     return (
@@ -29,6 +36,7 @@ export const Tab: React.FC<Props> = ({ tabCategory, active }) => {
             <li
               key={`${index}-icon-list-${skill.title}`}
               className={styles.iconListItem}
+              ref={ref}
             >
               <div
                 className={styles.skill}
@@ -52,8 +60,12 @@ export const Tab: React.FC<Props> = ({ tabCategory, active }) => {
   };
 
   return (
-    <div className={classList.join(" ")} id={getTabId(tabCategory)}>
-      {active ? renderTabContent() : null}
+    <div
+      className={classList.join(" ")}
+      id={getTabId(tabCategory)}
+      aria-hidden={!active}
+    >
+      {active || prevActive ? renderTabContent() : null}
     </div>
   );
-};
+});

@@ -11,7 +11,8 @@ $max-width: 82rem;
   align-items: center;
   flex-direction: column;
   gap: utils.vw-clamp(32px, xs, 40px);
-  margin: sizes.$section-margin-y auto;
+  min-height: calc(100lvh - (#{sizes.$section-margin-y} * 2));
+  margin: 0 auto sizes.$section-margin-y;
   max-width: sizes.$section-max-width;
 
   @include utils.container-query(md) {

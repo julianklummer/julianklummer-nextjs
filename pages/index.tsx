@@ -32,14 +32,25 @@ interface Props {
 export default function Index({ data, skillList, stationList, locale }: Props) {
   const handleScroll = () => {
     if (window.scrollY > 0) {
-      document.querySelector("header")?.classList.add(styles._scrolled);
+      document.body.classList.add(styles._scrolled);
     } else {
-      document.querySelector("header")?.classList.remove(styles._scrolled);
+      document.body.classList.remove(styles._scrolled);
+    }
+  };
+
+  const handleResize = () => {
+    if (!document.body.classList.contains(styles._resizing)) {
+      document.body.classList.add(styles._resizing);
+
+      setTimeout(() => {
+        document.body.classList.remove(styles._resizing);
+      }, 1000);
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
   }, []);
 
   return (

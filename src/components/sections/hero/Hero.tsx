@@ -14,7 +14,8 @@ export const Hero: React.FC<Props> = ({ headline, subline }) => {
         className={styles.heroImage}
         src={profilePic}
         alt="Profilbild"
-        width={355}
+        width={220}
+        height={220}
       />
       <h1 className={styles.heroH1}>
         <span className={styles.heroHeadline}>{headline}</span>

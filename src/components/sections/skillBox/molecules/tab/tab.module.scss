@@ -3,11 +3,7 @@
 @use "styles/utils" as utils;
 
 .tab {
-  background-color: colors.$dark-gray;
-  background: radial-gradient(circle, rgb(65, 65, 65) 19%, rgb(43, 43, 43) 92%);
-  border: 1px solid colors.$medium-turquoise;
   display: none;
-  overflow: hidden;
   z-index: 1;
   position: relative;
 
@@ -15,18 +11,58 @@
     width: 90%;
   }
 
-  &._active {
-    display: block;
-  }
-
-  &::before {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
+    transform-origin: top left;
+  }
+
+  &::before {
+    background-color: colors.$dark-gray;
+    background: radial-gradient(
+      circle,
+      rgb(65, 65, 65) 19%,
+      rgb(43, 43, 43) 92%
+    );
+    border: 1px solid colors.$medium-turquoise;
+    z-index: -1;
+  }
+
+  &::after {
     opacity: 0.6;
     mix-blend-mode: multiply;
     background: url(/images/grain.png) repeat;
     pointer-events: none;
+  }
+
+  &._active {
+    display: block;
+  }
+
+  &._prevActive {
+    display: block;
+  }
+}
+
+*[data-flip="invert"] {
+  .tab {
+    &::before,
+    &::after {
+      transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
+        scale(var(--dw), var(--dh));
+    }
+  }
+}
+
+*[data-flip="play"] {
+  .tab {
+    &::before,
+    &::after {
+      transition: transform 0.5s;
+      transform: none;
+    }
   }
 }
 
@@ -36,6 +72,7 @@
   display: grid;
   grid-template-columns: repeat(var(--items-per-row), minmax(0, 1fr));
   padding: unset;
+  overflow: hidden;
 
   @include utils.container-query(sm) {
     --items-per-row: 3;
@@ -61,19 +98,9 @@
   align-items: center;
   gap: 0.8rem;
   isolation: isolate;
+  opacity: 0;
 
   @include typography.skill-title;
-
-  --animation-duration: 0.3;
-  --animation-stagger: 0.2;
-  animation-name: fade-in;
-  animation-duration: calc(var(--animation-duration) * 1s);
-  animation-delay: calc(
-    var(--index) * (var(--animation-duration) - var(--animation-stagger)) * 1s
-  );
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-fill-mode: forwards;
-  opacity: 0;
 
   .skillTitle {
     display: grid;
@@ -112,13 +139,47 @@
   }
 }
 
+.tab._active {
+  .skill {
+    --animation-duration: 0.3;
+    --animation-stagger: 0.2;
+    animation-name: fade-in;
+    animation-duration: calc(var(--animation-duration) * 1s);
+    animation-delay: calc(
+      var(--index) * (var(--animation-duration) - var(--animation-stagger)) * 1s
+    );
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+}
+
 @keyframes fade-in {
   from {
-    transform: translate(-250px, 0);
+    transform: translate(0, 450px);
     opacity: 0;
   }
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+.tab._prevActive {
+  .skill {
+    animation-name: fade-out;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-fill-mode: forwards;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
