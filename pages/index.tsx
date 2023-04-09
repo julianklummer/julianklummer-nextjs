@@ -82,7 +82,9 @@ export default function Index({
             <StationBox stationList={stationList} />
           </SectionRow>
         </div>
-        <Copyright />
+        <footer className={styles.appFooter}>
+          <Copyright />
+        </footer>
       </LanguageProvider>
     </>
   );

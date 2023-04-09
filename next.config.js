@@ -12,6 +12,9 @@ const nextConfig = {
     defaultLocale: 'en',
     localeDetection: false
   },
+  images: {
+    formats: ['image/webp'],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

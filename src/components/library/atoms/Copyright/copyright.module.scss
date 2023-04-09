@@ -3,9 +3,10 @@
 @use "styles/theme/sizes" as sizes;
 
 .copyright {
-  position: sticky;
-  bottom: 0;
-  @include typography.p;
-  color: colors.$white;
+  display: block;
+  position: relative;
   padding: sizes.$sticky-padding-y sizes.$sticky-padding-x;
+  margin: 0 auto;
+  color: colors.$white;
+  max-width: sizes.$max-site-width;
 }

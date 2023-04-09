@@ -27,6 +27,8 @@ $max-width: 82rem;
 
 .heroImage {
   --size: #{utils.rem-vw-mix(220px, 0.8, xs)};
+  position: relative;
+  overflow: hidden;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
@@ -36,9 +38,16 @@ $max-width: 82rem;
   }
 
   @include utils.container-query(md) {
-    --size: #{utils.rem-vw-mix(300px, 0.5, md, 480px)};
+    --size: #{utils.rem-vw-mix(300px, 0.5, md)};
   }
-  // utils.vw-clamp(220px, xs, 420px);
+
+  @include utils.container-query(lg) {
+    --size: #{utils.rem-vw-mix(300px, 0.5, lg, 380px)};
+  }
+
+  @include utils.container-query(xl) {
+    --size: #{utils.rem-vw-mix(380px, 0.5, xl, 380px)};
+  }
 }
 
 .heroH1 {

@@ -20,7 +20,7 @@
     }
 
     @include utils.media-breakpoint-up(lg) {
-      width: utils.rem-vw-mix(28px, 0.5, lg, 46px);
+      width: utils.rem-vw-mix(28px, 0.5, lg, 36px);
     }
   }
 }

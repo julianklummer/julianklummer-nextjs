@@ -41,6 +41,10 @@
   @include standard-headline;
   font-size: utils.rem-vw-mix(20px, 0.5, xs);
 
+  @include utils.media-breakpoint-up(sm) {
+    font-size: utils.rem-vw-mix(20px, 0.5, sm);
+  }
+
   @include utils.media-breakpoint-up(md) {
     font-size: utils.rem-vw-mix(24px, 0.5, md);
   }
@@ -59,7 +63,7 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(24px, 0.5, lg, 36px);
+    font-size: utils.rem-vw-mix(24px, 0.5, lg, 30px);
   }
 }
 
@@ -137,7 +141,7 @@
   }
 
   @include utils.media-breakpoint-up(lg) {
-    font-size: utils.rem-vw-mix(80px, 0.5, lg, 120px);
+    font-size: utils.rem-vw-mix(80px, 0.5, lg, 100px);
   }
 }
 
@@ -145,18 +149,6 @@
   @include h4;
   font-weight: 400;
 }
-
-/*
-
-
-
-
-
-
-
-
-
-*/
 
 @mixin tabMenuCombobox {
   font-family: fonts.$cosima;
@@ -189,7 +181,7 @@
   }
 }
 
-@mixin skill-title {
+@mixin skillTitle {
   @include p;
   font-weight: 400;
 }
