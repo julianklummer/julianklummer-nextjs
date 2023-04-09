@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { flip } from "src/utils/animation/flip";
+import { ForwardedRef, forwardRef } from "react";
 import Region from "../../../../../../public/icons/stationList/region.svg";
 import ArrowDown from "../../../../../../public/icons/utils/arrow-down.svg";
 import { StationIcon } from "../../atoms/stationIcon/StationIcon";
@@ -11,44 +10,24 @@ export const getTabId = (station: station) => {
 };
 interface Props {
   station: station;
-  active?: boolean;
+  active: boolean;
+  prevActive: boolean;
   open: Function;
   close: Function;
+  index: number;
 }
 
-export const Accordion: React.FC<Props> = ({
-  station,
-  active,
-  open,
-  close,
-}) => {
-  const [panelOpen, setPanelOpen] = useState(false);
-  const elementRef = useRef<HTMLDivElement>(null);
+export const Accordion = forwardRef(function Accordion(
+  props: Props,
+  ref: ForwardedRef<HTMLDivElement>
+) {
+  const { station, active, prevActive, open, close, index } = props;
   const headerClassList = [styles.accordionHeader];
   const panelClassList = [styles.accordionPanel];
   if (active) {
     headerClassList.push(styles._active);
     panelClassList.push(styles._active);
   }
-
-  useEffect(() => {
-    if (elementRef.current) {
-      const relatedElements: HTMLElement[] = [];
-
-      const addNextSibling = (element: HTMLElement) => {
-        const nextSibling = element.nextElementSibling;
-        if (nextSibling) {
-          relatedElements.push(nextSibling as HTMLElement);
-          addNextSibling(nextSibling as HTMLElement);
-        }
-      };
-      addNextSibling(elementRef.current);
-
-      flip(() => setPanelOpen(active ? active : false), [...relatedElements]);
-    } else {
-      throw new Error("skillbox ref or skillbox sidebar ref not found");
-    }
-  }, [active]);
 
   const renderAccordionContent = () => {
     return (
@@ -63,7 +42,11 @@ export const Accordion: React.FC<Props> = ({
   };
 
   return (
-    <div className={styles.accordion} ref={elementRef}>
+    <div
+      className={styles.accordion}
+      style={{ "--index": index } as React.CSSProperties}
+      ref={ref}
+    >
       <div className={headerClassList.join(" ")}>
         <div className={styles.row}>
           <span className={styles.stationIcon}>
@@ -99,8 +82,8 @@ export const Accordion: React.FC<Props> = ({
         id={getTabId(station) + "-panel"}
         aria-labelledby={getTabId(station) + "-header"}
       >
-        {panelOpen ? renderAccordionContent() : null}
+        {active || prevActive ? renderAccordionContent() : null}
       </div>
     </div>
   );
-};
+});

@@ -7,13 +7,21 @@
 
 .stationBox {
   position: relative;
-  background-color: colors.$dark-gray;
-  border: 1px solid colors.$medium-turquoise;
   display: flex;
   flex-direction: column;
   height: fit-content;
+  padding: 1px;
 
   &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: colors.$dark-gray;
+    border: 1px solid colors.$medium-turquoise;
+    transform-origin: top left;
+  }
+
+  &::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -21,5 +29,22 @@
     mix-blend-mode: overlay;
     background: url(/images/grain.png) repeat;
     pointer-events: none;
+    transform-origin: top left;
+  }
+
+  &[data-flip="invert"] {
+    &::before,
+    &::after {
+      transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
+        scale(var(--dw), var(--dh));
+    }
+  }
+
+  &[data-flip="play"] {
+    &::before,
+    &::after {
+      transition: transform 0.1s;
+      transform: none;
+    }
   }
 }
