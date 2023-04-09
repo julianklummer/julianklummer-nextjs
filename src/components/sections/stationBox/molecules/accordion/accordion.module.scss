@@ -7,8 +7,17 @@
   background: radial-gradient(circle, rgb(53, 53, 53) 19%, rgb(43, 43, 43) 92%);
   border: 1px solid colors.$dark-gray-adjacent;
   padding: 5%;
-
   @include typography.p;
+
+  &[data-flip="invert"] {
+    transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
+      scale(var(--dw), var(--dh));
+  }
+
+  &[data-flip="play"] {
+    transition: transform 0.5s;
+    transform: none;
+  }
 }
 
 .accordionHeader {
@@ -16,6 +25,19 @@
   display: flex;
   gap: 0.4vw;
   flex-direction: column;
+  gap: utils.rem-vw-mix(8px, 0.5, xs);
+
+  @include utils.media-breakpoint-up(sm) {
+    gap: utils.rem-vw-mix(8px, 0.5, sm);
+  }
+
+  @include utils.media-breakpoint-up(md) {
+    gap: utils.rem-vw-mix(8px, 0.5, md);
+  }
+
+  @include utils.media-breakpoint-up(lg) {
+    gap: utils.rem-vw-mix(8px, 0.5, lg);
+  }
 
   .row {
     display: flex;
@@ -71,7 +93,7 @@
 
   .stationIcon {
     display: block;
-    padding: 1%;
+    padding: 3%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: colors.$white;
@@ -96,10 +118,41 @@
       width: utils.vw-clamp(40px, xl);
     }
   }
+
+  .accordionToggleIcon {
+    width: utils.vw-clamp(12px, xs, 16px);
+    transition: transform 0.6s;
+  }
+
+  &._active {
+    .accordionToggleIcon {
+      transform: rotate(180deg) translateY(2px);
+    }
+  }
+
+  &:hover,
+  &:focus-visible,
+  &._active {
+    h3 button {
+      color: colors.$medium-turquoise;
+    }
+
+    .accordionToggleIcon {
+      color: colors.$medium-turquoise;
+    }
+  }
+
+  h3 button {
+    &:hover,
+    &:focus-visible {
+      color: colors.$medium-turquoise;
+    }
+  }
 }
 
 .accordionPanel {
   display: none;
+  padding-top: 10%;
 
   &._active {
     display: block;

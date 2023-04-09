@@ -29,7 +29,7 @@ export const flip = (
         lastEl.style.setProperty("--dw", String(dw));
         lastEl.style.setProperty("--dh", String(dh));
 
-        if (dw !== 1 || dh !== 1) {
+        if (dx !== 0 || dy !== 0 || dw !== 1 || dh !== 1) {
           lastEl.dataset.flip = "invert";
 
           requestAnimationFrame(() => {

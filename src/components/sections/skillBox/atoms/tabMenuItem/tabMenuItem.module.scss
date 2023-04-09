@@ -4,20 +4,20 @@
 @use "styles/utils" as utils;
 
 .tabMenuItem {
-  @include typography.tab-menu-item;
+  @include typography.tabMenuItem;
   background-color: unset;
   border: unset;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.2rem 1rem 0.2rem 0;
   text-align: right;
   color: colors.$white;
   min-height: 48px;
   min-width: 48px;
 
   @include utils.media-breakpoint-up(md) {
+    padding: 0.2rem 1rem 0.2rem 0;
     &::after {
       content: "";
       display: block;

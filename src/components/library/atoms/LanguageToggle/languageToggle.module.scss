@@ -47,7 +47,6 @@
   cursor: pointer;
   background: colors.$rich-black;
   @include typography.navigationItem;
-  @include iconLink.style;
   border: 1px solid colors.$dark-gray-adjacent;
   padding: utils.vw-clamp(8px, xs, 8px);
 

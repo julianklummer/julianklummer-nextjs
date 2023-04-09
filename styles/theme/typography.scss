@@ -158,17 +158,29 @@
 
 */
 
-@mixin tab-menu-item {
+@mixin tabMenuCombobox {
   font-family: fonts.$cosima;
-  font-weight: 400;
-  line-height: 1;
-  font-size: utils.rem-vw-mix(16px, 0.5, xs);
+  font-size: utils.rem-vw-mix(12px, 0.5, xs);
+  @include hover.standard;
 
   @include utils.media-breakpoint-up(sm) {
-    font-size: utils.rem-vw-mix(18px, 0.5, sm);
+    font-size: utils.rem-vw-mix(14px, 0.5, sm);
+  }
+}
+
+@mixin tabMenuItem {
+  font-family: fonts.$cosima;
+  line-height: 1;
+  font-size: utils.rem-vw-mix(12px, 0.5, xs);
+  @include hover.standard;
+
+  @include utils.media-breakpoint-up(sm) {
+    font-size: utils.rem-vw-mix(14px, 0.5, sm);
   }
 
   @include utils.media-breakpoint-up(md) {
+    font-weight: 400;
+
     font-size: utils.rem-vw-mix(18px, 0.5, md);
   }
 

@@ -1,4 +1,7 @@
+import { useEffect, useRef, useState } from "react";
+import { flip } from "src/utils/animation/flip";
 import Region from "../../../../../../public/icons/stationList/region.svg";
+import ArrowDown from "../../../../../../public/icons/utils/arrow-down.svg";
 import { StationIcon } from "../../atoms/stationIcon/StationIcon";
 import { station } from "../../types";
 import styles from "./accordion.module.scss";
@@ -19,8 +22,33 @@ export const Accordion: React.FC<Props> = ({
   open,
   close,
 }) => {
+  const [panelOpen, setPanelOpen] = useState(false);
+  const elementRef = useRef<HTMLDivElement>(null);
+  const headerClassList = [styles.accordionHeader];
   const panelClassList = [styles.accordionPanel];
-  active && panelClassList.push(styles._active);
+  if (active) {
+    headerClassList.push(styles._active);
+    panelClassList.push(styles._active);
+  }
+
+  useEffect(() => {
+    if (elementRef.current) {
+      const relatedElements: HTMLElement[] = [];
+
+      const addNextSibling = (element: HTMLElement) => {
+        const nextSibling = element.nextElementSibling;
+        if (nextSibling) {
+          relatedElements.push(nextSibling as HTMLElement);
+          addNextSibling(nextSibling as HTMLElement);
+        }
+      };
+      addNextSibling(elementRef.current);
+
+      flip(() => setPanelOpen(active ? active : false), [...relatedElements]);
+    } else {
+      throw new Error("skillbox ref or skillbox sidebar ref not found");
+    }
+  }, [active]);
 
   const renderAccordionContent = () => {
     return (
@@ -35,8 +63,8 @@ export const Accordion: React.FC<Props> = ({
   };
 
   return (
-    <div className={styles.accordion}>
-      <div className={styles.accordionHeader}>
+    <div className={styles.accordion} ref={elementRef}>
+      <div className={headerClassList.join(" ")}>
         <div className={styles.row}>
           <span className={styles.stationIcon}>
             {station.icon ? <StationIcon name={station.icon} /> : null}
@@ -61,7 +89,9 @@ export const Accordion: React.FC<Props> = ({
         </h3>
         <div className={styles.row}>
           <span>{station.institution}</span>
-          <span>{active ? "close" : "open"}</span>
+          <span className={styles.accordionToggleIcon}>
+            <ArrowDown />
+          </span>
         </div>
       </div>
       <div
@@ -69,7 +99,7 @@ export const Accordion: React.FC<Props> = ({
         id={getTabId(station) + "-panel"}
         aria-labelledby={getTabId(station) + "-header"}
       >
-        {active ? renderAccordionContent() : null}
+        {panelOpen ? renderAccordionContent() : null}
       </div>
     </div>
   );

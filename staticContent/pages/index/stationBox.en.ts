@@ -40,7 +40,7 @@ export const stationBox: stationList = [
   },
   {
     id: "inpulse",
-    icon: "inpulse",
+    icon: "readyfortechno",
     title: "FREELANCE: EVENT-MANAGEMENT AGENCY",
     institution: "inPulse | Klummer und Tondera GbR",
     duration: "2018 - 2022",
