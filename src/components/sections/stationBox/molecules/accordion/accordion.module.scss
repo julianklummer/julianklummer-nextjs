@@ -33,11 +33,15 @@
   }
 
   &[data-flip="play"] {
-    transition: transform 0.1s;
+    @include utils.not-reduced-motion {
+      transition: transform 0.5s;
+    }
     transform: none;
 
     &::before {
-      transition: transform 0.1s;
+      @include utils.not-reduced-motion {
+        transition: transform 0.5s;
+      }
       transform: none;
     }
   }
@@ -144,7 +148,9 @@
 
   .accordionToggleIcon {
     width: utils.vw-clamp(12px, xs, 16px);
-    transition: transform 0.6s;
+    @include utils.not-reduced-motion {
+      transition: transform 0.6s;
+    }
   }
 
   &._active {
@@ -157,18 +163,18 @@
   &:focus-visible,
   &._active {
     h3 button {
-      color: colors.$medium-turquoise;
+      color: colors.$primary;
     }
 
     .accordionToggleIcon {
-      color: colors.$medium-turquoise;
+      color: colors.$primary;
     }
   }
 
   h3 button {
     &:hover,
     &:focus-visible {
-      color: colors.$medium-turquoise;
+      color: colors.$primary;
     }
   }
 }

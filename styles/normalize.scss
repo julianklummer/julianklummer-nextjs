@@ -1,4 +1,5 @@
 @use "styles/theme/colors" as colors;
+@use "styles/utils" as utils;
 
 * {
   box-sizing: border-box;
@@ -10,8 +11,4 @@ body {
 
 ul {
   margin: unset;
-}
-
-*:focus-visible {
-  outline: 1px solide colors.$medium-turquoise;
 }

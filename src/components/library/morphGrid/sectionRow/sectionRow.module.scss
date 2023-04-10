@@ -19,7 +19,9 @@
   }
 
   &[data-flip="play"] {
-    transition: transform 0.5s;
+    @include utils.not-reduced-motion {
+      transition: transform 0.5s;
+    }
     transform: none;
   }
 }

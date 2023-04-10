@@ -3,14 +3,14 @@
 @mixin standard {
   &:hover,
   &:focus-visible {
-    color: colors.$medium-turquoise;
+    color: colors.$primary;
   }
 }
 
 @mixin standardBlur {
   &:hover,
   &:focus-visible {
-    color: colors.$medium-turquoise;
-    filter: drop-shadow(0px 1px 1px #{colors.$medium-turquoise});
+    color: colors.$primary;
+    filter: drop-shadow(0px 1px 1px #{colors.$primary});
   }
 }

@@ -17,7 +17,7 @@
     position: absolute;
     inset: 0;
     background-color: colors.$dark-gray;
-    border: 1px solid colors.$medium-turquoise;
+    border: 1px solid colors.$primary;
     transform-origin: top left;
   }
 
@@ -43,7 +43,9 @@
   &[data-flip="play"] {
     &::before,
     &::after {
-      transition: transform 0.1s;
+      @include utils.not-reduced-motion {
+        transition: transform 0.5s;
+      }
       transform: none;
     }
   }

@@ -5,6 +5,6 @@ export type indexData = {
   };
   hero: {
     headline: string;
-    subline: string;
+    sublineStart: string;
   };
 };

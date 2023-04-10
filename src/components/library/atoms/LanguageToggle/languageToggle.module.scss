@@ -11,7 +11,7 @@
   position: relative;
 
   &[aria-expanded="true"] {
-    color: colors.$medium-turquoise;
+    color: colors.$primary;
   }
 }
 
@@ -19,11 +19,20 @@
   position: absolute;
   margin-top: #{utils.vw-clamp(6px, xs, 20px)};
   left: 50%;
-  border: 1px solid colors.$medium-turquoise;
+  border: 1px solid colors.$primary;
   color: colors.$light-white;
   padding: unset;
   list-style: none;
-  animation: listBoxOpen 0.2s ease-in-out forwards;
+  background: colors.$rich-black;
+
+  @include utils.not-reduced-motion {
+    animation: listBoxOpen 0.2s ease-in-out forwards;
+  }
+
+  @include utils.prefers-reduced-motion {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
 
   &:hover {
     .languageToggleListboxItem[aria-selected="true"]:not(:hover) {
@@ -47,14 +56,18 @@
   cursor: pointer;
   background: colors.$rich-black;
   @include typography.navigationItem;
-  border: 1px solid colors.$dark-gray-adjacent;
   padding: utils.vw-clamp(8px, xs, 8px);
 
   @include utils.media-breakpoint-up(md) {
-    padding: utils.vw-clamp(10px, md) utils.vw-clamp(16px, md);
+    margin: utils.vw-clamp(5px, md) utils.vw-clamp(5px, md);
+    padding: utils.vw-clamp(5px, md) utils.vw-clamp(11px, md);
   }
 
   &[aria-selected="true"] {
-    color: colors.$medium-turquoise;
+    color: colors.$primary;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid colors.$dark-gray-adjacent;
   }
 }

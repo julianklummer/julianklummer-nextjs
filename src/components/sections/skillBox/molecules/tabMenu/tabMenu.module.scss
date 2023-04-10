@@ -20,7 +20,7 @@
   align-items: center;
   cursor: pointer;
   @include typography.navigationItem;
-  border: 1px solid colors.$medium-turquoise;
+  border: 1px solid colors.$primary;
   padding: utils.vw-clamp(12px, xs, 16px);
   min-width: utils.vw-clamp(240px, xs, 240px);
   margin-bottom: utils.vw-clamp(16px, md);
@@ -32,7 +32,7 @@
   }
 
   &:hover {
-    color: colors.$medium-turquoise;
+    color: colors.$primary;
   }
 
   &[aria-expanded="true"] {
@@ -44,7 +44,9 @@
 
 .comboboxIcon {
   width: utils.vw-clamp(12px, xs, 16px);
-  transition: transform 0.6s;
+  @include utils.not-reduced-motion {
+    transition: transform 0.6s;
+  }
 }
 
 .tabMenuMobileLabel {
@@ -59,11 +61,18 @@
   min-width: 100%;
   margin-top: utils.vw-clamp(-16px, md);
   left: 50%;
-  border: 1px solid colors.$medium-turquoise;
+  border: 1px solid colors.$primary;
   color: colors.$light-white;
   padding: unset;
   list-style: none;
-  animation: listBoxOpen 0.2s ease-in-out forwards;
+  @include utils.not-reduced-motion {
+    animation: listBoxOpen 0.2s ease-in-out forwards;
+  }
+
+  @include utils.prefers-reduced-motion {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
 
   &:hover {
     .languageToggleListboxItem[aria-selected="true"]:not(:hover) {
@@ -84,7 +93,7 @@
   padding: utils.vw-clamp(8px, xs, 8px) utils.vw-clamp(12px, xs, 16px);
 
   &[aria-selected="true"] {
-    color: colors.$medium-turquoise;
+    color: colors.$primary;
   }
 
   button {

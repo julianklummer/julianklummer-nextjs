@@ -34,7 +34,9 @@
     &::after,
     .skillBox::before,
     .skillBox::after {
-      transition: transform 0.5s;
+      @include utils.not-reduced-motion {
+        transition: transform 0.5s;
+      }
       transform: none;
     }
   }
@@ -64,7 +66,7 @@
 
   &::before {
     background-color: colors.$dark-gray;
-    border: 1px solid colors.$medium-turquoise;
+    border: 1px solid colors.$primary;
     z-index: -1;
   }
 

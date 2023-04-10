@@ -7,7 +7,7 @@ import styles from "./navigationButtonGroup.module.scss";
 export const NavigationButtonGroup: React.FC = () => {
   return (
     <nav>
-      <ul className={styles.navigationButtonGroup}>
+      <ul className={styles.navigationButtonGroup} role="list">
         <li className={styles.navigationButtonGroupItem}>
           <IconLink
             title="Open LinkedIn Profile"

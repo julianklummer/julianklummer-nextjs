@@ -26,7 +26,7 @@
       rgb(65, 65, 65) 19%,
       rgb(43, 43, 43) 92%
     );
-    border: 1px solid colors.$medium-turquoise;
+    border: 1px solid colors.$primary;
     z-index: -1;
   }
 
@@ -60,7 +60,9 @@
   .tab {
     &::before,
     &::after {
-      transition: transform 0.5s;
+      @include utils.not-reduced-motion {
+        transition: transform 0.5s;
+      }
       transform: none;
     }
   }
@@ -141,8 +143,6 @@
 
 .tab._active {
   .skill {
-    --animation-duration: 0.3;
-    --animation-stagger: 0.2;
     animation-name: fade-in;
     animation-duration: calc(var(--animation-duration) * 1s);
     animation-delay: calc(
@@ -151,6 +151,16 @@
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-fill-mode: forwards;
     opacity: 0;
+
+    @include utils.not-reduced-motion {
+      --animation-duration: 0.3;
+      --animation-stagger: 0.2;
+    }
+
+    @include utils.prefers-reduced-motion {
+      --animation-duration: 0;
+      --animation-stagger: 0;
+    }
   }
 }
 
@@ -168,10 +178,17 @@
 .tab._prevActive {
   .skill {
     animation-name: fade-out;
-    animation-duration: 0.3s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation-fill-mode: forwards;
     opacity: 1;
+
+    @include utils.not-reduced-motion {
+      animation-duration: 0.3s;
+    }
+
+    @include utils.prefers-reduced-motion {
+      animation-duration: 0s;
+    }
   }
 }
 

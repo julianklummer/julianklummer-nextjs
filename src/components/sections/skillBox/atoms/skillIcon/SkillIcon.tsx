@@ -6,6 +6,7 @@ import Bootstrap from "../../../../../../public/icons/skillList/bootstrap.svg";
 import Css from "../../../../../../public/icons/skillList/css.svg";
 import Cypress from "../../../../../../public/icons/skillList/cypress.svg";
 import DesignThinking from "../../../../../../public/icons/skillList/design-thinking.svg";
+import Docker from "../../../../../../public/icons/skillList/docker.svg";
 import Drupal from "../../../../../../public/icons/skillList/drupal.svg";
 import Eslint from "../../../../../../public/icons/skillList/eslint.svg";
 import Excel from "../../../../../../public/icons/skillList/excel.svg";
@@ -132,6 +133,8 @@ export const SkillIcon: React.FC<Props> = ({ name }) => {
       return <Prettier />;
     case "stylelint":
       return <Stylelint />;
+    case "docker":
+      return <Docker />;
     default:
       return <SourceCode />;
   }

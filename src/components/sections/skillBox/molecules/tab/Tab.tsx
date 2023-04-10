@@ -31,7 +31,7 @@ export const Tab = forwardRef(function Tab(
           );
           let colorList = iconEntry.length
             ? iconEntry[0]?.colorList
-            : [{ r: 63, g: 204, b: 222 }];
+            : { r: 63, g: 204, b: 222 };
           return (
             <li
               key={`${index}-icon-list-${skill.title}`}
@@ -43,9 +43,9 @@ export const Tab = forwardRef(function Tab(
                 style={
                   {
                     "--index": index,
-                    "--color-r": colorList[0].r,
-                    "--color-g": colorList[0].g,
-                    "--color-b": colorList[0].b,
+                    "--color-r": colorList.r,
+                    "--color-g": colorList.g,
+                    "--color-b": colorList.b,
                   } as React.CSSProperties
                 }
               >

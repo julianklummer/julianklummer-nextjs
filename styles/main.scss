@@ -1,6 +1,7 @@
 @use "./theme/colors" as colors;
 @use "./theme/sizes" as sizes;
 @use "./theme/typography" as typography;
+@use "./utils" as utils;
 
 body {
   width: 100%;
@@ -37,4 +38,21 @@ h6 {
 
 p {
   @include typography.p;
+}
+
+*:focus-visible {
+  outline: 1px solid colors.$secondary;
+  outline-offset: 6px;
+  @include utils.not-reduced-motion {
+    animation: showOutline 0.1s ease-in-out;
+  }
+}
+
+@keyframes showOutline {
+  from {
+    outline-offset: 0;
+  }
+  to {
+    outline-offset: 5px;
+  }
 }

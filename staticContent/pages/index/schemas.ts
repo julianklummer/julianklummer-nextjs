@@ -8,7 +8,7 @@ export const indexDataSchema = z.object({
   }),
   hero: z.object({
     headline: z.string(),
-    subline: z.string(),
+    sublineStart: z.string(),
   }),
 });
 

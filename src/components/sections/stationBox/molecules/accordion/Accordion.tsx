@@ -11,7 +11,6 @@ export const getTabId = (station: station) => {
 interface Props {
   station: station;
   active: boolean;
-  prevActive: boolean;
   open: Function;
   close: Function;
   index: number;
@@ -21,7 +20,7 @@ export const Accordion = forwardRef(function Accordion(
   props: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) {
-  const { station, active, prevActive, open, close, index } = props;
+  const { station, active, open, close, index } = props;
   const headerClassList = [styles.accordionHeader];
   const panelClassList = [styles.accordionPanel];
   if (active) {
@@ -32,7 +31,7 @@ export const Accordion = forwardRef(function Accordion(
   const renderAccordionContent = () => {
     return (
       <>
-        <ul>
+        <ul role="list">
           {station.infos?.map((info, index) => (
             <li key={index}>{info}</li>
           ))}
@@ -82,7 +81,7 @@ export const Accordion = forwardRef(function Accordion(
         id={getTabId(station) + "-panel"}
         aria-labelledby={getTabId(station) + "-header"}
       >
-        {active || prevActive ? renderAccordionContent() : null}
+        {active ? renderAccordionContent() : null}
       </div>
     </div>
   );
