@@ -11,6 +11,16 @@
 .appFooter {
   position: sticky;
   bottom: 0;
+
+  & > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: sizes.$sticky-padding-y sizes.$sticky-padding-x;
+    margin: 0 auto;
+    max-width: sizes.$max-site-width;
+  }
 }
 
 body._scrolled {

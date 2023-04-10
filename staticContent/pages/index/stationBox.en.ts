@@ -10,7 +10,11 @@ export const stationBox: stationList = [
     icon: "sirup",
     link: "https://www.sirup.com/",
     linkTitle: "SIRUP Website",
-    infos: ["Frontend Development"],
+    infos: [
+      "React, Drupal, Symfony and vanilla implementations",
+      "Creation and enhancement of bundling, linting and testing",
+      "Creation of reusable componentsystems, templates & packages",
+    ],
   },
   {
     id: "sirup-1",
@@ -21,7 +25,11 @@ export const stationBox: stationList = [
     icon: "sirup",
     link: "https://www.sirup.com/",
     linkTitle: "SIRUP Website",
-    infos: ["Frontend Development"],
+    infos: [
+      "React, Drupal, Symfony and vanilla implementations",
+      "Creation and enhancement of bundling, linting and testing",
+      "Newsletter template development",
+    ],
   },
   {
     id: "hdm-1",
@@ -33,7 +41,9 @@ export const stationBox: stationList = [
     link: "https://www.omm.hdm-stuttgart.de/",
     linkTitle: "Online media management website",
     infos: [
-      "Online technologies, webdesign & programming",
+      "Final grade: 1,6",
+      "Thesis: Prototypical development of a WYSIWYG end-user editor for web pages according to atomic design principles with React within a JAMstack architecture.",
+      "IT basics, programming & webdevelopment",
       "Digital marketing & data analytics",
       "Digital content creation",
     ],
@@ -45,7 +55,11 @@ export const stationBox: stationList = [
     institution: "inPulse | Klummer und Tondera GbR",
     duration: "2018 - 2022",
     location: "Heilbronn",
-    infos: ["Event- und brandmanagement", "Online & offline marketing"],
+    infos: [
+      "Digital content creation including graphic design and development",
+      "Branding & performance marketing",
+      "Event- and projectmanagement",
+    ],
   },
   {
     id: "vinos",
@@ -57,9 +71,9 @@ export const stationBox: stationList = [
     link: "https://www.vinos.de/",
     linkTitle: "Wein & Vinos online shop",
     infos: [
+      "E-mail marketing, templating & analytics",
+      "Landingpage creation and productdata-management with Magento",
       "Customer relationship management",
-      "E-Mail Marketing & analytics",
-      "E-Commerce",
     ],
   },
 ];

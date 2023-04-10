@@ -10,7 +10,11 @@ export const stationBox: stationList = [
     icon: "sirup",
     link: "https://www.sirup.com/",
     linkTitle: "SIRUP Website",
-    infos: ["Frontend Development"],
+    infos: [
+      "React, Drupal, Symfony und Vanilla Implementierungen",
+      "Erstellung und Verbesserung von Bundling, Linting und Testing",
+      "Erstellung von wiederverwendbaren Komponentensystemen, Templates & Packages",
+    ],
   },
   {
     id: "sirup-1",
@@ -21,7 +25,11 @@ export const stationBox: stationList = [
     icon: "sirup",
     link: "https://www.sirup.com/",
     linkTitle: "SIRUP Website",
-    infos: ["Frontend Development"],
+    infos: [
+      "React, Drupal, Symfony und Vanilla Implementierungen",
+      "Erstellung und Verbesserung von Bundling, Linting und Testing",
+      "Entwicklung von Newsletter Templates",
+    ],
   },
   {
     id: "hdm-1",
@@ -33,10 +41,11 @@ export const stationBox: stationList = [
     link: "https://www.omm.hdm-stuttgart.de/",
     linkTitle: "Online Medien Management Studiengangs Website",
     infos: [
-      "Online Technologien, Webdesign & Entwicklung",
-      "Usability & User Experience Design",
-      "Digital Marketing & Data Analytics",
-      "Digital Content Erstellung",
+      "Abschlussnote: 1,6",
+      "Abschlussarbeit: Prototypische Entwicklung eines WYSIWYG End-User Editors für Webpages nach Atomic Design Prinzipien mit React innerhalb einer JAMstack Architektur",
+      "IT-Grundlagen, Programmierung & Webentwicklung",
+      "Digitales Marketing & Datenanalyse",
+      "Digitale Inhalteerstellung",
     ],
   },
   {
@@ -46,7 +55,11 @@ export const stationBox: stationList = [
     duration: "2018 - 2022",
     location: "Heilbronn",
     icon: "readyfortechno",
-    infos: ["Event- and brandmanagement", "Online & Offline Marketing"],
+    infos: [
+      "Erstellung von digitalen Inhalten inklusive Grafikdesign und Entwicklung",
+      "Branding & Performancemarketing",
+      "Event- und Projektmanagement",
+    ],
   },
   {
     id: "vinos",
@@ -58,9 +71,9 @@ export const stationBox: stationList = [
     link: "https://www.vinos.de/",
     linkTitle: "Wein & Vinos Online Shop",
     infos: [
+      "E-Mail-Marketing, Templating und Analytics",
+      "Erstellung von Landingpages und Produktdatenmanagement mit Magento",
       "Customer relationship management",
-      "E-Mail Marketing & Analytics",
-      "E-Commerce",
     ],
   },
 ];

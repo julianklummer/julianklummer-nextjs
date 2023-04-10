@@ -2,7 +2,11 @@
 @use "styles/theme/typography" as typography;
 @use "styles/theme/sizes" as sizes;
 
-.copyright {
+.legalLink {
+  background-color: transparent;
+  border: unset;
+  padding: 0;
   @include typography.p;
   color: colors.$white;
+  cursor: pointer;
 }

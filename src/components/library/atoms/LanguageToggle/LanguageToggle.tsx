@@ -9,12 +9,11 @@ import styles from "./languageToggle.module.scss";
 
 export const LanguageToggle: React.FC = () => {
   const languageContext = useContext(LanguageContext);
+  if (!languageContext) throw new Error("LanguageContext not found.");
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLUListElement>(null);
-
-  if (!languageContext) throw new Error("LanguageContext not found.");
 
   const changeLanguage = (locale: Locale): void => {
     if (locale !== languageContext.language) {
@@ -60,9 +59,16 @@ export const LanguageToggle: React.FC = () => {
     <>
       <button
         id="language-toggle"
-        // TODO: add translation
-        title="Switch language"
-        aria-label="Language toggle"
+        title={
+          languageContext.language === "de"
+            ? "Sprache wechseln"
+            : "Change language"
+        }
+        aria-label={
+          languageContext.language === "de"
+            ? "Sprache wechseln"
+            : "Change language"
+        }
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         className={styles.languageToggle}

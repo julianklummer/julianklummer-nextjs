@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import profileImage from "../../../../public/images/profile.jpeg";
 import styles from "./hero.module.scss";
 
@@ -14,6 +15,9 @@ export const Hero: React.FC<Props> = ({
   sublineStart,
   sublineList,
 }) => {
+  const languageContext = useContext(LanguageContext);
+  if (!languageContext) throw new Error("LanguageContext not found.");
+
   const sublineSwitcherRef = useRef<HTMLSpanElement>(null);
   const [sublineIndex, setSublineIndex] = useState(0);
 
@@ -52,8 +56,9 @@ export const Hero: React.FC<Props> = ({
       <span className={styles.heroImage}>
         <Image
           src={profileImage}
-          /* TODO: Add translation */
-          alt="Profilbild"
+          alt={
+            languageContext.language === "de" ? "Profilbild" : "Profile picture"
+          }
           placeholder="blur"
           priority
           fill

@@ -1,4 +1,5 @@
-import { ForwardedRef, forwardRef } from "react";
+import { ForwardedRef, forwardRef, useContext } from "react";
+import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import Region from "../../../../../../public/icons/stationList/region.svg";
 import ArrowDown from "../../../../../../public/icons/utils/arrow-down.svg";
 import { StationIcon } from "../../atoms/stationIcon/StationIcon";
@@ -20,6 +21,8 @@ export const Accordion = forwardRef(function Accordion(
   props: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) {
+  const languageContext = useContext(LanguageContext);
+  if (!languageContext) throw new Error("LanguageContext not found.");
   const { station, active, open, close, index } = props;
   const headerClassList = [styles.accordionHeader];
   const panelClassList = [styles.accordionPanel];
@@ -31,7 +34,7 @@ export const Accordion = forwardRef(function Accordion(
   const renderAccordionContent = () => {
     return (
       <>
-        <ul role="list">
+        <ul role="list" className={styles.panelList}>
           {station.infos?.map((info, index) => (
             <li key={index}>{info}</li>
           ))}
@@ -64,6 +67,16 @@ export const Accordion = forwardRef(function Accordion(
             id={getTabId(station) + "-header"}
             aria-expanded={active}
             aria-controls={getTabId(station) + "-panel"}
+            aria-label={
+              languageContext.language === "de"
+                ? "Details öffnen/schließen"
+                : "Toggle details"
+            }
+            title={
+              languageContext.language === "de"
+                ? "Details öffnen/schließen"
+                : "Toggle details"
+            }
             onClick={() => (active ? close() : open())}
           >
             {station.title}

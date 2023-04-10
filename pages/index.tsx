@@ -28,6 +28,7 @@ import {
 } from "staticContent/pages/index/sublineList.de";
 import { sublineList as sublineListEN } from "staticContent/pages/index/sublineList.en";
 
+import { LegalLink } from "src/components/library/atoms/LegalLink/LegalLink";
 import { indexData } from "staticContent/pages/index/types";
 import styles from "./index.module.scss";
 interface Props {
@@ -76,7 +77,7 @@ export default function Index({
       <Head>
         <title>{data.meta.title}</title>
         <meta name="description" content={data.meta.description} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
       <LanguageProvider language={locale}>
         <header className={styles.appHeader}>
@@ -95,7 +96,10 @@ export default function Index({
           </SectionRow>
         </div>
         <footer className={styles.appFooter}>
-          <Copyright />
+          <span>
+            <Copyright />
+            <LegalLink />
+          </span>
         </footer>
       </LanguageProvider>
     </>

@@ -127,22 +127,24 @@
     display: grid;
     place-items: center;
 
-    width: utils.vw-clamp(40px, xs);
+    --size: #{utils.vw-clamp(40px, xs)};
+    width: var(--size);
+    height: var(--size);
 
     @include utils.container-query(sm) {
-      width: utils.vw-clamp(40px, sm);
+      --size: #{utils.vw-clamp(40px, sm)};
     }
 
     @include utils.container-query(md) {
-      width: utils.vw-clamp(40px, md);
+      --size: #{utils.vw-clamp(40px, md)};
     }
 
     @include utils.container-query(lg) {
-      width: utils.vw-clamp(40px, lg);
+      --size: #{utils.vw-clamp(40px, lg)};
     }
 
     @include utils.container-query(xl) {
-      width: utils.vw-clamp(40px, xl);
+      --size: #{utils.vw-clamp(40px, xl)};
     }
   }
 
@@ -186,5 +188,12 @@
 
   &._active {
     display: block;
+  }
+}
+
+.panelList {
+  padding-left: 1em;
+  li {
+    padding-bottom: 0.5em;
   }
 }

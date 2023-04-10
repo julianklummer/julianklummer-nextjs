@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ArrowDown from "../../../../../../public/icons/utils/arrow-down.svg";
 import { TabMenuItem } from "../../atoms/tabMenuItem/TabMenuItem";
 import { TabCategory } from "../../types";
 
+import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
 import styles from "./tabMenu.module.scss";
 interface Props {
   tabCategoryList: TabCategory[];
@@ -15,6 +16,8 @@ export const TabMenu: React.FC<Props> = ({
   activeTabCategory,
   setActiveTabCategory,
 }) => {
+  const languageContext = useContext(LanguageContext);
+  if (!languageContext) throw new Error("LanguageContext not found.");
   const [comboboxOpen, setComboboxOpen] = useState(false);
 
   useEffect(() => {
@@ -27,9 +30,11 @@ export const TabMenu: React.FC<Props> = ({
         <label
           id="tab-menu-combobox-label"
           className={styles.tabMenuMobileLabel}
-          // TODO: add label
         >
           label label
+          {languageContext.language === "de"
+            ? "Kategorie ändern"
+            : "Change category"}
         </label>
         <div
           aria-controls="tab-menu-listbox"
