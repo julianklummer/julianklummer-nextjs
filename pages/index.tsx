@@ -22,10 +22,7 @@ import { skillBox as skillBoxDE } from "staticContent/pages/index/skillBox.de";
 import { skillBox as skillBoxEN } from "staticContent/pages/index/skillBox.en";
 import { stationBox as stationListDE } from "staticContent/pages/index/stationBox.de";
 import { stationBox as stationListEN } from "staticContent/pages/index/stationBox.en";
-import {
-  sublineList,
-  sublineList as sublineListDE,
-} from "staticContent/pages/index/sublineList.de";
+import { sublineList as sublineListDE } from "staticContent/pages/index/sublineList.de";
 import { sublineList as sublineListEN } from "staticContent/pages/index/sublineList.en";
 
 import { LegalLink } from "src/components/library/atoms/LegalLink/LegalLink";
@@ -126,7 +123,7 @@ export async function getStaticProps({ locale }: Pick<Props, "locale">) {
     locale === "en" ? await stationListEN : await stationListDE;
   stationListSchema.parse(stationList);
 
-  const sublienList =
+  const sublineList =
     locale === "en" ? await sublineListEN : await sublineListDE;
 
   return {
