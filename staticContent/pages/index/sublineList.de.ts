@@ -4,7 +4,7 @@ export const sublineList = [
   "fortgeschritten in React und Nextjs",
   "versiert in Barrierefreiheit und Sicherheit",
   "der auf eine hervorragende Webperformance abzielt",
-  "der leidenschaftlich Designs zum Leben erweckt",
+  "der gerne Designs zum Leben erweckt",
   "der kontinuierlich seine Fähigkeiten verbessert",
   "motiviert, die besten Benutzererfahrungen zu entwickeln.",
 ];
