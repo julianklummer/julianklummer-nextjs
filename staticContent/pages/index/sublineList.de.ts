@@ -1,10 +1,10 @@
 export const sublineList = [
-  "fluent in TypeScript and SASS",
-  "focused on JAMstack technologies & ecosystem",
-  "advanced in React and Nextjs",
-  "proficient in accessible and secure design",
-  "driven for superior web performance",
-  "passionate about bringing designs to live",
-  "dedicated to continuous learning",
-  "motivated for shipping the best user experiences",
+  "der fließend TypeScript und SASS beherrscht",
+  "fokusiert auf JAMstack Technologien & Ökosystem",
+  "fortgeschritten in React und Nextjs",
+  "versiert in Barrierefreiheit und Sicherheit",
+  "der auf eine hervorragende Webperformance abzielt",
+  "der leidenschaftlich Designs zum Leben erweckt",
+  "der kontinuierlich seine Fähigkeiten verbessert",
+  "motiviert, die besten Benutzererfahrungen zu entwickeln.",
 ];
