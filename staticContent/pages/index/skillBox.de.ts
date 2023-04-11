@@ -18,7 +18,7 @@ export const skillBox: skillList = [
     ],
   },
   {
-    title: "Frameworks",
+    title: "Frameworks & Bibliotheken",
     id: "frameworks-libraries",
     skillList: [
       { title: "React", icon: "react" },
@@ -46,16 +46,16 @@ export const skillBox: skillList = [
     ],
   },
   {
-    title: "Prinzipien",
+    title: "Prinzipien & Paradigmen",
     id: "principles",
     skillList: [
       { title: "Object Oriented Programming", icon: "oop" },
       { title: "Functional Programming", icon: "fp" },
-      { title: "Accessibility", icon: "accessibility" },
-      { title: "Security", icon: "security" },
+      { title: "Barrierefreiheit", icon: "accessibility" },
+      { title: "Sicherheit", icon: "security" },
       { title: "Atomic Design", icon: "atomic-design" },
-      { title: "Responsive Design", icon: "responsive-design" },
-      { title: "Fluid Design", icon: "fluid-design" },
+      { title: "Responsives Design", icon: "responsive-design" },
+      { title: "Fluides Design", icon: "fluid-design" },
       { title: "SEO", icon: "seo" },
     ],
   },
