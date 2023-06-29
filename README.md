@@ -1,1 +1,1 @@
-Repo for [julianklummer.de]([https://nextjs.org/](https://www.julianklummer.de/))
+Repo for julianklummer.de
