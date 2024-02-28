@@ -22,15 +22,12 @@ import { skillBox as skillBoxDE } from "staticContent/pages/index/skillBox.de";
 import { skillBox as skillBoxEN } from "staticContent/pages/index/skillBox.en";
 import { stationBox as stationListDE } from "staticContent/pages/index/stationBox.de";
 import { stationBox as stationListEN } from "staticContent/pages/index/stationBox.en";
-import { sublineList as sublineListDE } from "staticContent/pages/index/sublineList.de";
-import { sublineList as sublineListEN } from "staticContent/pages/index/sublineList.en";
 
 import { LegalLink } from "src/components/library/atoms/LegalLink/LegalLink";
 import { indexData } from "staticContent/pages/index/types";
 import styles from "./index.module.scss";
 interface Props {
   data: indexData;
-  sublineList: string[];
   skillList: skillList;
   stationList: stationList;
   aboutContent: string;
@@ -39,7 +36,6 @@ interface Props {
 
 export default function Index({
   data,
-  sublineList,
   skillList,
   stationList,
   aboutContent,
@@ -84,7 +80,6 @@ export default function Index({
           <Hero
             headline={data.hero.headline}
             sublineStart={data.hero.sublineStart}
-            sublineList={sublineList}
           />
           <SkillBox tabCategoryList={skillList} />
           <SectionRow>
@@ -123,13 +118,9 @@ export async function getStaticProps({ locale }: Pick<Props, "locale">) {
     locale === "en" ? await stationListEN : await stationListDE;
   stationListSchema.parse(stationList);
 
-  const sublineList =
-    locale === "en" ? await sublineListEN : await sublineListDE;
-
   return {
     props: {
       data,
-      sublineList,
       skillList,
       stationList,
       aboutContent,
