@@ -1,27 +1,22 @@
 import "server-only";
-import { languages } from "src/translations/languages";
-import { Translation, TranslationSchema } from "./types";
+import { Locale, Translation, TranslationSchema } from "./types";
 
-const loadTranslationFile = async (
-  lang: (typeof languages)[number]
-): Promise<Translation> => {
-  const translation = await import(`src/translations/translation.${lang}.json`);
+const loadTranslationFile = async (locale: Locale): Promise<Translation> => {
+  const translation = await import(
+    `src/translations/translation.${locale}.json`
+  );
   TranslationSchema.parse(translation);
   return translation;
 };
 
 const makeGetTranslation = () => {
-  let loadedTranslations: Partial<
-    Record<(typeof languages)[number], Translation>
-  > = {};
+  let loadedTranslations: Partial<Record<Locale, Translation>> = {};
 
-  return async (
-    lang: keyof typeof loadedTranslations
-  ): Promise<Translation> => {
-    if (!(lang in loadedTranslations)) {
-      loadedTranslations[lang] = await loadTranslationFile(lang);
+  return async (locale: Locale): Promise<Translation> => {
+    if (!(locale in loadedTranslations)) {
+      loadedTranslations[locale] = await loadTranslationFile(locale);
     }
-    return loadedTranslations[lang]!;
+    return loadedTranslations[locale]!;
   };
 };
 

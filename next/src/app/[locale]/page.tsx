@@ -1,39 +1,39 @@
 import { Copyright } from "@/components/library/atoms/Copyright/Copyright";
 import { LegalLink } from "@/components/library/atoms/LegalLink/LegalLink";
+import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
 import { SkillBox } from "@/components/sections/skillBox/organisms/skillBox/SkillBox";
+import { StationBox } from "@/components/sections/stationBox/organisms/stationBox/StationBox";
+import { TextBox } from "@/components/sections/textBox/TextBox";
+import { Locale } from "@/translations/types";
 import type { Metadata } from "next";
 import { Hero } from "src/components/sections/hero/Hero";
 import { Navigation } from "src/components/sections/navigation/organisms/navigation/Navigation";
 import { getTranslation } from "src/translations/getTranslation";
-import { languages } from "src/translations/languages";
 import styles from "./page.module.scss";
-import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
-import { StationBox } from "@/components/sections/stationBox/organisms/stationBox/StationBox";
-import { TextBox } from "@/components/sections/textBox/TextBox";
 
 type Props = {
   params: {
-    lang: (typeof languages)[number];
+    locale: Locale;
   };
 };
 
 export async function generateMetadata({
-  params: { lang },
+  params: { locale },
 }: Props): Promise<Metadata> {
   return {
-    title: (await getTranslation(lang)).meta.index.title,
-    description: (await getTranslation(lang)).meta.index.description,
+    title: (await getTranslation(locale)).meta.index.title,
+    description: (await getTranslation(locale)).meta.index.description,
   };
 }
 
-export async function getData(lang: (typeof languages)[number]) {
+export async function getData(locale: Locale) {
   return {
-    translation: await getTranslation(lang),
+    translation: await getTranslation(locale),
   };
 }
 
-export default async function Page({ params: { lang } }: Props) {
-  const { translation } = await getData(lang);
+export default async function Page({ params: { locale } }: Props) {
+  const { translation } = await getData(locale);
 
   return (
     <>

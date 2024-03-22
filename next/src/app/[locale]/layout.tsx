@@ -2,19 +2,18 @@ import { Background } from "@/components/utils/background/Background";
 import { ScrollResizeHelper } from "@/components/utils/scrollResizeHelper/ScrollResizeHelper";
 import "@/styles/main.scss";
 import "@/styles/normalize.scss";
-import { languages } from "@/translations/languages";
+import { Locale } from "@/translations/types";
 
-export default function RootLayout({
-  children,
-  params: { lang },
-}: {
+type Props = {
   children: React.ReactNode;
   params: {
-    lang: (typeof languages)[number];
+    lang: Locale;
   };
-}) {
+};
+
+export default function RootLayout({ children, params: { locale } }: Props) {
   return (
-    <html lang={lang}>
+    <html lang={locale}>
       <body>
         <Background />
         <ScrollResizeHelper />

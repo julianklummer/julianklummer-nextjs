@@ -1,7 +1,4 @@
-.background {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
+@mixin color-gradient {
   background: rgb(1 4 4);
   background: linear-gradient(
     160deg,
@@ -13,6 +10,13 @@
     rgb(23 132 140) 100%
   );
   background-attachment: fixed;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  @include color-gradient;
 
   &::after {
     content: "";

@@ -1,16 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { languages } from "./translations/languages";
+import { defaultLocale, locales } from "./translations/locales";
 import { parse } from "accept-language-parser";
+import { translationMiddleware } from "./middleware/translation";
 
 function getLocale(request: NextRequest) {
   const acceptLanguage = request.headers.get("accept-language");
   if (acceptLanguage) return parse(acceptLanguage)[0].code;
-  return "en";
+  return defaultLocale;
 }
 
 export function middleware(request: NextRequest) {
+  translationMiddleware(request);
   const { pathname } = request.nextUrl;
-  const pathnameHasLocale = languages.some(
+  const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
   if (pathnameHasLocale) return;

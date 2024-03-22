@@ -1,21 +1,22 @@
 "use client";
 import LanguageSVG from "@/icons/navigation/button/language.svg";
-import { useRouter } from "next/router";
-import { Locale } from "node_modules/next/dist/compiled/@vercel/og/satori";
+import { locales } from "@/translations/locales";
+import { Locale } from "@/translations/types";
+import { usePathname, useRouter } from "@/utils/navigation";
 import { useEffect, useRef, useState } from "react";
 import styles from "./languageToggle.module.scss";
 
-// TODO: Refactor language toggle for app router
 export const LanguageToggle: React.FC = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLUListElement>(null);
+  const currentLanguage = document.documentElement.lang;
+  const pathname = usePathname();
 
-  const changeLanguage = (locale: Locale): void => {
-    if (locale !== languageContext.language) {
-      router.push(router.asPath, router.asPath, { locale: locale });
-      languageContext.setLanguage(locale);
+  const changeLanguage = (newLocale: Locale): void => {
+    if (newLocale !== currentLanguage) {
+      router.push(pathname, { locale: newLocale });
     }
     setIsOpen(false);
   };
@@ -57,14 +58,18 @@ export const LanguageToggle: React.FC = () => {
       <button
         id="language-toggle"
         title={
-          languageContext.language === "de"
-            ? "Sprache wechseln"
-            : "Change language"
+          // TODO change translation
+          "test"
+          // languageContext.language === "de"
+          //   ? "Sprache wechseln"
+          //   : "Change language"
         }
         aria-label={
-          languageContext.language === "de"
-            ? "Sprache wechseln"
-            : "Change language"
+          // TODO change translation
+          "test"
+          // languageContext.language === "de"
+          //   ? "Sprache wechseln"
+          //   : "Change language"
         }
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -83,20 +88,21 @@ export const LanguageToggle: React.FC = () => {
           role="listbox"
           ref={dropdownRef}
         >
-          {languageList.map((language) => {
+          {locales.map((locale) => {
             return (
               <li
-                key={`language-${language.identifier}`}
-                id={language.identifier}
+                key={`language-${locale}`}
                 className={styles.languageToggleListboxItem}
                 role="option"
-                aria-selected={languageContext.language === language.identifier}
-                data-option={language.identifier}
+                data-option={locale}
+                aria-selected={currentLanguage === locale}
                 onClick={handleOptionClick}
                 onKeyDown={handleOptionKeydown}
                 tabIndex={0}
               >
-                {language.name[languageContext.language]}
+                {/* TODO Render translation */}
+                {locale}
+                {/* {language.name[languageContext.language]} */}
               </li>
             );
           })}

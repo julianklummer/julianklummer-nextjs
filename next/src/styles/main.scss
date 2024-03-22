@@ -1,7 +1,12 @@
+@use "components/utils/background/background.module" as background;
 @use "./theme/colors" as colors;
 @use "./theme/sizes" as sizes;
 @use "./theme/typography" as typography;
 @use "./utils" as utils;
+
+html {
+  @include background.color-gradient;
+}
 
 body {
   width: 100%;

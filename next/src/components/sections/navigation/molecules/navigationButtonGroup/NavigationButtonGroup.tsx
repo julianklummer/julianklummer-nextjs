@@ -1,3 +1,4 @@
+import { LanguageToggle } from "@/components/library/atoms/LanguageToggle/LanguageToggle";
 import GithubSVG from "@/icons/navigation/button/github.svg";
 import LinkedInSVG from "@/icons/navigation/button/linkedin.svg";
 import { IconLink } from "src/components/library/atoms/IconLink/IconLink";
@@ -36,8 +37,7 @@ export const NavigationButtonGroup: React.FC = () => {
           />
         </li>
         <li className={styles.navigationButtonGroupItem}>
-          {/* TODO Add language toggle */}
-          {/* <LanguageToggle /> */}
+          <LanguageToggle />
         </li>
       </ul>
     </nav>

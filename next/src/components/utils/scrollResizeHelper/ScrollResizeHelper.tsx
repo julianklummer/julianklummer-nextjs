@@ -1,7 +1,7 @@
 "use client";
 
+import styles from "@/app/[locale]/page.module.scss";
 import { useEffect } from "react";
-import styles from "./scrollResizeHelper.module.scss";
 
 export const ScrollResizeHelper = () => {
   const handleScroll = () => {

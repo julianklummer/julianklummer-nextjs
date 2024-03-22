@@ -32,6 +32,11 @@ $max-width: 82rem;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
+  aspect-ratio: 1/1;
+
+  img {
+    aspect-ratio: 1/1;
+  }
 
   @include utils.container-query(sm) {
     --size: #{utils.rem-vw-mix(300px, 0.3, sm)};
