@@ -1,7 +1,6 @@
-import GithubSvg from "public/icons/navigation/button/github.svg";
-import LinkedInSvg from "public/icons/navigation/button/linkedin.svg";
+import GithubSVG from "@/icons/navigation/button/github.svg";
+import LinkedInSVG from "@/icons/navigation/button/linkedin.svg";
 import { IconLink } from "src/components/library/atoms/IconLink/IconLink";
-import { LanguageToggle } from "src/components/library/atoms/LanguageToggle/LanguageToggle";
 import styles from "./navigationButtonGroup.module.scss";
 
 export const NavigationButtonGroup: React.FC = () => {
@@ -10,22 +9,35 @@ export const NavigationButtonGroup: React.FC = () => {
       <ul className={styles.navigationButtonGroup} role="list">
         <li className={styles.navigationButtonGroupItem}>
           <IconLink
-            title="Open LinkedIn Profile"
+            title={
+              // TODO: Add translation
+              "test"
+              // languageContext.language === "en"
+              // ? "Open LinkedIn Profile"
+              // : "Zum LinkedIn Profil"
+            }
             href="https://www.linkedin.com/in/julian-klummer-515a78170/"
             target="_blank"
-            icon={<LinkedInSvg />}
+            icon={<LinkedInSVG />}
           />
         </li>
         <li className={styles.navigationButtonGroupItem}>
           <IconLink
-            title="Open Github Profile"
+            title={
+              // TODO: Add translation
+              "test"
+              // languageContext.language === "en"
+              // ? "Open Github Profile"
+              // : "Zum Github Profil"
+            }
             href="https://github.com/julianklummer"
             target="_blank"
-            icon={<GithubSvg />}
+            icon={<GithubSVG />}
           />
         </li>
         <li className={styles.navigationButtonGroupItem}>
-          <LanguageToggle />
+          {/* TODO Add language toggle */}
+          {/* <LanguageToggle /> */}
         </li>
       </ul>
     </nav>

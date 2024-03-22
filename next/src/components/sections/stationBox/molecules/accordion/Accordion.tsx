@@ -1,16 +1,15 @@
-import { ForwardedRef, forwardRef, useContext } from "react";
-import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
-import Region from "../../../../../../public/icons/stationList/region.svg";
-import ArrowDown from "../../../../../../public/icons/utils/arrow-down.svg";
+import Region from "@/icons/stationList/region.svg";
+import ArrowDown from "@/icons/utils/arrow-down.svg";
+import { ForwardedRef, forwardRef } from "react";
 import { StationIcon } from "../../atoms/stationIcon/StationIcon";
-import { station } from "../../types";
+import { Station } from "../../types";
 import styles from "./accordion.module.scss";
 
-export const getTabId = (station: station) => {
+export const getTabId = (station: Station) => {
   return station.id + "-accordion";
 };
 interface Props {
-  station: station;
+  station: Station;
   active: boolean;
   open: Function;
   close: Function;
@@ -21,8 +20,6 @@ export const Accordion = forwardRef(function Accordion(
   props: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) {
-  const languageContext = useContext(LanguageContext);
-  if (!languageContext) throw new Error("LanguageContext not found.");
   const { station, active, open, close, index } = props;
   const headerClassList = [styles.accordionHeader];
   const panelClassList = [styles.accordionPanel];
@@ -68,14 +65,18 @@ export const Accordion = forwardRef(function Accordion(
             aria-expanded={active}
             aria-controls={getTabId(station) + "-panel"}
             aria-label={
-              languageContext.language === "de"
-                ? "Details öffnen/schließen"
-                : "Toggle details"
+              "test"
+              // Todo Add translation
+              // languageContext.language === "de"
+              //   ? "Details öffnen/schließen"
+              //   : "Toggle details"
             }
             title={
-              languageContext.language === "de"
-                ? "Details öffnen/schließen"
-                : "Toggle details"
+              // Todo Add translation
+              "test"
+              // languageContext.language === "de"
+              //   ? "Details öffnen/schließen"
+              //   : "Toggle details"
             }
             onClick={() => (active ? close() : open())}
           >

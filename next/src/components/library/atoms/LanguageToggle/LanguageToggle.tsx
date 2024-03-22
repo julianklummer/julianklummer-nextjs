@@ -1,15 +1,12 @@
+"use client";
+import LanguageSVG from "@/icons/navigation/button/language.svg";
 import { useRouter } from "next/router";
-import TranslationIcon from "public/icons/navigation/button/translation.svg";
-import { useContext, useEffect, useRef, useState } from "react";
-import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
-import { languageList } from "src/utils/contexts/languageContext/languageList";
-import { Locale } from "src/utils/contexts/languageContext/types";
-
+import { Locale } from "node_modules/next/dist/compiled/@vercel/og/satori";
+import { useEffect, useRef, useState } from "react";
 import styles from "./languageToggle.module.scss";
 
+// TODO: Refactor language toggle for app router
 export const LanguageToggle: React.FC = () => {
-  const languageContext = useContext(LanguageContext);
-  if (!languageContext) throw new Error("LanguageContext not found.");
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -75,7 +72,7 @@ export const LanguageToggle: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         ref={toggleRef}
       >
-        <TranslationIcon />
+        <LanguageSVG />
       </button>
       {isOpen && (
         <ul

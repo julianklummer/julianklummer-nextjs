@@ -1,12 +1,13 @@
+"use client";
 import { useRef, useState } from "react";
 import { flip } from "src/utils/animation/flip";
 import { Tab } from "../../molecules/tab/Tab";
 import { TabMenu } from "../../molecules/tabMenu/TabMenu";
-import { TabCategory } from "../../types";
+import { SkillTabCategory } from "../../types";
 import styles from "./skillBox.module.scss";
 
 interface Props {
-  tabCategoryList: TabCategory[];
+  tabCategoryList: SkillTabCategory[];
 }
 
 export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {

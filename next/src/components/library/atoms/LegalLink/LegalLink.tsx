@@ -1,20 +1,18 @@
-import { useContext } from "react";
-import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
+"use client";
 import styles from "./legalLink.module.scss";
 
 export const LegalLink: React.FC = () => {
-  const languageContext = useContext(LanguageContext);
-  if (!languageContext) throw new Error("LanguageContext not found.");
-
   const handleFocus = () => {
     window.scrollTo(0, document.body.scrollHeight);
   };
 
   const handleClick = () => {
     alert(
-      languageContext.language === "de"
-        ? "Bitte senden Sie mir eine kurze Mail an contact@julianklummmer.de und ich sende Ihnen die benötigten Informationen."
-        : "Please send me a short email to contact@julianklummmer.de and I will send you the required information."
+      // TODO: Add translation
+      test
+      // languageContext.language === "de"
+      // ? "Bitte senden Sie mir eine kurze Mail an contact@julianklummmer.de und ich sende Ihnen die benötigten Informationen."
+      // : "Please send me a short email to contact@julianklummmer.de and I will send you the required information."
     );
   };
 
@@ -24,7 +22,9 @@ export const LegalLink: React.FC = () => {
       onFocus={handleFocus}
       onClick={handleClick}
     >
-      {languageContext.language === "de" ? "Impressum" : "Legal"}
+      {/* TODO: Add translation */}
+      Impressum
+      {/* {languageContext.language === "de" ? "Impressum" : "Legal"} */}
     </button>
   );
 };

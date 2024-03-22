@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "index": {
+      "title": "Julian Klummer | Fullstack Entwickler aus Berlin",
+      "description": "Als Fullstack-Entwickler bin ich darauf spezialisiert, mit TypeScript und JAMstack-Technologien ansprechende digitale Anwendungen zu entwickeln. Von React über Nextjs bis hin zu Node und anderen wichtigen Tools verfüge ich über das Know-how, um Visionen zum Leben zu erwecken. Da ich mich auf kontinuierliches Lernen konzentriere, bin ich immer auf der Suche nach den neuesten Tools und Techniken, um innovative Lösungen zu erschaffen."
+    }
+  },
+  "components": {
+    "hero": {
+      "headline": "Julian Klummer",
+      "sublineStart": "Ambitionierter Fullstack Entwickler spezialisiert auf TypeScript"
+    },
+    "languageToggle": {
+      "english": "Englisch",
+      "german": "Deutsch"
+    },
+    "about": {
+      "text": "<p>Meine Leidenschaft für Code und digitale Medien entdeckte ich im Alter von 13 Jahren beim Experimentieren mit Code und Medien auf meinem ersten Blog. Während meiner wunderbaren Studienzeit in Stuttgart habe ich dieses weite Feld in verschiedenen Dimensionen weiter entdeckt, welche Technik, Medien und auch Managementthemen umfassen. Vor allem das Programmieren hat es mir angetan und jede neue Fähigkeit, die ich erlernte, trieb mich dazu, tiefer in das Feld einzutauchen.</p><p>Zunächst vertiefte ich meine Kenntnisse in HTML/[SA|C]SS, PHP, Python, SQL und traditionellen Stacks, bis ich mich für JAMstack-Technologien begeisterte. Seitdem habe ich mein Wissen in TypeScript/JavaScript, React, Bundling, APIs, Node und Architekturen, die das Zusammenspiel ermöglichen, vertieft.</p><p>Meine Leidenschaft ist es, ansprechende Benutzeroberflächen und -erfahrungen zu schaffen, daher konzentriere ich mich hauptsächlich auf die Frontend-Entwicklung. Ich arbeite ständig daran, meine Fähigkeiten zu verbessern und bleibe mit den neuesten Trends und Technologien auf dem Laufenden. Während meines Studiums habe ich die Eventagentur inPulse gegründet. Durch die Arbeit in dieser Agentur konnte ich durch verschiedene Marketingkampagnen für unsere Veranstaltungen tiefer in die Welt des Grafikdesigns und der Inhaltserstellung eintauchen. Dadurch wurde mein Auge für gutes Design geschult und meine Fähigkeit zur effektiven Kommunikation mit anderen Kreativen verbessert.</p><p>Als Entwickler arbeitete ich zunächst als Werkstudentin und später hauptberuflich bei der Digitalagentur Sirup im Herzen von Berlin. Während meiner Arbeit vertiefte ich kontinuierlich mein Wissen über Webtechnologien, Barrierefreiheit, Sicherheit, testdriven Entwicklung, objektorientierte/funktionale Programmierung und verschiedene Möglichkeiten, divs zu zentrieren.</p>"
+    },
+    "skillBox": {
+      "skillTabCategoryList": [
+        {
+          "title": "Sprachen",
+          "id": "languages",
+          "skillList": [
+            { "title": "TypeScript", "icon": "typescript" },
+            { "title": "JavaScript", "icon": "javascript" },
+            { "title": "HTML", "icon": "html" },
+            { "title": "SASS", "icon": "sass" },
+            { "title": "CSS", "icon": "css" },
+            { "title": "PHP", "icon": "php" },
+            { "title": "Python", "icon": "python" },
+            { "title": "SQL", "icon": "sql" },
+            { "title": "GraphQL", "icon": "graphql" },
+            { "title": "Markdown", "icon": "markdown" }
+          ]
+        },
+        {
+          "title": "Frameworks & Bibliotheken",
+          "id": "frameworks-libraries",
+          "skillList": [
+            { "title": "React", "icon": "react" },
+            { "title": "MUI", "icon": "mui" },
+            { "title": "Bootstrap", "icon": "bootstrap" },
+            { "title": "Jest", "icon": "jest" },
+            { "title": "Cypress", "icon": "cypress" },
+            { "title": "Nodejs", "icon": "nodejs" },
+            { "title": "NextJS", "icon": "nextjs" },
+            { "title": "Strapi", "icon": "strapi" },
+            { "title": "Drupal", "icon": "drupal" }
+          ]
+        },
+        {
+          "title": "Werkzeuge",
+          "id": "tools",
+          "skillList": [
+            { "title": "Webpack", "icon": "webpack" },
+            { "title": "Babel", "icon": "babel" },
+            { "title": "ESLint", "icon": "eslint" },
+            { "title": "StyleLint", "icon": "stylelint" },
+            { "title": "Prettier", "icon": "prettier" },
+            { "title": "Gulp", "icon": "gulp" },
+            { "title": "Git", "icon": "git" }
+          ]
+        },
+        {
+          "title": "Prinzipien & Paradigmen",
+          "id": "principles",
+          "skillList": [
+            { "title": "Object Oriented Programming", "icon": "oop" },
+            { "title": "Functional Programming", "icon": "fp" },
+            { "title": "Barrierefreiheit", "icon": "accessibility" },
+            { "title": "Sicherheit", "icon": "security" },
+            { "title": "Atomic Design", "icon": "atomic-design" },
+            { "title": "Responsives Design", "icon": "responsive-design" },
+            { "title": "Fluides Design", "icon": "fluid-design" },
+            { "title": "SEO", "icon": "seo" }
+          ]
+        },
+        {
+          "title": "Methoden",
+          "id": "methologies",
+          "skillList": [
+            { "title": "Scrum", "icon": "scrum" },
+            { "title": "Test Driven Development", "icon": "tdd" },
+            { "title": "Design Thinking", "icon": "design-thinking" }
+          ]
+        },
+        {
+          "title": "Andere",
+          "id": "other",
+          "skillList": [
+            { "title": "Affinity Designer", "icon": "affinity" },
+            { "title": "Logic Pro X", "icon": "logic" },
+            { "title": "Word", "icon": "word" },
+            { "title": "PowerPoint", "icon": "powerpoint" },
+            { "title": "Excel", "icon": "excel" }
+          ]
+        }
+      ]
+    },
+    "stationBox": {
+      "stationList": [
+        {
+          "id": "sirup-2",
+          "title": "VOLLZEIT: JUNIOR FRONTEND DEVELOPER ",
+          "institution": "SIRUP GmbH",
+          "duration": "seit 03/2022",
+          "location": "Berlin",
+          "icon": "sirup",
+          "link": "https://www.sirup.com/",
+          "linkTitle": "SIRUP Website",
+          "infos": [
+            "React, Drupal, Symfony und Vanilla Implementierungen",
+            "Erstellung und Verbesserung von Bundling, Linting und Testing",
+            "Erstellung von wiederverwendbaren Komponentensystemen, Templates & Packages"
+          ]
+        },
+        {
+          "id": "sirup-1",
+          "title": "WERKSSTUDENT: FRONTEND DEVELOPMENT ",
+          "institution": "SIRUP GmbH",
+          "duration": "02/2021 - 02/2022",
+          "location": "Berlin",
+          "icon": "sirup",
+          "link": "https://www.sirup.com/",
+          "linkTitle": "SIRUP Website",
+          "infos": [
+            "React, Drupal, Symfony und Vanilla Implementierungen",
+            "Erstellung und Verbesserung von Bundling, Linting und Testing",
+            "Entwicklung von Newsletter Templates"
+          ]
+        },
+        {
+          "id": "hdm-1",
+          "title": "BACHELOR OF ARTS: ONLINE-MEDIEN-MANAGEMENT",
+          "institution": "Hochschule der Medien Stuttgart",
+          "duration": "2017 - 2022",
+          "location": "Stuttgart",
+          "icon": "hdm",
+          "link": "https://www.omm.hdm-stuttgart.de/",
+          "linkTitle": "Online Medien Management Studiengangs Website",
+          "infos": [
+            "Abschlussnote: 1,6",
+            "Abschlussarbeit: Prototypische Entwicklung eines WYSIWYG End-User Editors für Webpages nach Atomic Design Prinzipien mit React innerhalb einer JAMstack Architektur",
+            "IT-Grundlagen, Programmierung & Webentwicklung",
+            "Digitales Marketing & Datenanalyse",
+            "Digitale Inhalteerstellung"
+          ]
+        },
+        {
+          "id": "inpulse",
+          "title": "SELBSTÄNDIG: EVENT-MANAGEMENT AGENTUR",
+          "institution": "inPulse | Klummer und Tondera GbR",
+          "duration": "2018 - 2022",
+          "location": "Heilbronn",
+          "icon": "readyfortechno",
+          "infos": [
+            "Erstellung von digitalen Inhalten inklusive Grafikdesign und Entwicklung",
+            "Branding & Performancemarketing",
+            "Event- und Projektmanagement"
+          ]
+        },
+        {
+          "id": "vinos",
+          "title": "PRAKTIKUM: E-COMMERCE CRM MARKETING",
+          "institution": "Wein & Vinos GmbH",
+          "duration": "09/2019 - 02/2020",
+          "location": "Berlin",
+          "icon": "vinos",
+          "link": "https://www.vinos.de/",
+          "linkTitle": "Wein & Vinos Online Shop",
+          "infos": [
+            "E-Mail-Marketing, Templating und Analytics",
+            "Erstellung von Landingpages und Produktdatenmanagement mit Magento",
+            "Customer relationship management"
+          ]
+        }
+      ]
+    }
+  }
+}

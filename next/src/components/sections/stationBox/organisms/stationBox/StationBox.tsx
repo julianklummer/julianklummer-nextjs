@@ -1,5 +1,5 @@
-import { useContext, useRef, useState } from "react";
-import { LanguageContext } from "src/utils/contexts/languageContext/LanguageContext";
+"use client";
+import { useRef, useState } from "react";
 import { Accordion } from "../../molecules/accordion/Accordion";
 import { stationList } from "../../types";
 import styles from "./stationBox.module.scss";
@@ -9,10 +9,6 @@ interface Props {
 }
 
 export const StationBox: React.FC<Props> = ({ stationList }) => {
-  const languageContext = useContext(LanguageContext);
-  if (!languageContext) throw new Error("LanguageContext not found.");
-  if (!stationList.length) throw new Error("missing items in data");
-
   const elementRef = useRef<HTMLDivElement>(null);
   const itemRef = useRef<HTMLDivElement[]>([]);
   const [activeAccordionItemIndex, setActiveAccordionItemKeyIndex] = useState<
@@ -26,7 +22,9 @@ export const StationBox: React.FC<Props> = ({ stationList }) => {
   return (
     <div className={styles.stationBox} ref={elementRef}>
       <h2 className={styles.stationBoxHeadline}>
-        {languageContext.language === "de" ? "Stationen" : "Stations"}
+        {/* TODO: Add translation */}
+        test
+        {/* {languageContext.language === "de" ? "Stationen" : "Stations"} */}
       </h2>
       {stationList.map((station, index) => {
         const isActive = index === activeAccordionItemIndex;

@@ -1,8 +1,8 @@
-import SourceCode from "../../../../../../public/icons/skillList/source-code.svg";
-import HdM from "../../../../../../public/icons/stationList/logos/hdm.svg";
-import ReadyForTechno from "../../../../../../public/icons/stationList/logos/readyfortechno.svg";
-import Sirup from "../../../../../../public/icons/stationList/logos/sirup.svg";
-import Vinos from "../../../../../../public/icons/stationList/logos/vinos.svg";
+import SourceCode from "@/icons/skillList/source-code.svg";
+import HdM from "@/icons/stationList/logos/hdm.svg";
+import ReadyForTechno from "@/icons/stationList/logos/readyfortechno.svg";
+import Sirup from "@/icons/stationList/logos/sirup.svg";
+import Vinos from "@/icons/stationList/logos/vinos.svg";
 interface Props {
   name: string;
 }

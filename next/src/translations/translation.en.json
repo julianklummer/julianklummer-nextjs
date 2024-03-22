@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "index": {
+      "title": "Julian Klummer | Fullstack Developer based in Berlin",
+      "description": "Als Fullstack-Entwickler bin ich darauf spezialisiert, mit TypeScript und JAMstack-Technologien ansprechende digitale Anwendungen zu entwickeln. Von React über Nextjs bis hin zu Node und anderen wichtigen Tools verfüge ich über das Know-how, um Visionen zum Leben zu erwecken. Da ich mich auf kontinuierliches Lernen konzentriere, bin ich immer auf der Suche nach den neuesten Tools und Techniken, um innovative Lösungen zu erschaffen."
+    }
+  },
+  "components": {
+    "hero": {
+      "headline": "Julian Klummer",
+      "sublineStart": "Ambitious fullstack developer specialiced on TypeScript"
+    },
+    "languageToggle": {
+      "english": "English",
+      "german": "German"
+    },
+    "about": {
+      "text": "<p>I discovered my passion for code and digital media at the age of 13 while experimenting with code and media on my first blog. During my wonderful study time in Stuttgart I have discovered this vast field in various dimensions covering technology, media and as well management topics. I was particularly drawn to programming and each new skill I learned drove me to dive deeper into the field.</p><p>First I strengthened my knowledge in HTML/[SA|C]SS, PHP, Python, SQL and “traditional” stacks until I fell for JAMstack technologies. Since then I focused and strengthened my skills in TypeScript/JavaScript, React, bundling, APIs, Node and architectures which bring the interplay alive.</p><p>I am passionate about creating appealing user interfaces and experiences, therefor I primarily focusing on frontend development. I constantly work to improve my skills and stay up-to-date with the latest trends and technologies. During my studies I set up the event agency inPulse. Through working in that company I was able to dive deeper into the world of graphic design and content creation through various marketing campaigns for our events. This trained my eye for good design and enhanced my ability for effective communication with other creators.</p><p>As a developer I started working as a working student and later full-time at the digital agency Sirup in the heart of Berlin. During my work I continuously consolidated my knowledge of web technologies, accessibility, security, test driven development, object oriented/functional programming and multiple ways to center divs.</p>"
+    },
+    "skillBox": {
+      "skillTabCategoryList": [
+        {
+          "title": "Languages",
+          "id": "languages",
+          "skillList": [
+            { "title": "TypeScript", "icon": "typescript" },
+            { "title": "JavaScript", "icon": "javascript" },
+            { "title": "HTML", "icon": "html" },
+            { "title": "SASS", "icon": "sass" },
+            { "title": "CSS", "icon": "css" },
+            { "title": "PHP", "icon": "php" },
+            { "title": "Python", "icon": "python" },
+            { "title": "SQL", "icon": "sql" },
+            { "title": "GraphQL", "icon": "graphql" },
+            { "title": "Markdown", "icon": "markdown" }
+          ]
+        },
+        {
+          "title": "Frameworks & libraries",
+          "id": "frameworks-libraries",
+          "skillList": [
+            { "title": "React", "icon": "react" },
+            { "title": "MUI", "icon": "mui" },
+            { "title": "Bootstrap", "icon": "bootstrap" },
+            { "title": "Jest", "icon": "jest" },
+            { "title": "Cypress", "icon": "cypress" },
+            { "title": "Nodejs", "icon": "nodejs" },
+            { "title": "NextJS", "icon": "nextjs" },
+            { "title": "Strapi", "icon": "strapi" },
+            { "title": "Drupal", "icon": "drupal" }
+          ]
+        },
+        {
+          "title": "Tools",
+          "id": "tools",
+          "skillList": [
+            { "title": "Webpack", "icon": "webpack" },
+            { "title": "Babel", "icon": "babel" },
+            { "title": "ESLint", "icon": "eslint" },
+            { "title": "StyleLint", "icon": "stylelint" },
+            { "title": "Prettier", "icon": "prettier" },
+            { "title": "Gulp", "icon": "gulp" },
+            { "title": "Git", "icon": "git" }
+          ]
+        },
+        {
+          "title": "Prinzipien & paradigms",
+          "id": "principles",
+          "skillList": [
+            { "title": "Object Oriented Programming", "icon": "oop" },
+            { "title": "Functional Programming", "icon": "fp" },
+            { "title": "Barrierefreiheit", "icon": "accessibility" },
+            { "title": "Sicherheit", "icon": "security" },
+            { "title": "Atomic Design", "icon": "atomic-design" },
+            { "title": "Responsives Design", "icon": "responsive-design" },
+            { "title": "Fluides Design", "icon": "fluid-design" },
+            { "title": "SEO", "icon": "seo" }
+          ]
+        },
+        {
+          "title": "Methologies",
+          "id": "methologies",
+          "skillList": [
+            { "title": "Scrum", "icon": "scrum" },
+            { "title": "Test Driven Development", "icon": "tdd" },
+            { "title": "Design Thinking", "icon": "design-thinking" }
+          ]
+        },
+        {
+          "title": "Other",
+          "id": "other",
+          "skillList": [
+            { "title": "Affinity Designer", "icon": "affinity" },
+            { "title": "Logic Pro X", "icon": "logic" },
+            { "title": "Word", "icon": "word" },
+            { "title": "PowerPoint", "icon": "powerpoint" },
+            { "title": "Excel", "icon": "excel" }
+          ]
+        }
+      ]
+    }
+  },
+  "stationBox": {
+    "stationList": [
+      {
+        "id": "sirup-2",
+        "title": "FULLTIME: JUNIOR FRONTEND DEVELOPER",
+        "institution": "SIRUP GmbH",
+        "duration": "since 03/2022",
+        "location": "Berlin",
+        "icon": "sirup",
+        "link": "https://www.sirup.com/",
+        "linkTitle": "SIRUP Website",
+        "infos": [
+          "React, Drupal, Symfony and vanilla implementations",
+          "Creation and enhancement of bundling, linting and testing",
+          "Creation of reusable componentsystems, templates & packages"
+        ]
+      },
+      {
+        "id": "sirup-1",
+        "title": "WORKING STUDENT: FRONTEND DEVELOPMENT",
+        "institution": "SIRUP GmbH",
+        "duration": "02/2021 - 02/2022",
+        "location": "Berlin",
+        "icon": "sirup",
+        "link": "https://www.sirup.com/",
+        "linkTitle": "SIRUP Website",
+        "infos": [
+          "React, Drupal, Symfony and vanilla implementations",
+          "Creation and enhancement of bundling, linting and testing",
+          "Newsletter template development"
+        ]
+      },
+      {
+        "id": "hdm-1",
+        "title": "BACHELOR OF ARTS: ONLINE-MEDIEN-MANAGEMENT",
+        "institution": "Stuttgart Media University",
+        "duration": "2017 - 2022",
+        "location": "Stuttgart",
+        "icon": "hdm",
+        "link": "https://www.omm.hdm-stuttgart.de/",
+        "linkTitle": "Online media management website",
+        "infos": [
+          "Final grade: 1,6",
+          "Thesis: Prototypical development of a WYSIWYG end-user editor for web pages according to atomic design principles with React within a JAMstack architecture.",
+          "IT basics, programming & webdevelopment",
+          "Digital marketing & data analytics",
+          "Digital content creation"
+        ]
+      },
+      {
+        "id": "inpulse",
+        "icon": "readyfortechno",
+        "title": "FREELANCE: EVENT-MANAGEMENT AGENCY",
+        "institution": "inPulse | Klummer und Tondera GbR",
+        "duration": "2018 - 2022",
+        "location": "Heilbronn",
+        "infos": [
+          "Digital content creation including graphic design and development",
+          "Branding & performance marketing",
+          "Event- and projectmanagement"
+        ]
+      },
+      {
+        "id": "vinos",
+        "icon": "vinos",
+        "title": "INTERNSHIP: E-COMMERCE CRM MARKETING",
+        "institution": "Wein & Vinos GmbH",
+        "duration": "09/2019 - 02/2020",
+        "location": "Berlin",
+        "link": "https://www.vinos.de/",
+        "linkTitle": "Wein & Vinos online shop",
+        "infos": [
+          "E-mail marketing, templating & analytics",
+          "Landingpage creation and productdata-management with Magento",
+          "Customer relationship management"
+        ]
+      }
+    ]
+  }
+}
