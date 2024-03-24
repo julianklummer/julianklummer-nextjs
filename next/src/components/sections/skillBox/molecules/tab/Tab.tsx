@@ -1,14 +1,14 @@
 import { ForwardedRef, forwardRef } from "react";
 import { SkillIcon } from "../../atoms/skillIcon/SkillIcon";
 import { iconColorList } from "../../atoms/skillIcon/iconColorList";
-import { TabCategory } from "../../types";
+import { SkillTabCategory } from "../../types";
 import styles from "./tab.module.scss";
 
-export const getTabId = (tabCategory: TabCategory) => {
-  return tabCategory.id + "-tab";
+export const getTabId = (tabCategory: SkillTabCategory) => {
+  return tabCategory.title + "-tab";
 };
 interface Props {
-  tabCategory: TabCategory;
+  tabCategory: SkillTabCategory;
   active?: boolean;
   prevActive?: boolean;
 }

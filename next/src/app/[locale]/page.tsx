@@ -1,14 +1,16 @@
 import { Copyright } from "@/components/library/atoms/Copyright/Copyright";
 import { LegalLink } from "@/components/library/atoms/LegalLink/LegalLink";
+import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
 import { Hero } from "@/components/sections/hero/Hero";
 import { Navigation } from "@/components/sections/navigation/organisms/navigation/Navigation";
+import { SkillBox } from "@/components/sections/skillBox/organisms/skillBox/SkillBox";
+import { StationBox } from "@/components/sections/stationBox/organisms/stationBox/StationBox";
 import { TextBox } from "@/components/sections/textBox/TextBox";
 import { Locale } from "@/translations/types";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import profileImage from "public/assets/images/profile.jpeg";
 import styles from "./page.module.scss";
-import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
 
 type Props = {
   params: {
@@ -30,6 +32,16 @@ export async function generateMetadata({
 export default async function Page({ params: { locale } }: Props) {
   const t = await getTranslations({ locale, namespace: "components" });
 
+  // TODO: Move content out of translations files
+  const { skillTabCategoryList } = JSON.parse(
+    `{"skillTabCategoryList": ${JSON.stringify(
+      t.raw("skillBox.skillTabCategoryList")
+    )}}`
+  );
+  const { stationList } = JSON.parse(
+    `{"stationList": ${JSON.stringify(t.raw("stationBox.stationList"))}}`
+  );
+
   return (
     <>
       <header className={styles.appHeader}>
@@ -44,15 +56,10 @@ export default async function Page({ params: { locale } }: Props) {
             alt: t("hero.imageAlt"),
           }}
         />
-        {/*
-        <SkillBox
-          tabCategoryList={translation.components.skillBox.skillTabCategoryList}
-        /> */}
+        <SkillBox tabCategoryList={skillTabCategoryList} />
         <SectionRow>
           <TextBox text={t.raw("about.text")} />
-          {/*   <StationBox
-            stationList={translation.components.stationBox.stationList}
-          /> */}
+          <StationBox stationList={stationList} />
         </SectionRow>
       </div>
       <footer className={styles.appFooter}>

@@ -2,11 +2,11 @@
 import ArrowDown from "@/icons/utils/arrow-down.svg";
 import { useEffect, useState } from "react";
 import { TabMenuItem } from "../../atoms/tabMenuItem/TabMenuItem";
-import { SkillList, SkillTabCategory } from "../../types";
+import { SkillTabCategory } from "../../types";
 
 import styles from "./tabMenu.module.scss";
 interface Props {
-  tabCategoryList: SkillList[];
+  tabCategoryList: SkillTabCategory[];
   activeTabCategory: SkillTabCategory;
   setActiveTabCategory: (index: number) => void;
 }
@@ -60,7 +60,7 @@ export const TabMenu: React.FC<Props> = ({
           {comboboxOpen
             ? tabCategoryList.map((tabCategory, index) => (
                 <li
-                  key={`${index}-tabmenu-${tabCategory.id}`}
+                  key={`${index}-tabmenu-${tabCategory.title}`}
                   role="option"
                   aria-selected={tabCategory === activeTabCategory}
                   className={styles.tabMenuMobileListBoxItem}
@@ -78,7 +78,7 @@ export const TabMenu: React.FC<Props> = ({
       <div className={styles.tabMenuDesktop} role="tablist">
         {tabCategoryList.map((tabCategory, index) => (
           <TabMenuItem
-            key={`${index}-tabmenu-${tabCategory.id}`}
+            key={`${index}-tabmenu-${tabCategory.title}`}
             tabCategory={tabCategory}
             active={tabCategory === activeTabCategory}
             onClick={() => setActiveTabCategory(index)}

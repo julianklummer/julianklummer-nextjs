@@ -11,7 +11,7 @@ export const LanguageToggle: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLUListElement>(null);
-  const currentLanguage = document.documentElement.lang;
+  const currentLanguage = document.documentElement.lang || "en";
   const pathname = usePathname();
 
   const changeLanguage = (newLocale: Locale): void => {

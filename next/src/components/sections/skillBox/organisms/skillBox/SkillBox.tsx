@@ -49,7 +49,10 @@ export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
     <div className={styles.skillBoxSection} ref={elementRef}>
       <div className={styles.skillBox}>
         <div className={styles.sidebar}>
-          <h2 className={styles.sidebarHeadline}>Skills</h2>
+          <h2 className={styles.sidebarHeadline}>
+            {/* // TODO Add translation */}
+            test
+          </h2>
           <TabMenu
             tabCategoryList={tabCategoryList}
             activeTabCategory={tabCategoryList[activeTabCategoryIndex]}
@@ -62,7 +65,7 @@ export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
 
           return (
             <Tab
-              key={`${index}-tab-${tabCategory.id}`}
+              key={`${index}-tab-${tabCategory.title}`}
               tabCategory={tabCategory}
               active={!isPrevActive && isActive}
               prevActive={isPrevActive}
