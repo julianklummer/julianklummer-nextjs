@@ -1,3 +1,7 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+export const withNextIntl = createNextIntlPlugin('./src/translations/utils/RequestConfig.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   sassOptions: {
@@ -34,4 +38,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

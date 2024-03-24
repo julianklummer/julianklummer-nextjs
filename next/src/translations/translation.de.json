@@ -8,7 +8,8 @@
   "components": {
     "hero": {
       "headline": "Julian Klummer",
-      "sublineStart": "Ambitionierter Fullstack Entwickler spezialisiert auf TypeScript"
+      "subline": "Ambitionierter Fullstack Entwickler spezialisiert auf TypeScript",
+      "imageAlt": "TODO"
     },
     "languageToggle": {
       "english": "Englisch",

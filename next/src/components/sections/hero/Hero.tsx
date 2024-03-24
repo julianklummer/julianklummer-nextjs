@@ -1,23 +1,22 @@
-import Image from "next/image";
-import profileImage from "../../../../public/assets/images/profile.jpeg";
+import Image, { StaticImageData } from "next/image";
 import styles from "./hero.module.scss";
 
 interface Props {
   headline: string;
-  sublineStart: string;
+  subline: string;
+  image: {
+    src: StaticImageData;
+    alt: string;
+  };
 }
 
-export const Hero: React.FC<Props> = ({ headline, sublineStart }) => {
+export const Hero: React.FC<Props> = ({ headline, subline, image }) => {
   return (
     <div className={styles.hero}>
       <span className={styles.heroImage}>
         <Image
-          src={profileImage}
-          alt={
-            // TODO add translation
-            "test"
-            // languageContext.language === "de" ? "Profilbild" : "Profile picture"
-          }
+          src={image.src}
+          alt={image.alt}
           placeholder="blur"
           priority
           fill
@@ -29,7 +28,7 @@ export const Hero: React.FC<Props> = ({ headline, sublineStart }) => {
 
       <h1 className={styles.heroH1}>
         <span className={styles.heroHeadline}>{headline}</span>
-        <small className={styles.heroSubline}>{sublineStart}</small>
+        <small className={styles.heroSubline}>{subline}</small>
       </h1>
     </div>
   );

@@ -7,7 +7,7 @@ import { Locale } from "@/translations/types";
 type Props = {
   children: React.ReactNode;
   params: {
-    lang: Locale;
+    locale: Locale;
   };
 };
 

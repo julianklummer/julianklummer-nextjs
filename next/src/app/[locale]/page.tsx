@@ -1,15 +1,14 @@
 import { Copyright } from "@/components/library/atoms/Copyright/Copyright";
 import { LegalLink } from "@/components/library/atoms/LegalLink/LegalLink";
-import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
-import { SkillBox } from "@/components/sections/skillBox/organisms/skillBox/SkillBox";
-import { StationBox } from "@/components/sections/stationBox/organisms/stationBox/StationBox";
+import { Hero } from "@/components/sections/hero/Hero";
+import { Navigation } from "@/components/sections/navigation/organisms/navigation/Navigation";
 import { TextBox } from "@/components/sections/textBox/TextBox";
 import { Locale } from "@/translations/types";
-import type { Metadata } from "next";
-import { Hero } from "src/components/sections/hero/Hero";
-import { Navigation } from "src/components/sections/navigation/organisms/navigation/Navigation";
-import { getTranslation } from "src/translations/getTranslation";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import profileImage from "public/assets/images/profile.jpeg";
 import styles from "./page.module.scss";
+import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
 
 type Props = {
   params: {
@@ -20,20 +19,16 @@ type Props = {
 export async function generateMetadata({
   params: { locale },
 }: Props): Promise<Metadata> {
-  return {
-    title: (await getTranslation(locale)).meta.index.title,
-    description: (await getTranslation(locale)).meta.index.description,
-  };
-}
+  const t = await getTranslations({ locale, namespace: "meta.index" });
 
-export async function getData(locale: Locale) {
   return {
-    translation: await getTranslation(locale),
+    title: t("title"),
+    description: t("description"),
   };
 }
 
 export default async function Page({ params: { locale } }: Props) {
-  const { translation } = await getData(locale);
+  const t = await getTranslations({ locale, namespace: "components" });
 
   return (
     <>
@@ -42,17 +37,22 @@ export default async function Page({ params: { locale } }: Props) {
       </header>
       <div>
         <Hero
-          headline={translation.components.hero.headline}
-          sublineStart={translation.components.hero.sublineStart}
+          headline={t("hero.headline")}
+          subline={t("hero.subline")}
+          image={{
+            src: profileImage,
+            alt: t("hero.imageAlt"),
+          }}
         />
+        {/*
         <SkillBox
           tabCategoryList={translation.components.skillBox.skillTabCategoryList}
-        />
+        /> */}
         <SectionRow>
-          <TextBox text={translation.components.about.text} />
-          <StationBox
+          <TextBox text={t.raw("about.text")} />
+          {/*   <StationBox
             stationList={translation.components.stationBox.stationList}
-          />
+          /> */}
         </SectionRow>
       </div>
       <footer className={styles.appFooter}>

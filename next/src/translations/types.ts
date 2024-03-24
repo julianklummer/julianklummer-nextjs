@@ -13,7 +13,8 @@ export const TranslationSchema = z.object({
   components: z.object({
     hero: z.object({
       headline: z.string(),
-      sublineStart: z.string(),
+      subline: z.string(),
+      imageAlt: z.string(),
     }),
     languageToggle: z.object({
       english: z.string(),
