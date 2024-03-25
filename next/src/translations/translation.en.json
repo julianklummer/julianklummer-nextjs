@@ -7,19 +7,19 @@
   },
   "components": {
     "navigation": {
-      "socialLink": "Open {name} profile"
+      "socialLink": "Open {name} profile",
+      "languageToggle": {
+        "label": "Change language",
+        "languages": {
+          "en": "English",
+          "de": "German"
+        }
+      }
     },
     "hero": {
       "headline": "Julian Klummer",
       "subline": "Ambitious fullstack developer specialiced on TypeScript",
       "imageAlt": "TODO"
-    },
-    "languageToggle": {
-      "label": "Change language",
-      "languages": {
-        "en": "English",
-        "de": "German"
-      }
     },
     "about": {
       "text": "<p>I discovered my passion for code and digital media at the age of 13 while experimenting with code and media on my first blog. During my wonderful study time in Stuttgart I have discovered this vast field in various dimensions covering technology, media and as well management topics. I was particularly drawn to programming and each new skill I learned drove me to dive deeper into the field.</p><p>First I strengthened my knowledge in HTML/[SA|C]SS, PHP, Python, SQL and “traditional” stacks until I fell for JAMstack technologies. Since then I focused and strengthened my skills in TypeScript/JavaScript, React, bundling, APIs, Node and architectures which bring the interplay alive.</p><p>I am passionate about creating appealing user interfaces and experiences, therefor I primarily focusing on frontend development. I constantly work to improve my skills and stay up-to-date with the latest trends and technologies. During my studies I set up the event agency inPulse. Through working in that company I was able to dive deeper into the world of graphic design and content creation through various marketing campaigns for our events. This trained my eye for good design and enhanced my ability for effective communication with other creators.</p><p>As a developer I started working as a working student and later full-time at the digital agency Sirup in the heart of Berlin. During my work I continuously consolidated my knowledge of web technologies, accessibility, security, test driven development, object oriented/functional programming and multiple ways to center divs.</p>"
@@ -189,7 +189,7 @@
       ]
     },
     "legal": {
-      "title": "Legal",
+      "label": "Legal",
       "alert": "Please send me a short email to contact@julianklummmer.de and I will send you the required information."
     }
   }

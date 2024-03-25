@@ -13,18 +13,18 @@ export const TranslationSchema = z.object({
   components: z.object({
     navigation: z.object({
       socialLink: z.string(),
+      languageToggle: z.object({
+        label: z.string(),
+        languages: z.object({
+          en: z.string(),
+          de: z.string(),
+        }),
+      }),
     }),
     hero: z.object({
       headline: z.string(),
       subline: z.string(),
       imageAlt: z.string(),
-    }),
-    languageToggle: z.object({
-      label: z.string(),
-      languages: z.object({
-        en: z.string(),
-        de: z.string(),
-      }),
     }),
     about: z.object({
       text: z.string(),
@@ -39,7 +39,7 @@ export const TranslationSchema = z.object({
       stationList: StationListSchema,
     }),
     legal: z.object({
-      title: z.string(),
+      label: z.string(),
       alert: z.string(),
     }),
   }),

@@ -1,19 +1,18 @@
 "use client";
+import { Translation } from "@/translations/types";
 import styles from "./legalLink.module.scss";
 
-export const LegalLink: React.FC = () => {
+type Props = {
+  translations: Translation["components"]["legal"];
+};
+
+export const LegalLink: React.FC<Props> = ({ translations }) => {
   const handleFocus = () => {
     window.scrollTo(0, document.body.scrollHeight);
   };
 
   const handleClick = () => {
-    alert(
-      // TODO: Add translation
-      test
-      // languageContext.language === "de"
-      // ? "Bitte senden Sie mir eine kurze Mail an contact@julianklummmer.de und ich sende Ihnen die benötigten Informationen."
-      // : "Please send me a short email to contact@julianklummmer.de and I will send you the required information."
-    );
+    alert(translations.alert);
   };
 
   return (
@@ -22,9 +21,7 @@ export const LegalLink: React.FC = () => {
       onFocus={handleFocus}
       onClick={handleClick}
     >
-      {/* TODO: Add translation */}
-      Impressum
-      {/* {languageContext.language === "de" ? "Impressum" : "Legal"} */}
+      {translations.alert}
     </button>
   );
 };

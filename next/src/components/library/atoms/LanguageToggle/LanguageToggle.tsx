@@ -1,17 +1,22 @@
 "use client";
 import LanguageSVG from "@/icons/navigation/button/language.svg";
 import { locales } from "@/translations/locales";
-import { Locale } from "@/translations/types";
+import { Locale, Translation } from "@/translations/types";
 import { usePathname, useRouter } from "@/utils/navigation";
+import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import styles from "./languageToggle.module.scss";
 
-export const LanguageToggle: React.FC = () => {
+type Props = {
+  translations: Translation["components"]["navigation"]["languageToggle"];
+};
+
+export const LanguageToggle: React.FC<Props> = ({ translations }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLUListElement>(null);
-  const currentLanguage = document.documentElement.lang || "en";
+  const currentLanguage = useLocale();
   const pathname = usePathname();
 
   const changeLanguage = (newLocale: Locale): void => {
@@ -57,20 +62,8 @@ export const LanguageToggle: React.FC = () => {
     <>
       <button
         id="language-toggle"
-        title={
-          // TODO change translation
-          "test"
-          // languageContext.language === "de"
-          //   ? "Sprache wechseln"
-          //   : "Change language"
-        }
-        aria-label={
-          // TODO change translation
-          "test"
-          // languageContext.language === "de"
-          //   ? "Sprache wechseln"
-          //   : "Change language"
-        }
+        title={translations.label}
+        aria-label={translations.label}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         className={styles.languageToggle}
@@ -100,9 +93,7 @@ export const LanguageToggle: React.FC = () => {
                 onKeyDown={handleOptionKeydown}
                 tabIndex={0}
               >
-                {/* TODO Render translation */}
-                {locale}
-                {/* {language.name[languageContext.language]} */}
+                {translations.languages[locale]}
               </li>
             );
           })}

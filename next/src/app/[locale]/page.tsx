@@ -65,7 +65,12 @@ export default async function Page({ params: { locale } }: Props) {
       <footer className={styles.appFooter}>
         <span>
           <Copyright />
-          <LegalLink />
+          <LegalLink
+            translations={{
+              label: t("legal.label"),
+              alert: t("legal.alert"),
+            }}
+          />
         </span>
       </footer>
     </>
