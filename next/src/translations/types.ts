@@ -11,23 +11,36 @@ export const TranslationSchema = z.object({
     }),
   }),
   components: z.object({
+    navigation: z.object({
+      socialLink: z.string(),
+    }),
     hero: z.object({
       headline: z.string(),
       subline: z.string(),
       imageAlt: z.string(),
     }),
     languageToggle: z.object({
-      english: z.string(),
-      german: z.string(),
+      label: z.string(),
+      languages: z.object({
+        en: z.string(),
+        de: z.string(),
+      }),
     }),
     about: z.object({
       text: z.string(),
     }),
     skillBox: z.object({
+      navigationHeadline: z.string(),
+      navigationChangeCategory: z.string(),
       skillTabCategoryList: SkillTabCategoryListSchema,
     }),
     stationBox: z.object({
+      headline: z.string(),
       stationList: StationListSchema,
+    }),
+    legal: z.object({
+      title: z.string(),
+      alert: z.string(),
     }),
   }),
 });

@@ -6,19 +6,27 @@
     }
   },
   "components": {
+    "navigation": {
+      "socialLink": "{name} Profil öffnen"
+    },
     "hero": {
       "headline": "Julian Klummer",
       "subline": "Ambitionierter Fullstack Entwickler spezialisiert auf TypeScript",
       "imageAlt": "TODO"
     },
     "languageToggle": {
-      "english": "Englisch",
-      "german": "Deutsch"
+      "label": "Sprache wechseln",
+      "languages": {
+        "en": "Englisch",
+        "de": "Deutsch"
+      }
     },
     "about": {
       "text": "<p>Meine Leidenschaft für Code und digitale Medien entdeckte ich im Alter von 13 Jahren beim Experimentieren mit Code und Medien auf meinem ersten Blog. Während meiner wunderbaren Studienzeit in Stuttgart habe ich dieses weite Feld in verschiedenen Dimensionen weiter entdeckt, welche Technik, Medien und auch Managementthemen umfassen. Vor allem das Programmieren hat es mir angetan und jede neue Fähigkeit, die ich erlernte, trieb mich dazu, tiefer in das Feld einzutauchen.</p><p>Zunächst vertiefte ich meine Kenntnisse in HTML/[SA|C]SS, PHP, Python, SQL und traditionellen Stacks, bis ich mich für JAMstack-Technologien begeisterte. Seitdem habe ich mein Wissen in TypeScript/JavaScript, React, Bundling, APIs, Node und Architekturen, die das Zusammenspiel ermöglichen, vertieft.</p><p>Meine Leidenschaft ist es, ansprechende Benutzeroberflächen und -erfahrungen zu schaffen, daher konzentriere ich mich hauptsächlich auf die Frontend-Entwicklung. Ich arbeite ständig daran, meine Fähigkeiten zu verbessern und bleibe mit den neuesten Trends und Technologien auf dem Laufenden. Während meines Studiums habe ich die Eventagentur inPulse gegründet. Durch die Arbeit in dieser Agentur konnte ich durch verschiedene Marketingkampagnen für unsere Veranstaltungen tiefer in die Welt des Grafikdesigns und der Inhaltserstellung eintauchen. Dadurch wurde mein Auge für gutes Design geschult und meine Fähigkeit zur effektiven Kommunikation mit anderen Kreativen verbessert.</p><p>Als Entwickler arbeitete ich zunächst als Werkstudentin und später hauptberuflich bei der Digitalagentur Sirup im Herzen von Berlin. Während meiner Arbeit vertiefte ich kontinuierlich mein Wissen über Webtechnologien, Barrierefreiheit, Sicherheit, testdriven Entwicklung, objektorientierte/funktionale Programmierung und verschiedene Möglichkeiten, divs zu zentrieren.</p>"
     },
     "skillBox": {
+      "navigationHeadline": "Kenntnisse",
+      "navigationChangeCategory": "Kategorie wechseln",
       "skillTabCategoryList": [
         {
           "title": "Sprachen",
@@ -101,6 +109,7 @@
       ]
     },
     "stationBox": {
+      "headline": "Werdegang",
       "stationList": [
         {
           "id": "sirup-2",
@@ -178,6 +187,10 @@
           ]
         }
       ]
+    },
+    "legal": {
+      "title": "Impressum",
+      "alert": "Bitte senden Sie mir eine kurze Mail an contact@julianklummmer.de und ich sende Ihnen die benötigten Informationen."
     }
   }
 }
