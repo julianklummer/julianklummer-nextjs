@@ -21,7 +21,7 @@ export const LegalLink: React.FC<Props> = ({ translations }) => {
       onFocus={handleFocus}
       onClick={handleClick}
     >
-      {translations.alert}
+      {translations.label}
     </button>
   );
 };

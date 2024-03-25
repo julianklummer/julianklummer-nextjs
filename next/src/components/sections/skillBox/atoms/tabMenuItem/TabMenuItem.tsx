@@ -1,9 +1,9 @@
 import { getTabId } from "../../molecules/tab/Tab";
-import { TabCategory } from "../../types";
+import { SkillTabCategory } from "../../types";
 import styles from "./tabMenuItem.module.scss";
 
 interface Props {
-  tabCategory: TabCategory;
+  tabCategory: SkillTabCategory;
   active: boolean;
   onClick: Function;
 }

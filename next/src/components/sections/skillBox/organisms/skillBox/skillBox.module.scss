@@ -90,4 +90,8 @@
 .sidebarHeadline {
   @include typography.h2;
   margin: unset;
+
+  @include utils.media-breakpoint-up(md) {
+    padding: 0 utils.vw-clamp(10px, md);
+  }
 }

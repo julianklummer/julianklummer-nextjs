@@ -141,7 +141,7 @@
   }
 }
 
-.tab._active {
+.tab._active._animated {
   .skill {
     animation-name: fade-in;
     animation-duration: calc(var(--animation-duration) * 1s);

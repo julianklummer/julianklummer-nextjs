@@ -1,4 +1,12 @@
-import { ForwardedRef, forwardRef } from "react";
+"use client";
+import {
+  ForwardedRef,
+  forwardRef,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { SkillIcon } from "../../atoms/skillIcon/SkillIcon";
 import { iconColorList } from "../../atoms/skillIcon/iconColorList";
 import { SkillTabCategory } from "../../types";
@@ -18,9 +26,38 @@ export const Tab = forwardRef(function Tab(
   ref: ForwardedRef<HTMLLIElement>
 ) {
   const { tabCategory, active, prevActive } = props;
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const iconListRef = useRef<Element>(null);
+
+  const intersectionObserver = useMemo(
+    () =>
+      new IntersectionObserver(
+        ([entry]) => {
+          console.log("entry.isIntersecting", entry.isIntersecting);
+          if (entry.isIntersecting !== isIntersecting) {
+            setIsIntersecting(entry.isIntersecting);
+          }
+        },
+        {
+          threshold: 0.6,
+        }
+      ),
+    []
+  );
+
+  useEffect(() => {
+    if (!iconListRef.current) return;
+    intersectionObserver.observe(iconListRef.current);
+
+    return () => {
+      intersectionObserver.disconnect();
+    };
+  }, [iconListRef, intersectionObserver]);
+
   const classList = [styles.tab];
   if (active) classList.push(styles._active);
   if (prevActive) classList.push(styles._prevActive);
+  if (isIntersecting) classList.push(styles._animated);
 
   const renderTabContent = () => {
     return (
@@ -66,6 +103,7 @@ export const Tab = forwardRef(function Tab(
       className={classList.join(" ")}
       id={getTabId(tabCategory)}
       aria-hidden={!active}
+      ref={iconListRef}
     >
       {active || prevActive ? renderTabContent() : null}
     </div>

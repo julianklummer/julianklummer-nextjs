@@ -3,15 +3,17 @@ import ArrowDown from "@/icons/utils/arrow-down.svg";
 import { useEffect, useState } from "react";
 import { TabMenuItem } from "../../atoms/tabMenuItem/TabMenuItem";
 import { SkillTabCategory } from "../../types";
-
 import styles from "./tabMenu.module.scss";
+
 interface Props {
+  label: string;
   tabCategoryList: SkillTabCategory[];
   activeTabCategory: SkillTabCategory;
   setActiveTabCategory: (index: number) => void;
 }
 
 export const TabMenu: React.FC<Props> = ({
+  label,
   tabCategoryList,
   activeTabCategory,
   setActiveTabCategory,
@@ -29,10 +31,7 @@ export const TabMenu: React.FC<Props> = ({
           id="tab-menu-combobox-label"
           className={styles.tabMenuMobileLabel}
         >
-          // TODO: Add translation 'test'
-          {/* {languageContext.language === "de"
-            ? "Kategorie ändern"
-            : "Change category"} */}
+          {label}
         </label>
         <div
           aria-controls="tab-menu-listbox"

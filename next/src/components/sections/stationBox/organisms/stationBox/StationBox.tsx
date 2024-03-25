@@ -1,14 +1,14 @@
 "use client";
+import { Translation } from "@/translations/types";
 import { useRef, useState } from "react";
 import { Accordion } from "../../molecules/accordion/Accordion";
-import { stationList } from "../../types";
 import styles from "./stationBox.module.scss";
 
 interface Props {
-  stationList: stationList;
+  translations: Translation["components"]["stationBox"];
 }
 
-export const StationBox: React.FC<Props> = ({ stationList }) => {
+export const StationBox: React.FC<Props> = ({ translations }) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const itemRef = useRef<HTMLDivElement[]>([]);
   const [activeAccordionItemIndex, setActiveAccordionItemKeyIndex] = useState<
@@ -21,12 +21,8 @@ export const StationBox: React.FC<Props> = ({ stationList }) => {
 
   return (
     <div className={styles.stationBox} ref={elementRef}>
-      <h2 className={styles.stationBoxHeadline}>
-        {/* TODO: Add translation */}
-        test
-        {/* {languageContext.language === "de" ? "Stationen" : "Stations"} */}
-      </h2>
-      {stationList.map((station, index) => {
+      <h2 className={styles.stationBoxHeadline}>{translations.headline}</h2>
+      {translations.stationList.map((station, index) => {
         const isActive = index === activeAccordionItemIndex;
 
         return (

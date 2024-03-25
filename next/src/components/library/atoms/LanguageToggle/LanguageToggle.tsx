@@ -45,7 +45,9 @@ export const LanguageToggle: React.FC<Props> = ({ translations }) => {
   };
 
   const handleClickoutSide = (event: MouseEvent): void => {
-    if (!dropdownRef.current?.contains(event.target as Node)) setIsOpen(false);
+    const isPopupClick = dropdownRef.current?.contains(event.target as Node);
+    const isButtonClick = toggleRef.current?.contains(event.target as Node);
+    if (!isPopupClick && !isButtonClick) setIsOpen(false);
   };
 
   useEffect(() => {

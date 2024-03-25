@@ -1,17 +1,18 @@
 "use client";
+import { Translation } from "@/translations/types";
 import { useRef, useState } from "react";
 import { flip } from "src/utils/animation/flip";
 import { Tab } from "../../molecules/tab/Tab";
 import { TabMenu } from "../../molecules/tabMenu/TabMenu";
-import { SkillTabCategory } from "../../types";
 import styles from "./skillBox.module.scss";
 
 interface Props {
-  tabCategoryList: SkillTabCategory[];
+  translations: Translation["components"]["skillBox"];
 }
 
-export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
-  if (!tabCategoryList.length) throw new Error("missing items in data");
+export const SkillBox: React.FC<Props> = ({ translations }) => {
+  if (!translations.skillTabCategoryList.length)
+    throw new Error("missing items in data");
   const activeLastItemRef = useRef<HTMLLIElement>(null);
   const elementRef = useRef<HTMLDivElement>(null);
   const [activeTabCategoryIndex, setActiveTabCategoryKeyIndex] =
@@ -50,16 +51,18 @@ export const SkillBox: React.FC<Props> = ({ tabCategoryList }) => {
       <div className={styles.skillBox}>
         <div className={styles.sidebar}>
           <h2 className={styles.sidebarHeadline}>
-            {/* // TODO Add translation */}
-            test
+            {translations.navigationHeadline}
           </h2>
           <TabMenu
-            tabCategoryList={tabCategoryList}
-            activeTabCategory={tabCategoryList[activeTabCategoryIndex]}
+            label={translations.navigationHeadline}
+            tabCategoryList={translations.skillTabCategoryList}
+            activeTabCategory={
+              translations.skillTabCategoryList[activeTabCategoryIndex]
+            }
             setActiveTabCategory={changeActiveCategory}
           />
         </div>
-        {tabCategoryList.map((tabCategory, index) => {
+        {translations.skillTabCategoryList.map((tabCategory, index) => {
           const isActive = index === activeTabCategoryIndex;
           const isPrevActive = index === prevActiveTabCategoryIndex;
 

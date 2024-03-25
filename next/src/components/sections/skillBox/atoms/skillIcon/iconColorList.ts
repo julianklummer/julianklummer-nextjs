@@ -272,4 +272,52 @@ export const iconColorList = [
       b: 27,
     },
   },
+  {
+    id: "elastic-search",
+    colorList: {
+      r: 243,
+      g: 211,
+      b: 55,
+    },
+  },
+  {
+    id: "tailwind",
+    colorList: {
+      r: 22,
+      g: 74,
+      b: 97,
+    },
+  },
+  {
+    id: "storybook",
+    colorList: {
+      r: 200,
+      g: 56,
+      b: 108,
+    },
+  },
+  {
+    id: "docker",
+    colorList: {
+      r: 22,
+      g: 78,
+      b: 186,
+    },
+  },
+  {
+    id: "gitlab",
+    colorList: {
+      r: 252,
+      g: 109,
+      b: 38,
+    },
+  },
+  {
+    id: "github",
+    colorList: {
+      r: 255,
+      g: 255,
+      b: 255,
+    },
+  },
 ];

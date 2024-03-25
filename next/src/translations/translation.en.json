@@ -49,13 +49,16 @@
           "id": "frameworks-libraries",
           "skillList": [
             { "title": "React", "icon": "react" },
-            { "title": "MUI", "icon": "mui" },
+            { "title": "Next", "icon": "nextjs" },
+            { "title": "Node", "icon": "nodejs" },
+            { "title": "Strapi", "icon": "strapi" },
             { "title": "Bootstrap", "icon": "bootstrap" },
+            { "title": "Tailwind", "icon": "tailwind" },
+            { "title": "MUI", "icon": "mui" },
+            { "title": "Elastic Search", "icon": "elastic-search" },
             { "title": "Jest", "icon": "jest" },
             { "title": "Cypress", "icon": "cypress" },
-            { "title": "Nodejs", "icon": "nodejs" },
-            { "title": "NextJS", "icon": "nextjs" },
-            { "title": "Strapi", "icon": "strapi" },
+            { "title": "Storybook", "icon": "storybook" },
             { "title": "Drupal", "icon": "drupal" }
           ]
         },
@@ -63,6 +66,9 @@
           "title": "Tools",
           "id": "tools",
           "skillList": [
+            { "title": "Docker", "icon": "docker" },
+            { "title": "Gitlab CI/CD", "icon": "gitlab" },
+            { "title": "Github CI/CD", "icon": "github" },
             { "title": "Webpack", "icon": "webpack" },
             { "title": "Babel", "icon": "babel" },
             { "title": "ESLint", "icon": "eslint" },
@@ -99,6 +105,11 @@
           "title": "Other",
           "id": "other",
           "skillList": [
+            { "title": "PhpStorm", "icon": "phpstorm" },
+            { "title": "WebStorm", "icon": "webstorm" },
+            { "title": "Visuel Studio", "icon": "visual-studio" },
+            { "title": "Linux", "icon": "linux" },
+            { "title": "Mac OS", "icon": "mac-os" },
             { "title": "Affinity Designer", "icon": "affinity" },
             { "title": "Logic Pro X", "icon": "logic" },
             { "title": "Word", "icon": "word" },
@@ -109,7 +120,7 @@
       ]
     },
     "stationBox": {
-      "headline": "career",
+      "headline": "Career",
       "stationList": [
         {
           "id": "sirup-2",
