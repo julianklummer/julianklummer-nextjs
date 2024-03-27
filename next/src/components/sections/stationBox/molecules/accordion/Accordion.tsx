@@ -8,13 +8,13 @@ import styles from "./accordion.module.scss";
 export const getTabId = (station: Station) => {
   return station.id + "-accordion";
 };
-interface Props {
+type Props = {
   station: Station;
   active: boolean;
   open: Function;
   close: Function;
   index: number;
-}
+};
 
 export const Accordion = forwardRef(function Accordion(
   props: Props,

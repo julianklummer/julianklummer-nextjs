@@ -5,12 +5,12 @@ import { TabMenuItem } from "../../atoms/tabMenuItem/TabMenuItem";
 import { SkillTabCategory } from "../../types";
 import styles from "./tabMenu.module.scss";
 
-interface Props {
+type Props = {
   label: string;
   tabCategoryList: SkillTabCategory[];
   activeTabCategory: SkillTabCategory;
   setActiveTabCategory: (index: number) => void;
-}
+};
 
 export const TabMenu: React.FC<Props> = ({
   label,

@@ -1,8 +1,8 @@
 import styles from "./textBox.module.scss";
 
-interface Props {
+type Props = {
   text: string;
-}
+};
 
 export const TextBox: React.FC<Props> = ({ text }) => {
   return (

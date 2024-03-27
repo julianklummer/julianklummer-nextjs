@@ -39,14 +39,14 @@
 
 @mixin h3 {
   @include standard-headline;
-  font-size: utils.rem-vw-mix(20px, 0.5, xs);
+  font-size: utils.rem-vw-mix(24px, 0.5, xs);
 
   @include utils.media-breakpoint-up(sm) {
-    font-size: utils.rem-vw-mix(20px, 0.5, sm);
+    font-size: utils.rem-vw-mix(24px, 0.5, sm);
   }
 
   @include utils.media-breakpoint-up(md) {
-    font-size: utils.rem-vw-mix(24px, 0.5, md);
+    font-size: utils.rem-vw-mix(28px, 0.5, md);
   }
 
   @include utils.media-breakpoint-up(lg) {

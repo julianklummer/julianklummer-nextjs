@@ -26,6 +26,7 @@
   margin-bottom: utils.vw-clamp(16px, md);
   position: relative;
   color: colors.$white;
+  gap: utils.vw-clamp(8px, xs);
 
   @include utils.media-breakpoint-up(md) {
     padding: utils.vw-clamp(10px, md) utils.vw-clamp(16px, md);
@@ -122,7 +123,7 @@
     gap: utils.vw-clamp(12px, md);
 
     @include utils.media-breakpoint-up(lg) {
-      gap: utils.vw-clamp(12px, lg);
+      gap: utils.vw-clamp(4px, lg);
     }
   }
 }

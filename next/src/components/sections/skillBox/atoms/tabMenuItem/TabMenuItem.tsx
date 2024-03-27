@@ -2,11 +2,11 @@ import { getTabId } from "../../molecules/tab/Tab";
 import { SkillTabCategory } from "../../types";
 import styles from "./tabMenuItem.module.scss";
 
-interface Props {
+type Props = {
   tabCategory: SkillTabCategory;
   active: boolean;
   onClick: Function;
-}
+};
 
 export const TabMenuItem: React.FC<Props> = ({
   tabCategory,

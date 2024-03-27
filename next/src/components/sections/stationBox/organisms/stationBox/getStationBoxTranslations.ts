@@ -4,7 +4,7 @@ import { StationBox } from "./StationBox";
 export const getStationBoxTranslations: GetTranslationsFunction<
   typeof StationBox
 > = (t) => ({
-  headline: t("stationbox.headline" as never),
+  headline: t("stationBox.headline" as never),
   // TODO: Move to content source instead of translationfile
   ...JSON.parse(
     `{"stationList": ${JSON.stringify(

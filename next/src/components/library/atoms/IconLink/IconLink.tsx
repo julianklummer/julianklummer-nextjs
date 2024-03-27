@@ -1,12 +1,12 @@
 import Link from "next/link";
 import styles from "./iconLink.module.scss";
 
-interface Props {
+type Props = {
   title: string;
   href: string;
   target?: string;
   icon: React.ReactNode;
-}
+};
 
 export const IconLink: React.FC<Props> = ({ href, title, target, icon }) => {
   return (

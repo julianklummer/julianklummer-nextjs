@@ -80,7 +80,7 @@
     --items-per-row: 3;
   }
 
-  @include utils.container-query(md) {
+  @include utils.container-query(lg) {
     --items-per-row: 4;
   }
 }

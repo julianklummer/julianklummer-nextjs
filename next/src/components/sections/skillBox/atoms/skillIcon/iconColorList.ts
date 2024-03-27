@@ -283,9 +283,9 @@ export const iconColorList = [
   {
     id: "tailwind",
     colorList: {
-      r: 22,
-      g: 74,
-      b: 97,
+      r: 44,
+      g: 148,
+      b: 194,
     },
   },
   {

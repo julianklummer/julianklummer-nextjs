@@ -19,10 +19,10 @@
     "hero": {
       "headline": "Julian Klummer",
       "subline": "Ambitionierter Fullstack Entwickler spezialisiert auf TypeScript",
-      "imageAlt": "TODO"
+      "imageAlt": "Portrait von Julian Klummer"
     },
     "about": {
-      "text": "<p>Meine Leidenschaft für Code und digitale Medien entdeckte ich im Alter von 13 Jahren beim Experimentieren mit Code und Medien auf meinem ersten Blog. Während meiner wunderbaren Studienzeit in Stuttgart habe ich dieses weite Feld in verschiedenen Dimensionen weiter entdeckt, welche Technik, Medien und auch Managementthemen umfassen. Vor allem das Programmieren hat es mir angetan und jede neue Fähigkeit, die ich erlernte, trieb mich dazu, tiefer in das Feld einzutauchen.</p><p>Zunächst vertiefte ich meine Kenntnisse in HTML/[SA|C]SS, PHP, Python, SQL und traditionellen Stacks, bis ich mich für JAMstack-Technologien begeisterte. Seitdem habe ich mein Wissen in TypeScript/JavaScript, React, Bundling, APIs, Node und Architekturen, die das Zusammenspiel ermöglichen, vertieft.</p><p>Meine Leidenschaft ist es, ansprechende Benutzeroberflächen und -erfahrungen zu schaffen, daher konzentriere ich mich hauptsächlich auf die Frontend-Entwicklung. Ich arbeite ständig daran, meine Fähigkeiten zu verbessern und bleibe mit den neuesten Trends und Technologien auf dem Laufenden. Während meines Studiums habe ich die Eventagentur inPulse gegründet. Durch die Arbeit in dieser Agentur konnte ich durch verschiedene Marketingkampagnen für unsere Veranstaltungen tiefer in die Welt des Grafikdesigns und der Inhaltserstellung eintauchen. Dadurch wurde mein Auge für gutes Design geschult und meine Fähigkeit zur effektiven Kommunikation mit anderen Kreativen verbessert.</p><p>Als Entwickler arbeitete ich zunächst als Werkstudentin und später hauptberuflich bei der Digitalagentur Sirup im Herzen von Berlin. Während meiner Arbeit vertiefte ich kontinuierlich mein Wissen über Webtechnologien, Barrierefreiheit, Sicherheit, testdriven Entwicklung, objektorientierte/funktionale Programmierung und verschiedene Möglichkeiten, divs zu zentrieren.</p>"
+      "text": "<span>Meine Reise in die Welt des Codings und digitalen Medien begann im Alter von 13 Jahren, als ich meinen ersten Fotografie-Blogs entwickelte und mit ihm experimentierte. Dieses Projekt weckte meine Faszination für Websites, die durch schöne Designs und interessante Benutzeroberflächen herausstechen. In meinem Bachelorstudium in Stuttgart habe ich dann das umfangreiche Feld der Online-Medien in zahlreichen Dimensionen erkundet. Meine akademische Ausbildung umfasste ein breites Spektrum, von grundlegenden IT-Kenntnissen bis hin zu fortgeschrittenen Konzepten wie Anwendungsentwicklung, maschinellem Lernen und dem Internet der Dinge. Darüber hinaus habe ich meine Fähigkeiten im Management, der Projektleitung und der Kompetenz in multimedialen Umgebungen geschärft.</span><span>Während meines Studiums erweiterte ich meine Fähigkeiten durch die Arbeit in meiner unternehmerischen Selbständigkeit im Bereich Event- und Brandmanagement und einer Werkstudentenstelle als Frontend-Entwickler.</span><span>Durch die Selbstständigkeit erlernte ich Grafikdesign und die Erstellung von Inhalten für die Webplattform und pflegte Webshops und Ticketingsysteme. Besonders schulte ich die Fähigkeit zur Schaffung guter Prozesse, effektive Team-Kommunikation, zielstrebiges Handeln und Ausbalancierung von Interessenkonflikten.</span><span>Meine Zeit in der Frontend-Entwicklung ermöglichte mir ein tieferes Verständnis für die Feinheiten der Programmierung und der Webarchitektur. Insbesondere meine Beteiligung an diversen Projekten bei der Agentur SIRUP hat mich mit einer Vielzahl von Technologien vertraut gemacht und mein Wissensspektrum erweitert.</span><span>Durch die verschiedenen Techstacks ergeben sich viele Herausforderungen für die Integration von APIs, Synchronisierung von Server und Client und das Bundling. Dieser Aufgabe habe ich mich proaktiv angenommen und Pflege und Integration von Tools und Modulen, um sowohl die best mögliche User- als auch Developer Experience zu ermöglichen.</span><span>Ich möchte Prozesse optimieren und effizient entwickeln. Unter Einhaltung des DRY-Prinzips (Don't Repeat Yourself) priorisiere ich sauberen, wiederverwendbaren Code, der innerhalb von Paketen eingekapselt und dokumentiert ist. Darüber hinaus halte ich mich über neue Technologien, Best Practices und Design-Patterns auf dem neuesten Stand und teile mein Wissen gerne, um mein Umfeld voranzubringen und die Adaption von Innovation zu ermöglichen.</span><span>Eine meiner liebsten Herausforderungen in letzter Zeit war die Implementierung eines Headless CMS für eine Nextjs-Integration. Mit meinem Fachwissen in der Backend-Entwicklung mit TypeScript, Node, Koa und Strapi konnten wir erfolgreich ein robustes Systems realisieren und eine Such-API mit elasticsearch realisieren.</span>"
     },
     "skillBox": {
       "navigationHeadline": "Kenntnisse",
@@ -38,10 +38,8 @@
             { "title": "SASS", "icon": "sass" },
             { "title": "CSS", "icon": "css" },
             { "title": "PHP", "icon": "php" },
-            { "title": "Python", "icon": "python" },
             { "title": "SQL", "icon": "sql" },
-            { "title": "GraphQL", "icon": "graphql" },
-            { "title": "Markdown", "icon": "markdown" }
+            { "title": "GraphQL", "icon": "graphql" }
           ]
         },
         {
@@ -86,6 +84,11 @@
             { "title": "Functional Programming", "icon": "fp" },
             { "title": "Barrierefreiheit", "icon": "accessibility" },
             { "title": "Sicherheit", "icon": "security" },
+            {
+              "title": "Internationalisierung",
+              "icon": "internationalization"
+            },
+
             { "title": "Atomic Design", "icon": "atomic-design" },
             { "title": "Responsives Design", "icon": "responsive-design" },
             { "title": "Fluides Design", "icon": "fluid-design" },
@@ -124,7 +127,7 @@
       "stationList": [
         {
           "id": "sirup-2",
-          "title": "VOLLZEIT: JUNIOR FRONTEND DEVELOPER ",
+          "title": "VOLLZEIT: FRONTEND DEVELOPER",
           "institution": "SIRUP GmbH",
           "duration": "seit 03/2022",
           "location": "Berlin",

@@ -1,14 +1,14 @@
 import Image, { StaticImageData } from "next/image";
 import styles from "./hero.module.scss";
 
-interface Props {
+type Props = {
   headline: string;
   subline: string;
   image: {
     src: StaticImageData;
     alt: string;
   };
-}
+};
 
 export const Hero: React.FC<Props> = ({ headline, subline, image }) => {
   return (

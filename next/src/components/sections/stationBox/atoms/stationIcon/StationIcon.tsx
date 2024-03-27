@@ -3,9 +3,9 @@ import HdM from "@/icons/stationList/logos/hdm.svg";
 import ReadyForTechno from "@/icons/stationList/logos/readyfortechno.svg";
 import Sirup from "@/icons/stationList/logos/sirup.svg";
 import Vinos from "@/icons/stationList/logos/vinos.svg";
-interface Props {
+type Props = {
   name: string;
-}
+};
 
 export const StationIcon: React.FC<Props> = ({ name }) => {
   switch (name) {

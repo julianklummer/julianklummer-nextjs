@@ -6,9 +6,9 @@ import { Tab } from "../../molecules/tab/Tab";
 import { TabMenu } from "../../molecules/tabMenu/TabMenu";
 import styles from "./skillBox.module.scss";
 
-interface Props {
+type Props = {
   translations: Translation["components"]["skillBox"];
-}
+};
 
 export const SkillBox: React.FC<Props> = ({ translations }) => {
   if (!translations.skillTabCategoryList.length)

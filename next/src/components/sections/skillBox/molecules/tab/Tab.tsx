@@ -15,11 +15,11 @@ import styles from "./tab.module.scss";
 export const getTabId = (tabCategory: SkillTabCategory) => {
   return tabCategory.title + "-tab";
 };
-interface Props {
+type Props = {
   tabCategory: SkillTabCategory;
   active?: boolean;
   prevActive?: boolean;
-}
+};
 
 export const Tab = forwardRef(function Tab(
   props: Props,
@@ -27,13 +27,12 @@ export const Tab = forwardRef(function Tab(
 ) {
   const { tabCategory, active, prevActive } = props;
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const iconListRef = useRef<Element>(null);
+  const iconListRef = useRef<HTMLElement>(null);
 
   const intersectionObserver = useMemo(
     () =>
       new IntersectionObserver(
         ([entry]) => {
-          console.log("entry.isIntersecting", entry.isIntersecting);
           if (entry.isIntersecting !== isIntersecting) {
             setIsIntersecting(entry.isIntersecting);
           }

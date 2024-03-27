@@ -4,9 +4,9 @@ import { useRef, useState } from "react";
 import { Accordion } from "../../molecules/accordion/Accordion";
 import styles from "./stationBox.module.scss";
 
-interface Props {
+type Props = {
   translations: Translation["components"]["stationBox"];
-}
+};
 
 export const StationBox: React.FC<Props> = ({ translations }) => {
   const elementRef = useRef<HTMLDivElement>(null);

@@ -5,7 +5,6 @@
 
 .textBox {
   position: relative;
-  padding: 3% 0;
   z-index: 1;
   height: fit-content;
   justify-self: right;
@@ -29,25 +28,25 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: utils.vw-clamp(20px, lg);
-    height: utils.vw-clamp(600px, lg);
+    height: utils.vw-clamp(800px, lg);
   }
 
   @include utils.container-query(xl) {
-    height: utils.vw-clamp(600px, xl);
+    height: utils.vw-clamp(800px, xl);
     gap: utils.vw-clamp(20px, xl);
   }
 
   @include utils.container-query(xxl) {
-    height: utils.vw-clamp(600px, xxl);
+    height: utils.vw-clamp(800px, xxl);
     gap: utils.vw-clamp(20px, xxl);
   }
 
   @include utils.container-query(xxxl) {
-    height: utils.vw-clamp(600px, xxxl);
+    height: utils.vw-clamp(800px, xxxl);
     gap: utils.vw-clamp(20px, xxxl);
   }
 
-  p {
+  span {
     margin: unset;
     max-width: utils.vw-clamp(400px, xs);
 
@@ -61,12 +60,6 @@
 
     @include utils.container-query(lg) {
       width: 45%;
-    }
-
-    @include utils.container-query(xl) {
-    }
-
-    @include utils.container-query(xxl) {
     }
   }
 }

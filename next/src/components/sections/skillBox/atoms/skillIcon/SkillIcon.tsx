@@ -20,6 +20,7 @@ import Gitlab from "@/icons/skillList/gitlab.svg";
 import Graphql from "@/icons/skillList/graphql.svg";
 import Gulp from "@/icons/skillList/gulp.svg";
 import Html from "@/icons/skillList/html.svg";
+import Internationalization from "@/icons/skillList/internationalization.svg";
 import Javascript from "@/icons/skillList/javascript.svg";
 import Jest from "@/icons/skillList/jest.svg";
 import Linux from "@/icons/skillList/linux.svg";
@@ -58,9 +59,9 @@ import Webpack from "@/icons/skillList/webpack.svg";
 import WebStorm from "@/icons/skillList/webstorm.svg";
 import Word from "@/icons/skillList/word.svg";
 
-interface Props {
+type Props = {
   name: string;
-}
+};
 
 export const SkillIcon: React.FC<Props> = ({ name }) => {
   switch (name) {
@@ -180,6 +181,8 @@ export const SkillIcon: React.FC<Props> = ({ name }) => {
       return <PhpStorm />;
     case "linux":
       return <Linux />;
+    case "internationalization":
+      return <Internationalization />;
     default:
       return <SourceCode />;
   }

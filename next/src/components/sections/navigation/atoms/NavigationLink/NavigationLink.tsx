@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./navigationLink.module.scss";
 
-interface Props {
+type Props = {
   title: string;
   href: string;
-}
+};
 
 export const NavigationLink: React.FC<Props> = ({ href, title }) => {
   return (
