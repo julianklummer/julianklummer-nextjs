@@ -2,7 +2,7 @@
 
 .navigationButtonGroup {
   list-style: none;
-  display: flex;
+  display: flex block;
   padding: 0;
   gap: utils.vw-clamp(8px, xs, 20px);
 }

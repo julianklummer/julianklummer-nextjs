@@ -1,4 +1,3 @@
-"use server";
 import { LanguageToggle } from "@/components/library/atoms/LanguageToggle/LanguageToggle";
 import GithubSVG from "@/icons/navigation/button/github.svg";
 import LinkedInSVG from "@/icons/navigation/button/linkedin.svg";

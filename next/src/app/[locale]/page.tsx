@@ -4,6 +4,7 @@ import { LegalLink } from "@/components/library/atoms/LegalLink/LegalLink";
 import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
 import { Hero } from "@/components/sections/hero/Hero";
 import { Navigation } from "@/components/sections/navigation/organisms/navigation/Navigation";
+import { ProjectShowcase } from "@/components/sections/projectShowcase/organisms/ProjectShowcase";
 import { getSkillBoxTranslations } from "@/components/sections/skillBox/organisms/skillBox/getSkillBoxTranslations";
 import { SkillBox } from "@/components/sections/skillBox/organisms/skillBox/SkillBox";
 import { getStationBoxTranslations } from "@/components/sections/stationBox/organisms/stationBox/getStationBoxTranslations";
@@ -41,6 +42,15 @@ export default async function Page({ params: { locale } }: Props) {
         <Navigation />
       </header>
       <div>
+        <ProjectShowcase />
+        {/* <ProjectTeaser
+          headline={"Cybersicherheit BW"}
+          url={"https://julianklummer.com"}
+          image={{
+            src: csbwScreenshot,
+            alt: "Website screenshot",
+          }}
+        /> */}
         <Hero
           headline={t("hero.headline")}
           subline={t("hero.subline")}

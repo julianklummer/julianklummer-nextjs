@@ -2,7 +2,7 @@
 
 .navigationMenu {
   list-style: none;
-  display: flex;
+  display: flex block;
   padding: 0;
   gap: utils.vw-clamp(16px, xs, 40px);
 }

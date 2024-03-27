@@ -9,6 +9,14 @@ body {
   margin: 0;
 }
 
-ul {
+ul,
+ol {
   margin: unset;
+  padding: unset;
+  list-style: none;
+}
+
+button {
+  border: transparent;
+  background: none;
 }

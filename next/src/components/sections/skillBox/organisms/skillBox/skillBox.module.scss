@@ -47,7 +47,7 @@
   width: sizes.$section-width;
   max-width: sizes.$section-max-width;
   margin: sizes.$section-margin-y auto;
-  display: flex;
+  display: flex block;
   padding: 3% 5%;
   flex-direction: column;
   z-index: 1;
@@ -73,13 +73,13 @@
   &::after {
     opacity: 0.6;
     mix-blend-mode: multiply;
-    background: url(/images/grain.webp) repeat;
+    background: url(/assets/images/grain.webp) repeat;
     pointer-events: none;
   }
 }
 
 .sidebar {
-  display: flex;
+  display: flex block;
   flex-direction: column;
   justify-content: center;
   align-items: center;

@@ -15,7 +15,7 @@
 }
 
 .tabMenuMobileCombobox {
-  display: flex;
+  display: flex block;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -117,7 +117,7 @@
   display: none;
 
   @include utils.media-breakpoint-up(md) {
-    display: flex;
+    display: flex block;
     flex-direction: column;
     align-items: flex-end;
     gap: utils.vw-clamp(12px, md);

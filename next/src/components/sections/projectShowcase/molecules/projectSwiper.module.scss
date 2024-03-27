@@ -1,0 +1,36 @@
+@use "styles/theme/sizes" as sizes;
+@use "styles/theme/colors" as colors;
+@use "styles/utils" as utils;
+
+.projectSwiper {
+  overflow: visible;
+}
+
+.navWrapper {
+  display: flex block;
+  gap: utils.vw-clamp(2px, xs, 10px);
+  margin-top: utils.vw-clamp(10px, xs, 20px);
+}
+
+.buttonPrev,
+.buttonNext {
+  position: relative;
+  padding: utils.vw-clamp(2px, xs, 6px);
+  color: colors.$white;
+  cursor: pointer;
+
+  &[disabled] {
+    color: colors.$light-gray;
+    cursor: not-allowed;
+  }
+
+  svg {
+    width: utils.vw-clamp(10px, xs, 30px);
+  }
+}
+
+.buttonPrev {
+  svg {
+    transform: rotate(180deg);
+  }
+}

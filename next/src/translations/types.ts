@@ -2,6 +2,7 @@ import { SkillTabCategoryListSchema } from "src/components/sections/skillBox/typ
 import { StationListSchema } from "src/components/sections/stationBox/types";
 import { z } from "zod";
 import { locales } from "./locales";
+import { TeaserListSchema } from "@/components/sections/projectShowcase/types";
 
 export const TranslationSchema = z.object({
   meta: z.object({
@@ -37,6 +38,18 @@ export const TranslationSchema = z.object({
     stationBox: z.object({
       headline: z.string(),
       stationList: StationListSchema,
+    }),
+    projectSwiper: z.object({
+      headline: z.string(),
+      description: z.string(),
+      swiper: z.object({
+        containerMessage: z.string(),
+        firstSlideMessage: z.string(),
+        lastSlideMessage: z.string(),
+        buttonNext: z.string(),
+        buttonPrev: z.string(),
+      }),
+      teaserList: TeaserListSchema,
     }),
     legal: z.object({
       label: z.string(),

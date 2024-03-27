@@ -8,7 +8,7 @@
   z-index: 1;
   height: fit-content;
   justify-self: right;
-  display: flex;
+  display: flex block;
   justify-content: center;
   flex-wrap: wrap;
   gap: utils.vw-clamp(20px, xs);
@@ -23,7 +23,7 @@
   }
 
   @include utils.container-query(lg) {
-    display: flex;
+    display: flex block;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;

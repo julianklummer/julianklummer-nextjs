@@ -7,7 +7,7 @@
 
 .stationBox {
   position: relative;
-  display: flex;
+  display: flex block;
   flex-direction: column;
   height: fit-content;
   padding: 1px;
@@ -27,7 +27,7 @@
     inset: 0;
     opacity: 0.3;
     mix-blend-mode: overlay;
-    background: url(/images/grain.webp) repeat;
+    background: url(/assets/images/grain.webp) repeat;
     pointer-events: none;
     transform-origin: top left;
   }

@@ -33,7 +33,7 @@
   &::after {
     opacity: 0.6;
     mix-blend-mode: multiply;
-    background: url(/images/grain.webp) repeat;
+    background: url(/assets/images/grain.webp) repeat;
     pointer-events: none;
   }
 
@@ -94,7 +94,7 @@
 
 .skill {
   height: 100%;
-  display: flex;
+  display: flex block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
