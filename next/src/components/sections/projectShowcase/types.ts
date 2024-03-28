@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const TeaserSchema = z.object({
   headline: z.string(),
+  tooltip: z.string(),
   url: z.string(),
   image: z.object({
     srcId: z.string(),

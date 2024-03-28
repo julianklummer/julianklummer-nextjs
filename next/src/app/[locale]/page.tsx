@@ -42,15 +42,6 @@ export default async function Page({ params: { locale } }: Props) {
         <Navigation />
       </header>
       <div>
-        <ProjectShowcase />
-        {/* <ProjectTeaser
-          headline={"Cybersicherheit BW"}
-          url={"https://julianklummer.com"}
-          image={{
-            src: csbwScreenshot,
-            alt: "Website screenshot",
-          }}
-        /> */}
         <Hero
           headline={t("hero.headline")}
           subline={t("hero.subline")}
@@ -64,6 +55,7 @@ export default async function Page({ params: { locale } }: Props) {
           <TextBox text={t.raw("about.text")} />
           <StationBox translations={getStationBoxTranslations(t)} />
         </SectionRow>
+        <ProjectShowcase />
       </div>
       <footer className={styles.appFooter}>
         <span>

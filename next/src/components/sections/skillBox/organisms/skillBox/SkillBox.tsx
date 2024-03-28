@@ -47,7 +47,7 @@ export const SkillBox: React.FC<Props> = ({ translations }) => {
   };
 
   return (
-    <div className={styles.skillBoxSection} ref={elementRef}>
+    <section className={styles.skillBoxSection} ref={elementRef}>
       <div className={styles.skillBox}>
         <div className={styles.sidebar}>
           <h2 className={styles.sidebarHeadline}>
@@ -77,6 +77,6 @@ export const SkillBox: React.FC<Props> = ({ translations }) => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };

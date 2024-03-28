@@ -20,7 +20,7 @@ export const Hero: React.FC<Props> = ({ headline, subline, image }) => {
           placeholder="blur"
           priority
           fill
-          sizes="(max-width: 479) 308px,
+          sizes="(max-width: 479px) 308px,
           (max-width: 1280px) 354px,
           380px"
         />

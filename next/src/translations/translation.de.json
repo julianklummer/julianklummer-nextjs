@@ -215,6 +215,7 @@
       "teaserList": [
         {
           "headline": "Cybersicherheit-BW",
+          "tooltip": "www.cybersicherheit-bw.de öffnen",
           "url": "https://www.cybersicherheit-bw.de/",
           "image": {
             "srcId": "csbw",
@@ -223,6 +224,7 @@
         },
         {
           "headline": "Berliner Ensemble",
+          "tooltip": "www.berliner-ensemble.de/magazin öffnen",
           "url": "https://www.berliner-ensemble.de/magazin",
           "image": {
             "srcId": "berlinerensemble",
@@ -231,6 +233,7 @@
         },
         {
           "headline": "Burgtheater",
+          "tooltip": "www.burgtheater.at öffnen",
           "url": "https://www.burgtheater.at/",
           "image": {
             "srcId": "burgtheater",
@@ -239,6 +242,7 @@
         },
         {
           "headline": "Science Olympiaden",
+          "tooltip": "www.scienceolympiaden.de öffnen",
           "url": "https://www.scienceolympiaden.de/",
           "image": {
             "srcId": "scienceolympiaden",
@@ -247,6 +251,7 @@
         },
         {
           "headline": "Bundesamt für Naturschutz",
+          "tooltip": "www.bfn.de öffnen",
           "url": "https://www.bfn.de/",
           "image": {
             "srcId": "bfn",
@@ -255,6 +260,7 @@
         },
         {
           "headline": "Aufbau Verlage",
+          "tooltip": "www.aufbau-verlage.de/edition-braus öffnen",
           "url": "https://www.aufbau-verlage.de/edition-braus",
           "image": {
             "srcId": "aufbau",

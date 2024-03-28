@@ -2,14 +2,72 @@
 @use "styles/theme/colors" as colors;
 @use "styles/utils" as utils;
 
-.projectSwiper {
-  overflow: visible;
+.projectSwiperContainer {
+  .projectSwiper {
+    overflow: visible;
+  }
+
+  .slide {
+    opacity: 0;
+  }
+
+  .navWrapper {
+    display: flex block;
+    gap: utils.vw-clamp(2px, xs, 10px);
+    margin-top: utils.vw-clamp(10px, xs, 20px);
+
+    @include utils.not-reduced-motion {
+      transition: all 0.3s 0.8s ease-in;
+      opacity: 0;
+    }
+  }
+
+  &._animated {
+    .slide {
+      animation-name: slide-in;
+      animation-duration: calc(var(--animation-duration) * 1s);
+      animation-delay: calc(
+        var(--index) * (var(--animation-duration) - var(--animation-stagger)) *
+          1s
+      );
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      opacity: 0;
+
+      @include utils.not-reduced-motion {
+        --animation-duration: 0.5;
+        --animation-stagger: 0.1;
+      }
+
+      @include utils.prefers-reduced-motion {
+        --animation-duration: 0;
+        --animation-stagger: 0;
+      }
+    }
+
+    .navWrapper {
+      opacity: 1;
+    }
+  }
 }
 
-.navWrapper {
-  display: flex block;
-  gap: utils.vw-clamp(2px, xs, 10px);
-  margin-top: utils.vw-clamp(10px, xs, 20px);
+@keyframes slide-in {
+  0% {
+    transform: translateX(70vw);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-2vw);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-4vw);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .buttonPrev,
