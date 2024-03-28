@@ -22,7 +22,7 @@
       "imageAlt": "Portrait of Julian Klummer"
     },
     "about": {
-      "text": "<p>I discovered my passion for code and digital media at the age of 13 while experimenting with code and media on my first blog. During my wonderful study time in Stuttgart I have discovered this vast field in various dimensions covering technology, media and as well management topics. I was particularly drawn to programming and each new skill I learned drove me to dive deeper into the field.</p><p>First I strengthened my knowledge in HTML/[SA|C]SS, PHP, Python, SQL and “traditional” stacks until I fell for JAMstack technologies. Since then I focused and strengthened my skills in TypeScript/JavaScript, React, bundling, APIs, Node and architectures which bring the interplay alive.</p><p>I am passionate about creating appealing user interfaces and experiences, therefor I primarily focusing on frontend development. I constantly work to improve my skills and stay up-to-date with the latest trends and technologies. During my studies I set up the event agency inPulse. Through working in that company I was able to dive deeper into the world of graphic design and content creation through various marketing campaigns for our events. This trained my eye for good design and enhanced my ability for effective communication with other creators.</p><p>As a developer I started working as a working student and later full-time at the digital agency Sirup in the heart of Berlin. During my work I continuously consolidated my knowledge of web technologies, accessibility, security, test driven development, object oriented/functional programming and multiple ways to center divs.</p>"
+      "text": "<span>My journey into the world of coding and digital media began at the age of 13 when I developed my first photography blog and experimented with it. This project sparked my fascination for websites that stand out through beautiful designs and interesting user interfaces. In my bachelor's studies in Stuttgart, I explored the extensive field of online media in numerous dimensions. My academic education covered a wide spectrum, from basic IT skills to advanced concepts such as application development, machine learning, and the Internet of Things. Additionally, I honed my skills in management, project leadership, and competency in multimedia environments.</span><span>During my studies, I expanded my skills through work in my entrepreneurial venture in event and brand management and a working student job as a frontend developer.</span><span>Through entrepreneurship, I learned graphic design and content creation for web platforms, maintaining web shops, and ticketing systems. I particularly trained in creating good processes, effective team communication, decisive action, and balancing conflicting interests.</span><span>My time in frontend development gave me a deeper understanding of the intricacies of programming and web architecture. In particular, my involvement in various projects at the SIRUP agency acquainted me with a variety of technologies and expanded my knowledge spectrum.</span><span>The different tech stacks present many challenges for API integration, server-client synchronization, and bundling. I proactively took on this task, maintaining and integrating tools and modules to enable both the best possible user and developer experience.</span><span>I aim to optimize processes and develop efficiently. Adhering to the DRY principle (Don't Repeat Yourself), I prioritize clean, reusable code encapsulated and documented within packages. Furthermore, I stay up to date on new technologies, best practices, and design patterns, and I'm happy to share my knowledge to advance my environment and enable the adoption of innovation.</span><span>One of my favorite recent challenges was implementing a headless CMS for a Next.js integration. With my expertise in backend development with TypeScript, Node, Koa, and Strapi, we successfully realized a robust system and implemented a search API with Elasticsearch.</span>"
     },
     "skillBox": {
       "navigationHeadline": "Skills",
@@ -195,6 +195,73 @@
             "Landingpage creation and productdata-management with Magento",
             "Customer relationship management"
           ]
+        }
+      ]
+    },
+    "projectSwiper": {
+      "headline": "Projects",
+      "description": "Selection of publicly accessible pages I have contributed to",
+      "swiper": {
+        "containerMessage": "Carousel",
+        "firstSlideMessage": "First slide is being displayed.",
+        "lastSlideMessage": "Last slide is being displayed.",
+        "buttonNext": "Show next slide",
+        "buttonPrev": "Show previous slide"
+      },
+      "teaserList": [
+        {
+          "headline": "Cybersecurity-BW",
+          "tooltip": "Open www.cybersicherheit-bw.de",
+          "url": "https://www.cybersicherheit-bw.de/",
+          "image": {
+            "srcId": "csbw",
+            "alt": "Website Screenshot of Cybersecurity Agency Baden-Württemberg"
+          }
+        },
+        {
+          "headline": "Berliner Ensemble",
+          "tooltip": "Open www.berliner-ensemble.de/magazin",
+          "url": "https://www.berliner-ensemble.de/magazin",
+          "image": {
+            "srcId": "berlinerensemble",
+            "alt": "Website Screenshot of Berliner Ensemble Magazin"
+          }
+        },
+        {
+          "headline": "Burgtheater",
+          "tooltip": "Open www.burgtheater.at",
+          "url": "https://www.burgtheater.at/",
+          "image": {
+            "srcId": "burgtheater",
+            "alt": "Website Screenshot of Burgtheater"
+          }
+        },
+        {
+          "headline": "Science Olympiads",
+          "tooltip": "Open www.scienceolympiaden.de",
+          "url": "https://www.scienceolympiaden.de/",
+          "image": {
+            "srcId": "scienceolympiaden",
+            "alt": "Website Screenshot of Science Olympiads"
+          }
+        },
+        {
+          "headline": "Federal Agency for Nature Conservation",
+          "tooltip": "Open www.bfn.de",
+          "url": "https://www.bfn.de/",
+          "image": {
+            "srcId": "bfn",
+            "alt": "Website Screenshot of Federal Agency for Nature Conservation"
+          }
+        },
+        {
+          "headline": "Aufbau Publishers",
+          "tooltip": "Open www.aufbau-verlage.de/edition-braus",
+          "url": "https://www.aufbau-verlage.de/edition-braus",
+          "image": {
+            "srcId": "aufbau",
+            "alt": "Website Screenshot Edition Braus of Aufbau Publishers"
+          }
         }
       ]
     },
