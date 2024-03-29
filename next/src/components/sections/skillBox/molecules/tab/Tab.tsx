@@ -1,5 +1,5 @@
 "use client";
-import { ForwardedRef, forwardRef, useState } from "react";
+import { ForwardedRef, forwardRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { SkillIcon } from "../../atoms/skillIcon/SkillIcon";
 import { iconColorList } from "../../atoms/skillIcon/iconColorList";
@@ -20,8 +20,10 @@ export const Tab = forwardRef(function Tab(
   ref: ForwardedRef<HTMLLIElement>
 ) {
   const { tabCategory, active, prevActive } = props;
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const { ref: internalRef, inView } = useInView({ threshold: 0.6 });
+  const { ref: internalRef, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.6,
+  });
 
   const classList = [styles.tab];
   if (active) classList.push(styles._active);

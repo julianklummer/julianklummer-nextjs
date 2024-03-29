@@ -18,7 +18,10 @@ export const ProjectSwiper: React.FC<Props> = ({ translations }) => {
   const [instance, setSwiperInstance] = useState<SwiperType>();
   const [isLastSlideActive, setIsLastSlideActive] = useState<boolean>(false);
   const [isFirstSlideActive, setIsFirstSlideActive] = useState<boolean>(true);
-  const { ref, inView } = useInView({ threshold: 0.6 });
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.6,
+  });
   const id = useId();
 
   const containerClassList = [styles.projectSwiperContainer];
