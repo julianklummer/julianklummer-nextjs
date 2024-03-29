@@ -1,12 +1,6 @@
 "use client";
-import {
-  ForwardedRef,
-  forwardRef,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { ForwardedRef, forwardRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { SkillIcon } from "../../atoms/skillIcon/SkillIcon";
 import { iconColorList } from "../../atoms/skillIcon/iconColorList";
 import { SkillTabCategory } from "../../types";
@@ -27,36 +21,12 @@ export const Tab = forwardRef(function Tab(
 ) {
   const { tabCategory, active, prevActive } = props;
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const iconListRef = useRef<HTMLElement>(null);
-
-  const intersectionObserver = useMemo(
-    () =>
-      new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting !== isIntersecting) {
-            setIsIntersecting(entry.isIntersecting);
-          }
-        },
-        {
-          threshold: 0.6,
-        }
-      ),
-    []
-  );
-
-  useEffect(() => {
-    if (!iconListRef.current) return;
-    intersectionObserver.observe(iconListRef.current);
-
-    return () => {
-      intersectionObserver.disconnect();
-    };
-  }, [iconListRef, intersectionObserver]);
+  const { ref: internalRef, inView } = useInView({ threshold: 0.6 });
 
   const classList = [styles.tab];
   if (active) classList.push(styles._active);
   if (prevActive) classList.push(styles._prevActive);
-  if (isIntersecting) classList.push(styles._animated);
+  if (inView) classList.push(styles._animated);
 
   const renderTabContent = () => {
     return (
@@ -102,7 +72,7 @@ export const Tab = forwardRef(function Tab(
       className={classList.join(" ")}
       id={getTabId(tabCategory)}
       aria-hidden={!active}
-      ref={iconListRef}
+      ref={internalRef}
     >
       {active || prevActive ? renderTabContent() : null}
     </div>

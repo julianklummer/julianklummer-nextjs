@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@graphql-tools/load": "^8.0.2",
+    "@graphql-tools/url-loader": "^8.0.2",
     "accept-language-parser": "^1.5.0",
+    "graphql": "^16.8.1",
     "next": "^14.1",
     "next-intl": "^3.9.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.8.1",
     "sharp": "^0.33.2",
     "swiper": "^11.0.7",
     "zod": "^3.22.4"

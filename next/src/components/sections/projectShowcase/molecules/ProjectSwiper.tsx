@@ -1,6 +1,7 @@
 "use client";
 import { Translation } from "@/translations/types";
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useId, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import ArrowSvg from "src/icons/arrow.svg";
 import { Swiper as SwiperType } from "swiper";
 import "swiper/css";
@@ -17,39 +18,14 @@ export const ProjectSwiper: React.FC<Props> = ({ translations }) => {
   const [instance, setSwiperInstance] = useState<SwiperType>();
   const [isLastSlideActive, setIsLastSlideActive] = useState<boolean>(false);
   const [isFirstSlideActive, setIsFirstSlideActive] = useState<boolean>(true);
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const swiperWrapper = useRef<HTMLDivElement>(null);
+  const { ref, inView } = useInView({ threshold: 0.6 });
   const id = useId();
 
   const containerClassList = [styles.projectSwiperContainer];
-  if (isIntersecting) containerClassList.push(styles._animated);
-
-  const intersectionObserver = useMemo(
-    () =>
-      new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting !== isIntersecting) {
-            setIsIntersecting(entry.isIntersecting);
-          }
-        },
-        {
-          threshold: 0.6,
-        }
-      ),
-    []
-  );
-
-  useEffect(() => {
-    if (!swiperWrapper.current) return;
-    intersectionObserver.observe(swiperWrapper.current);
-
-    return () => {
-      intersectionObserver.disconnect();
-    };
-  }, [swiperWrapper, intersectionObserver]);
+  if (inView) containerClassList.push(styles._animated);
 
   return (
-    <div ref={swiperWrapper} className={containerClassList.join(" ")}>
+    <div ref={ref} className={containerClassList.join(" ")}>
       <Swiper
         className={styles.projectSwiper}
         modules={[A11y, Keyboard, Mousewheel]}
