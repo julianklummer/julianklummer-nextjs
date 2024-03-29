@@ -1,11 +1,15 @@
 import styles from "./textBox.module.scss";
 
 type Props = {
-  text: string;
+  text?: string;
+  children?: React.ReactNode;
 };
 
-export const TextBox: React.FC<Props> = ({ text }) => {
+export const TextBox: React.FC<Props> = ({ text, children }) => {
   return (
-    <p className={styles.textBox} dangerouslySetInnerHTML={{ __html: text }} />
+    <span className={styles.textBox}>
+      {text}
+      {children}
+    </span>
   );
 };

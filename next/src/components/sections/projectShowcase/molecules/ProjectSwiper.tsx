@@ -74,6 +74,7 @@ export const ProjectSwiper: React.FC<Props> = ({ translations }) => {
                 "--index": index,
               } as React.CSSProperties
             }
+            key={index + teaser.headline}
           >
             <ProjectTeaser {...teaser} />
           </SwiperSlide>

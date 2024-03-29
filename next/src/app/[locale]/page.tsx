@@ -1,3 +1,6 @@
+import { getData } from "@/apiConnector/getData";
+import { startQuery } from "@/apiConnector/queries/startQuery";
+import { Start, StartSchema } from "@/apiConnector/types/Start";
 import { Copyright } from "@/components/library/atoms/Copyright/Copyright";
 import { getLegalLinkTranslations } from "@/components/library/atoms/LegalLink/getLegalLinkTranslations";
 import { LegalLink } from "@/components/library/atoms/LegalLink/LegalLink";
@@ -14,6 +17,7 @@ import { Locale } from "@/translations/types";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import profileImage from "public/assets/images/profile.jpeg";
+import Markdown from "react-markdown";
 import styles from "./page.module.scss";
 
 type Props = {
@@ -22,19 +26,37 @@ type Props = {
   };
 };
 
+const makeGetContent = (locale: Locale): (() => Promise<Start["start"]>) => {
+  let content: Start["start"] | null = null;
+
+  return async () => {
+    if (content) return content;
+    const { start } = await getData({
+      query: startQuery,
+      schema: StartSchema,
+      variableValues: {
+        locale: locale === "en" ? "en-US" : "de",
+      },
+    });
+    content = start;
+    return content;
+  };
+};
+
 export async function generateMetadata({
   params: { locale },
 }: Props): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: "meta.index" });
+  const content = await makeGetContent(locale)();
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title: content.metaTitle,
+    description: content.metaDescription,
   };
 }
 
 export default async function Page({ params: { locale } }: Props) {
   const t = await getTranslations({ locale, namespace: "components" });
+  const content = await makeGetContent(locale)();
 
   return (
     <>
@@ -43,8 +65,8 @@ export default async function Page({ params: { locale } }: Props) {
       </header>
       <div>
         <Hero
-          headline={t("hero.headline")}
-          subline={t("hero.subline")}
+          headline={content.heroHeadline}
+          subline={content.heroSubline}
           image={{
             src: profileImage,
             alt: t("hero.imageAlt"),
@@ -52,7 +74,9 @@ export default async function Page({ params: { locale } }: Props) {
         />
         <SkillBox translations={getSkillBoxTranslations(t)} />
         <SectionRow>
-          <TextBox text={t.raw("about.text")} />
+          <TextBox>
+            <Markdown>{content.about}</Markdown>
+          </TextBox>
           <StationBox translations={getStationBoxTranslations(t)} />
         </SectionRow>
         <ProjectShowcase />
