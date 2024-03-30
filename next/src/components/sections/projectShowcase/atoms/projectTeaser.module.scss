@@ -1,0 +1,111 @@
+@use "styles/theme/colors" as colors;
+@use "styles/theme/typography" as typography;
+@use "styles/utils" as utils;
+
+.projectTeaser {
+  --aspect-ratio: 4/5;
+  width: 100%;
+  aspect-ratio: var(--aspect-ratio);
+  position: relative;
+  display: block;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: all 0.2s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform-origin: center center;
+    background-color: colors.$dark-gray;
+    border: 1px solid colors.$white;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 58%;
+    inset: auto 1px 1px;
+    transform-origin: center center;
+    background: linear-gradient(transparent 0%, rgba(24, 24, 23, 0.5) 50%);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .link {
+    position: absolute;
+    inset: auto 0 0;
+    display: flex block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1%;
+    text-align: center;
+    z-index: 1;
+    border-top: 1px solid colors.$white;
+    backdrop-filter: blur(4px) brightness(90%);
+    mask-image: radial-gradient(
+      circle at center,
+      rgb(0 0 0 / 100%) 80%,
+      transparent
+    );
+    padding: 7% 0;
+    @include typography.h4;
+    text-decoration: none;
+    color: colors.$white;
+    gap: 0;
+    transition: all 0.2s ease-in-out;
+
+    --icon-width: 10%;
+
+    .linkText {
+      max-width: calc(100% - var(--icon-width));
+      margin-right: calc(var(--icon-width) * -1);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .linkIcon {
+      opacity: 0;
+      width: var(--icon-width);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  .image {
+    position: absolute;
+    inset: 5%;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &:has(.link:hover, .link:focus-visible),
+  &:focus-visible,
+  &:hover {
+    filter: saturate(1.5);
+    transform: scale(1.05);
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 38%;
+      inset: auto 1px 1px;
+      transform-origin: center center;
+      background: linear-gradient(transparent 20%, rgba(24, 24, 23, 0.5) 50%);
+    }
+
+    .link {
+      gap: 2%;
+      backdrop-filter: blur(7px) brightness(70%);
+
+      .linkText {
+        margin-right: 0;
+      }
+
+      .linkIcon {
+        opacity: 1;
+      }
+    }
+  }
+}

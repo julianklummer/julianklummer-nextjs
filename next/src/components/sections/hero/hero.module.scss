@@ -1,0 +1,114 @@
+@use "styles/theme/typography" as typography;
+@use "styles/theme/breakpoints" as breakpoints;
+@use "styles/theme/sizes" as sizes;
+@use "styles/utils" as utils;
+
+$max-width: 82rem;
+
+.hero {
+  display: flex block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100lvh - (#{sizes.$section-margin-y} * 2));
+  margin: 0 auto sizes.$section-margin-y;
+  max-width: sizes.$section-max-width;
+  gap: utils.vw-clamp(32px, xs, 40px);
+
+  @include utils.container-query(md) {
+    gap: utils.vw-clamp(32px, md, 64px);
+    flex-direction: row;
+  }
+
+  @include utils.container-query(lg) {
+    gap: utils.vw-clamp(32px, lg, 64px);
+  }
+}
+
+.heroImage {
+  --size: #{utils.rem-vw-mix(220px, 0.8, xs)};
+  position: relative;
+  overflow: hidden;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+
+  img {
+    aspect-ratio: 1/1;
+  }
+
+  @include utils.container-query(sm) {
+    --size: #{utils.rem-vw-mix(300px, 0.3, sm)};
+  }
+
+  @include utils.container-query(md) {
+    --size: #{utils.rem-vw-mix(300px, 0.5, md)};
+  }
+
+  @include utils.container-query(lg) {
+    --size: #{utils.rem-vw-mix(300px, 0.5, lg, 380px)};
+  }
+
+  @include utils.container-query(xl) {
+    --size: #{utils.rem-vw-mix(380px, 0.5, xl, 380px)};
+  }
+}
+
+.heroH1 {
+  width: min-content;
+  text-align: center;
+  margin: unset;
+
+  @include utils.container-query(lg) {
+    text-align: left;
+  }
+
+  * {
+    display: block;
+  }
+}
+
+.heroHeadline {
+  @include typography.heroHeadline;
+  width: max-content;
+}
+
+.heroSubline {
+  @include typography.heroSubline;
+  display: inline-block;
+}
+
+.textSwitcher {
+  display: inline;
+}
+
+.textSwitcherFadeIn {
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.textSwitcherFadeOut {
+  animation-name: fade-out;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,62 @@
+@use "styles/theme/colors" as colors;
+@use "styles/theme/sizes" as sizes;
+@use "styles/theme/background-blur" as background-blur;
+@use "styles/utils" as utils;
+
+.textBox {
+  position: relative;
+  z-index: 1;
+  height: fit-content;
+  justify-self: right;
+  display: flex block;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: utils.vw-clamp(20px, xs);
+
+  @include utils.container-query(sm) {
+    gap: utils.vw-clamp(20px, sm);
+  }
+
+  @include utils.container-query(md) {
+    justify-content: flex-end;
+    gap: utils.vw-clamp(20px, md);
+  }
+
+  @include utils.container-query(lg) {
+    display: flex block;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 3%;
+    height: utils.vw-clamp(800px, lg);
+  }
+
+  @include utils.container-query(xl) {
+    height: utils.vw-clamp(800px, xl);
+  }
+
+  @include utils.container-query(xxl) {
+    height: utils.vw-clamp(800px, xxl);
+  }
+
+  @include utils.container-query(xxxl) {
+    height: utils.vw-clamp(800px, xxxl);
+  }
+
+  p {
+    margin: unset;
+    max-width: utils.vw-clamp(400px, xs);
+
+    @include utils.container-query(sm) {
+      max-width: utils.vw-clamp(300px, sm);
+    }
+
+    @include utils.container-query(md) {
+      max-width: utils.vw-clamp(400px, md);
+    }
+
+    @include utils.container-query(lg) {
+      width: 47%;
+    }
+  }
+}

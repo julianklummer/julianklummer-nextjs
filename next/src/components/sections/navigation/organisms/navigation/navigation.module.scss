@@ -1,0 +1,10 @@
+@use "styles/theme/sizes" as sizes;
+
+.navigation {
+  display: flex block;
+  padding: sizes.$sticky-padding-y sizes.$sticky-padding-x;
+  justify-content: space-between;
+  align-items: center;
+  max-width: sizes.$max-site-width;
+  margin: 0 auto;
+}

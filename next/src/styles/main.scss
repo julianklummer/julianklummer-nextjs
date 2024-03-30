@@ -1,0 +1,62 @@
+@use "components/utils/background/background.module" as background;
+@use "./theme/colors" as colors;
+@use "./theme/sizes" as sizes;
+@use "./theme/typography" as typography;
+@use "./utils" as utils;
+
+html {
+  @include background.color-gradient;
+}
+
+body {
+  width: 100%;
+  min-width: sizes.$min-site-width;
+  min-height: 100vh;
+  color: colors.$white;
+  container-type: inline-size;
+}
+
+h1 {
+  @include typography.h1;
+}
+
+h2 {
+  @include typography.h2;
+}
+
+h3 {
+  @include typography.h3;
+}
+
+h4 {
+  @include typography.h4;
+}
+
+h5 {
+  @include typography.h5;
+}
+
+h6 {
+  @include typography.h6;
+}
+
+p {
+  @include typography.p;
+}
+
+*:focus-visible {
+  outline: 1px solid colors.$secondary;
+  outline-offset: 6px;
+  @include utils.not-reduced-motion {
+    animation: showOutline 0.1s ease-in-out;
+  }
+}
+
+@keyframes showOutline {
+  from {
+    outline-offset: 0;
+  }
+  to {
+    outline-offset: 5px;
+  }
+}

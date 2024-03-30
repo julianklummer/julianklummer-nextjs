@@ -1,0 +1,56 @@
+@use "src/components/sections/hero/hero.module.scss" as hero;
+@use "styles/theme/typography" as typography;
+@use "styles/theme/breakpoints" as breakpoints;
+@use "styles/theme/colors" as colors;
+@use "styles/theme/sizes" as sizes;
+@use "styles/utils" as utils;
+
+.stationBox {
+  position: relative;
+  display: flex block;
+  flex-direction: column;
+  height: fit-content;
+  padding: 1px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: colors.$dark-gray;
+    border: 1px solid colors.$primary;
+    transform-origin: top left;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    background: url(/assets/images/grain.webp) repeat;
+    pointer-events: none;
+    transform-origin: top left;
+  }
+
+  &[data-flip="invert"] {
+    &::before,
+    &::after {
+      transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
+        scale(var(--dw), var(--dh));
+    }
+  }
+
+  &[data-flip="play"] {
+    &::before,
+    &::after {
+      @include utils.not-reduced-motion {
+        transition: transform 0.5s;
+      }
+      transform: none;
+    }
+  }
+}
+
+.stationBoxHeadline {
+  @include utils.visually-hidden;
+}
