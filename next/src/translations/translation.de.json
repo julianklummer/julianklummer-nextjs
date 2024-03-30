@@ -55,7 +55,6 @@
           "skillList": [
             { "title": "Docker", "icon": "docker" },
             { "title": "Gitlab CI/CD", "icon": "gitlab" },
-            { "title": "Github CI/CD", "icon": "github" },
             { "title": "Webpack", "icon": "webpack" },
             { "title": "Babel", "icon": "babel" },
             { "title": "ESLint", "icon": "eslint" },
