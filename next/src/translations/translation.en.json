@@ -108,6 +108,7 @@
     },
     "stationBox": {
       "headline": "Career",
+      "openClodeAccordion": "Toggle details",
       "stationList": [
         {
           "id": "sirup-2",

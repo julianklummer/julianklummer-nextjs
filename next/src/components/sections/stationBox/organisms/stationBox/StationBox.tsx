@@ -28,6 +28,9 @@ export const StationBox: React.FC<Props> = ({ translations }) => {
         return (
           <Accordion
             key={`${index}-tab-${station.id}`}
+            translations={{
+              openCloseAccordion: translations.openCloseAccordion,
+            }}
             station={station}
             active={isActive}
             open={() => handleAccordionClick(index)}

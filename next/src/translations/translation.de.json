@@ -112,6 +112,7 @@
     },
     "stationBox": {
       "headline": "Werdegang",
+      "openClodeAccordion": "Details öffnen/schließen",
       "stationList": [
         {
           "id": "sirup-2",

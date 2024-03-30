@@ -189,6 +189,11 @@
   &._active {
     display: block;
   }
+
+  ul,
+  li {
+    list-style: circle;
+  }
 }
 
 .panelList {

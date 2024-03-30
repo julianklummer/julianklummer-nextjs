@@ -26,6 +26,7 @@ export const TranslationSchema = z.object({
     }),
     stationBox: z.object({
       headline: z.string(),
+      openCloseAccordion: z.string(),
       stationList: StationListSchema,
     }),
     projectSwiper: z.object({

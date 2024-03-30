@@ -9,6 +9,9 @@ export const getTabId = (station: Station) => {
   return station.id + "-accordion";
 };
 type Props = {
+  translations: {
+    openCloseAccordion: string;
+  };
   station: Station;
   active: boolean;
   open: Function;
@@ -17,10 +20,9 @@ type Props = {
 };
 
 export const Accordion = forwardRef(function Accordion(
-  props: Props,
+  { translations, station, active, open, close, index }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) {
-  const { station, active, open, close, index } = props;
   const headerClassList = [styles.accordionHeader];
   const panelClassList = [styles.accordionPanel];
   if (active) {
@@ -64,20 +66,8 @@ export const Accordion = forwardRef(function Accordion(
             id={getTabId(station) + "-header"}
             aria-expanded={active}
             aria-controls={getTabId(station) + "-panel"}
-            aria-label={
-              "test"
-              // Todo Add translation
-              // languageContext.language === "de"
-              //   ? "Details öffnen/schließen"
-              //   : "Toggle details"
-            }
-            title={
-              // Todo Add translation
-              "test"
-              // languageContext.language === "de"
-              //   ? "Details öffnen/schließen"
-              //   : "Toggle details"
-            }
+            aria-label={translations.openCloseAccordion}
+            title={translations.openCloseAccordion}
             onClick={() => (active ? close() : open())}
           >
             {station.title}
