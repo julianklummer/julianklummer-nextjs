@@ -12,7 +12,7 @@ export const getProjectSwiperTranslations: GetTranslationsFunction<
     buttonNext: t("projectSwiper.swiper.buttonNext" as never),
     buttonPrev: t("projectSwiper.swiper.buttonPrev" as never),
   },
-  // TODO: Move to content source instead of translationfile
+  // TODO: Move to contentful instead of translationfile
   ...JSON.parse(
     `{"teaserList": ${JSON.stringify(
       t.raw("projectSwiper.teaserList" as never)

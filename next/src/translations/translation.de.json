@@ -1,10 +1,4 @@
 {
-  "meta": {
-    "index": {
-      "title": "Julian Klummer | Fullstack Entwickler aus Berlin",
-      "description": "Als Fullstack-Entwickler bin ich darauf spezialisiert, mit TypeScript und JAMstack-Technologien ansprechende digitale Anwendungen zu entwickeln. Von React über Nextjs bis hin zu Node und anderen wichtigen Tools verfüge ich über das Know-how, um Visionen zum Leben zu erwecken. Da ich mich auf kontinuierliches Lernen konzentriere, bin ich immer auf der Suche nach den neuesten Tools und Techniken, um innovative Lösungen zu erschaffen."
-    }
-  },
   "components": {
     "navigation": {
       "socialLink": "{name} Profil öffnen",
@@ -17,12 +11,7 @@
       }
     },
     "hero": {
-      "headline": "Julian Klummer",
-      "subline": "Ambitionierter Fullstack Entwickler spezialisiert auf TypeScript",
       "imageAlt": "Portrait von Julian Klummer"
-    },
-    "about": {
-      "text": "<span>Meine Reise in die Welt des Codings und digitalen Medien begann im Alter von 13 Jahren, als ich meinen ersten Fotografie-Blogs entwickelte und mit ihm experimentierte. Dieses Projekt weckte meine Faszination für Websites, die durch schöne Designs und interessante Benutzeroberflächen herausstechen. In meinem Bachelorstudium in Stuttgart habe ich dann das umfangreiche Feld der Online-Medien in zahlreichen Dimensionen erkundet. Meine akademische Ausbildung umfasste ein breites Spektrum, von grundlegenden IT-Kenntnissen bis hin zu fortgeschrittenen Konzepten wie Anwendungsentwicklung, maschinellem Lernen und dem Internet der Dinge. Darüber hinaus habe ich meine Fähigkeiten im Management, der Projektleitung und der Kompetenz in multimedialen Umgebungen geschärft.</span><span>Während meines Studiums erweiterte ich meine Fähigkeiten durch die Arbeit in meiner unternehmerischen Selbständigkeit im Bereich Event- und Brandmanagement und einer Werkstudentenstelle als Frontend-Entwickler.</span><span>Durch die Selbstständigkeit erlernte ich Grafikdesign und die Erstellung von Inhalten für die Webplattform und pflegte Webshops und Ticketingsysteme. Besonders schulte ich die Fähigkeit zur Schaffung guter Prozesse, effektive Team-Kommunikation, zielstrebiges Handeln und Ausbalancierung von Interessenkonflikten.</span><span>Meine Zeit in der Frontend-Entwicklung ermöglichte mir ein tieferes Verständnis für die Feinheiten der Programmierung und der Webarchitektur. Insbesondere meine Beteiligung an diversen Projekten bei der Agentur SIRUP hat mich mit einer Vielzahl von Technologien vertraut gemacht und mein Wissensspektrum erweitert.</span><span>Durch die verschiedenen Techstacks ergeben sich viele Herausforderungen für die Integration von APIs, Synchronisierung von Server und Client und das Bundling. Dieser Aufgabe habe ich mich proaktiv angenommen und Pflege und Integration von Tools und Modulen, um sowohl die best mögliche User- als auch Developer Experience zu ermöglichen.</span><span>Ich möchte Prozesse optimieren und effizient entwickeln. Unter Einhaltung des DRY-Prinzips (Don't Repeat Yourself) priorisiere ich sauberen, wiederverwendbaren Code, der innerhalb von Paketen eingekapselt und dokumentiert ist. Darüber hinaus halte ich mich über neue Technologien, Best Practices und Design-Patterns auf dem neuesten Stand und teile mein Wissen gerne, um mein Umfeld voranzubringen und die Adaption von Innovation zu ermöglichen.</span><span>Eine meiner liebsten Herausforderungen in letzter Zeit war die Implementierung eines Headless CMS für eine Nextjs-Integration. Mit meinem Fachwissen in der Backend-Entwicklung mit TypeScript, Node, Koa und Strapi konnten wir erfolgreich ein robustes Systems realisieren und eine Such-API mit elasticsearch realisieren.</span>"
     },
     "skillBox": {
       "navigationHeadline": "Kenntnisse",

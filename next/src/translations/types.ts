@@ -5,12 +5,6 @@ import { locales } from "./locales";
 import { TeaserListSchema } from "@/components/sections/projectShowcase/types";
 
 export const TranslationSchema = z.object({
-  meta: z.object({
-    index: z.object({
-      title: z.string(),
-      description: z.string(),
-    }),
-  }),
   components: z.object({
     navigation: z.object({
       socialLink: z.string(),
@@ -23,12 +17,7 @@ export const TranslationSchema = z.object({
       }),
     }),
     hero: z.object({
-      headline: z.string(),
-      subline: z.string(),
       imageAlt: z.string(),
-    }),
-    about: z.object({
-      text: z.string(),
     }),
     skillBox: z.object({
       navigationHeadline: z.string(),

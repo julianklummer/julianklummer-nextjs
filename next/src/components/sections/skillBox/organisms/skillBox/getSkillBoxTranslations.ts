@@ -6,7 +6,7 @@ export const getSkillBoxTranslations: GetTranslationsFunction<
 > = (t) => ({
   navigationHeadline: t("skillBox.navigationHeadline" as never),
   navigationChangeCategory: t("skillBox.navigationChangeCategory" as never),
-  // TODO: Move to content source instead of translationfile
+  // TODO: Move to contentful instead of translationfile
   ...JSON.parse(
     `{"skillTabCategoryList": ${JSON.stringify(
       t.raw("skillBox.skillTabCategoryList" as never)
