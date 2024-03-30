@@ -123,9 +123,10 @@
           "link": "https://www.sirup.com/",
           "linkTitle": "SIRUP Website",
           "infos": [
-            "React, Drupal, Symfony und Vanilla Implementierungen",
-            "Erstellung und Verbesserung von Bundling, Linting und Testing",
-            "Erstellung von wiederverwendbaren Komponentensystemen, Templates & Packages"
+            "Implementierungen in Next, React, Node, Strapi, Drupal, Symfony und Vanilla TypeScript",
+            "Erstellung und Pflege von Bundling, Linting und Testing",
+            "Einführung wiederverwendbarer Packages, Komponentensystemen & Templates",
+            "Arbeit an Seiten mit besonderen Barrierefreiheits- und Sicherheitsanforderungen"
           ]
         },
         {
@@ -138,7 +139,7 @@
           "link": "https://www.sirup.com/",
           "linkTitle": "SIRUP Website",
           "infos": [
-            "React, Drupal, Symfony und Vanilla Implementierungen",
+            "Implementierungen mit React, Drupal, Symfony und Vanilla",
             "Erstellung und Verbesserung von Bundling, Linting und Testing",
             "Entwicklung von Newsletter Templates"
           ]

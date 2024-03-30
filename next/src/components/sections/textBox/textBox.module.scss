@@ -27,23 +27,20 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: utils.vw-clamp(20px, lg);
+    gap: 3%;
     height: utils.vw-clamp(800px, lg);
   }
 
   @include utils.container-query(xl) {
     height: utils.vw-clamp(800px, xl);
-    gap: utils.vw-clamp(20px, xl);
   }
 
   @include utils.container-query(xxl) {
     height: utils.vw-clamp(800px, xxl);
-    gap: utils.vw-clamp(20px, xxl);
   }
 
   @include utils.container-query(xxxl) {
     height: utils.vw-clamp(800px, xxxl);
-    gap: utils.vw-clamp(20px, xxxl);
   }
 
   p {
@@ -59,7 +56,7 @@
     }
 
     @include utils.container-query(lg) {
-      width: 45%;
+      width: 47%;
     }
   }
 }
