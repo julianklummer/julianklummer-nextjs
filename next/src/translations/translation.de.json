@@ -112,7 +112,7 @@
     },
     "stationBox": {
       "headline": "Werdegang",
-      "openClodeAccordion": "Details öffnen/schließen",
+      "openCloseAccordion": "Details öffnen/schließen",
       "stationList": [
         {
           "id": "sirup-2",
@@ -192,7 +192,7 @@
         }
       ]
     },
-    "projectSwiper": {
+    "projectShowcase": {
       "headline": "Projekte",
       "description": "Auswahl an öffentlich zugänglichen Seiten an denen ich mitgewirkt habe",
       "swiper": {

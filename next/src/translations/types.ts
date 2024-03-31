@@ -29,7 +29,7 @@ export const TranslationSchema = z.object({
       openCloseAccordion: z.string(),
       stationList: StationListSchema,
     }),
-    projectSwiper: z.object({
+    projectShowcase: z.object({
       headline: z.string(),
       description: z.string(),
       swiper: z.object({
