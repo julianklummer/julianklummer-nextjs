@@ -1,12 +1,13 @@
-import { getData } from "@/apiConnector/getData";
+import { fetchData } from "@/apiConnector/fetchData";
 import { startQuery } from "@/apiConnector/queries/startQuery";
-import { Start, StartSchema } from "@/apiConnector/types/Start";
+import { StartSchema } from "@/apiConnector/types/Start";
 import { Copyright } from "@/components/library/atoms/Copyright/Copyright";
 import { getLegalLinkTranslations } from "@/components/library/atoms/LegalLink/getLegalLinkTranslations";
 import { LegalLink } from "@/components/library/atoms/LegalLink/LegalLink";
 import { SectionRow } from "@/components/library/morphGrid/sectionRow/SectionRow";
 import { Hero } from "@/components/sections/hero/Hero";
 import { Navigation } from "@/components/sections/navigation/organisms/navigation/Navigation";
+import { getProjectShowcaseTranslations } from "@/components/sections/projectShowcase/organisms/getProjectShowcaseTranslations";
 import { ProjectShowcase } from "@/components/sections/projectShowcase/organisms/ProjectShowcase";
 import { getSkillBoxTranslations } from "@/components/sections/skillBox/organisms/skillBox/getSkillBoxTranslations";
 import { SkillBox } from "@/components/sections/skillBox/organisms/skillBox/SkillBox";
@@ -26,27 +27,16 @@ type Props = {
   };
 };
 
-const makeGetContent = (locale: Locale): (() => Promise<Start["start"]>) => {
-  let content: Start["start"] | null = null;
-
-  return async () => {
-    if (content) return content;
-    const { start } = await getData({
-      query: startQuery,
-      schema: StartSchema,
-      variableValues: {
-        locale: locale === "en" ? "en-US" : "de",
-      },
-    });
-    content = start;
-    return content;
-  };
-};
-
 export async function generateMetadata({
   params: { locale },
 }: Props): Promise<Metadata> {
-  const content = await makeGetContent(locale)();
+  const { start: content } = await fetchData({
+    query: startQuery,
+    schema: StartSchema,
+    variables: {
+      locale: locale === "en" ? "en-US" : "de",
+    },
+  });
 
   return {
     title: content.metaTitle,
@@ -56,7 +46,13 @@ export async function generateMetadata({
 
 export default async function Page({ params: { locale } }: Props) {
   const t = await getTranslations({ locale, namespace: "components" });
-  const content = await makeGetContent(locale)();
+  const { start: content } = await fetchData({
+    query: startQuery,
+    schema: StartSchema,
+    variables: {
+      locale: locale === "en" ? "en-US" : "de",
+    },
+  });
 
   return (
     <>
@@ -72,6 +68,7 @@ export default async function Page({ params: { locale } }: Props) {
             alt: t("hero.imageAlt"),
           }}
         />
+
         <SkillBox translations={getSkillBoxTranslations(t)} />
         <SectionRow>
           <TextBox>
@@ -79,7 +76,7 @@ export default async function Page({ params: { locale } }: Props) {
           </TextBox>
           <StationBox translations={getStationBoxTranslations(t)} />
         </SectionRow>
-        <ProjectShowcase />
+        <ProjectShowcase translations={getProjectShowcaseTranslations(t)} />
       </div>
       <footer className={styles.appFooter}>
         <span>

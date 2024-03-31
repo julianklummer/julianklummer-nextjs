@@ -11,7 +11,7 @@ import { ProjectTeaser } from "../atoms/ProjectTeaser";
 import styles from "./projectSwiper.module.scss";
 
 type Props = {
-  translations: Translation["components"]["projectSwiper"];
+  translations: Translation["components"]["projectShowcase"];
 };
 
 export const ProjectSwiper: React.FC<Props> = ({ translations }) => {

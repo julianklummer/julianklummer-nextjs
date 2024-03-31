@@ -108,7 +108,7 @@
     },
     "stationBox": {
       "headline": "Career",
-      "openClodeAccordion": "Toggle details",
+      "openCloseAccordion": "Toggle details",
       "stationList": [
         {
           "id": "sirup-2",
@@ -188,7 +188,7 @@
         }
       ]
     },
-    "projectSwiper": {
+    "projectShowcase": {
       "headline": "Projects",
       "description": "Selection of publicly accessible pages I have contributed to",
       "swiper": {

@@ -9,10 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@graphql-tools/load": "^8.0.2",
-    "@graphql-tools/url-loader": "^8.0.2",
     "accept-language-parser": "^1.5.0",
-    "graphql": "^16.8.1",
     "next": "^14.1",
     "next-intl": "^3.9.5",
     "react": "^18.2.0",
