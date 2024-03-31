@@ -29,6 +29,9 @@ export const fetchData = async <T extends ZodSchema>({
           query,
           variables,
         }),
+        next: {
+          revalidate: 60 * 60,
+        },
       })
     ).json();
 

@@ -21,8 +21,6 @@ import profileImage from "public/assets/images/profile.jpeg";
 import Markdown from "react-markdown";
 import styles from "./page.module.scss";
 
-export const dynamic = "force-static";
-
 type Props = {
   params: {
     locale: Locale;
