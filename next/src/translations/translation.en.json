@@ -227,6 +227,15 @@
           }
         },
         {
+          "headline": "Wiener Symphoniker",
+          "tooltip": "Open www.wienersymphoniker.at",
+          "url": "https://www.wienersymphoniker.at/",
+          "image": {
+            "srcId": "wienersymphoniker",
+            "alt": "Website Screenshot of the Wiener Symphoniker"
+          }
+        },
+        {
           "headline": "Science Olympiads",
           "tooltip": "Open www.scienceolympiaden.de",
           "url": "https://www.scienceolympiaden.de/",
