@@ -5,6 +5,7 @@ import burgtheater from "public/assets/images/projects/burgtheater.png";
 import bfn from "public/assets/images/projects/bfn.png";
 import scienceolympiaden from "public/assets/images/projects/scienceolympiaden.png";
 import berlinerensemble from "public/assets/images/projects/berlinerensemble.png";
+import wienersymphoniker from "public/assets/images/projects/wienersymphoniker.png";
 
 export const getStaticProjectImageData = (srcId: string): StaticImageData => {
   switch (srcId) {
@@ -20,6 +21,8 @@ export const getStaticProjectImageData = (srcId: string): StaticImageData => {
       return scienceolympiaden;
     case "berlinerensemble":
       return berlinerensemble;
+    case "wienersymphoniker":
+      return wienersymphoniker;
     default:
       return csbw;
   }
