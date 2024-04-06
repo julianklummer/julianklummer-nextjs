@@ -124,10 +124,10 @@
           "link": "https://www.sirup.com/",
           "linkTitle": "SIRUP Website",
           "infos": [
-            "Implementierungen in Next, React, Node, Strapi, Drupal, Symfony und Vanilla TypeScript",
+            "Implementierungen in Next, React, Node, Strapi, Drupal, Symfony und vanilla TypeScript",
             "Erstellung und Pflege von Bundling, Linting und Testing",
             "Einführung wiederverwendbarer Packages, Komponentensystemen & Templates",
-            "Arbeit an Seiten mit besonderen Barrierefreiheits- und Sicherheitsanforderungen"
+            "Arbeit an Anwendungen mit besonderen Barrierefreiheits- und Sicherheitsanforderungen"
           ]
         },
         {
