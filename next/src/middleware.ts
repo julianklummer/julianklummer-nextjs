@@ -11,5 +11,5 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ["/((?!api|_next|assets|favicon.ico|apple-icon.png).*)"],
+  matcher: ["/((?!api|_next|manifest|assets|favicon.ico|apple-icon.png).*)"],
 };
