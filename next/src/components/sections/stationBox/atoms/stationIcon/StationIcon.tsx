@@ -1,4 +1,5 @@
 import SourceCode from "@/icons/skillList/source-code.svg";
+import Burda from "@/icons/stationList/logos/burda.svg";
 import HdM from "@/icons/stationList/logos/hdm.svg";
 import ReadyForTechno from "@/icons/stationList/logos/readyfortechno.svg";
 import Sirup from "@/icons/stationList/logos/sirup.svg";
@@ -9,6 +10,8 @@ type Props = {
 
 export const StationIcon: React.FC<Props> = ({ name }) => {
   switch (name) {
+    case "burda":
+      return <Burda />;
     case "sirup":
       return <Sirup />;
     case "vinos":

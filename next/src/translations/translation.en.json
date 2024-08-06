@@ -111,10 +111,21 @@
       "openCloseAccordion": "Toggle details",
       "stationList": [
         {
+          "id": "burda",
+          "title": "FULLTIME: FULLSTACK DEVELOPER",
+          "institution": "Hubert Burda Media",
+          "duration": "since 08/2024",
+          "location": "Remote",
+          "icon": "burda",
+          "link": "https://www.burda.com/de/",
+          "linkTitle": "Hubert Burda Media Website",
+          "infos": ["Fullstack Development in the garden and living team"]
+        },
+        {
           "id": "sirup-2",
           "title": "FULLTIME: FRONTEND DEVELOPER",
           "institution": "SIRUP GmbH",
-          "duration": "since 03/2022",
+          "duration": "03/2022 - 07/2024",
           "location": "Berlin",
           "icon": "sirup",
           "link": "https://www.sirup.com/",
