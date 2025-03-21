@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "accept-language-parser": "^1.5.0",
-    "next": "^15.1.2",
+    "next": "^15.2.3",
     "next-intl": "^3.9.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
