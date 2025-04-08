@@ -1,6 +1,6 @@
 services:
   node:
-    image: node:20.11
+    image: node:22.14.0
     volumes: ["./next:/next"]
     working_dir: /next
     restart: unless-stopped

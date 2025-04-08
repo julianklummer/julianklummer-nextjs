@@ -11,7 +11,7 @@
   "dependencies": {
     "accept-language-parser": "^1.5.0",
     "next": "^15.2.4",
-    "next-intl": "^3.9.5",
+    "next-intl": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.8.1",

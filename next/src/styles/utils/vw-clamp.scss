@@ -14,11 +14,9 @@
 
   @if $vw-size != 0vw and $maximum-size == null {
     @return max(#{$vw-size}, #{rem($minimum-size)});
-  }
-  @elseif $vw-size != 0vw and $maximum-size != null {
+  } @else if $vw-size != 0vw and $maximum-size != null {
     @return clamp(#{rem($minimum-size)}, #{$vw-size}, #{rem($maximum-size)});
-  }
-  @elseif $maximum-size != null and $size > $maximum-size {
+  } @else if $maximum-size != null and $size > $maximum-size {
     @return rem($maximum-size);
   } @else {
     @return rem($size);

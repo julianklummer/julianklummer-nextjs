@@ -1,14 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
-import { defaultLocale, locales } from "./translations/locales";
-import { parse } from "accept-language-parser";
-import { translationMiddleware } from "./middleware/translation";
 import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
 
-export default createMiddleware({
-  defaultLocale: "en",
-  locales,
-  localePrefix: "as-needed",
-});
+export default createMiddleware(routing);
 
 export const config = {
   matcher: ["/((?!api|_next|manifest|assets|favicon.ico|apple-icon.png).*)"],

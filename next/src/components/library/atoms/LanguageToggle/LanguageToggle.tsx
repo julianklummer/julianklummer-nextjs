@@ -1,8 +1,8 @@
 "use client";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import LanguageSVG from "@/icons/navigation/button/language.svg";
 import { locales } from "@/translations/locales";
 import { Locale, Translation } from "@/translations/types";
-import { usePathname, useRouter } from "@/utils/navigation";
 import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import styles from "./languageToggle.module.scss";

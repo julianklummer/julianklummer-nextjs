@@ -1,0 +1,287 @@
+{
+  "components": {
+    "navigation": {
+      "socialLink": "{name} Profil öffnen",
+      "languageToggle": {
+        "label": "Sprache wechseln",
+        "languages": {
+          "en": "Englisch",
+          "de": "Deutsch"
+        }
+      }
+    },
+    "hero": {
+      "imageAlt": "Portrait von Julian Klummer"
+    },
+    "skillBox": {
+      "navigationHeadline": "Kenntnisse",
+      "navigationChangeCategory": "Kategorie wechseln",
+      "skillTabCategoryList": [
+        {
+          "title": "Sprachen",
+          "id": "languages",
+          "skillList": [
+            { "title": "TypeScript", "icon": "typescript" },
+            { "title": "JavaScript", "icon": "javascript" },
+            { "title": "HTML", "icon": "html" },
+            { "title": "SASS", "icon": "sass" },
+            { "title": "CSS", "icon": "css" },
+            { "title": "PHP", "icon": "php" },
+            { "title": "SQL", "icon": "sql" },
+            { "title": "GraphQL", "icon": "graphql" }
+          ]
+        },
+        {
+          "title": "Frameworks & Bibliotheken",
+          "id": "frameworks-libraries",
+          "skillList": [
+            { "title": "React", "icon": "react" },
+            { "title": "Next", "icon": "nextjs" },
+            { "title": "Node", "icon": "nodejs" },
+            { "title": "Strapi", "icon": "strapi" },
+            { "title": "Bootstrap", "icon": "bootstrap" },
+            { "title": "Tailwind", "icon": "tailwind" },
+            { "title": "MUI", "icon": "mui" },
+            { "title": "Elastic Search", "icon": "elastic-search" },
+            { "title": "Jest", "icon": "jest" },
+            { "title": "Cypress", "icon": "cypress" },
+            { "title": "Storybook", "icon": "storybook" },
+            { "title": "Drupal", "icon": "drupal" }
+          ]
+        },
+        {
+          "title": "Werkzeuge",
+          "id": "tools",
+          "skillList": [
+            { "title": "Docker", "icon": "docker" },
+            { "title": "Gitlab CI/CD", "icon": "gitlab" },
+            { "title": "Webpack", "icon": "webpack" },
+            { "title": "Babel", "icon": "babel" },
+            { "title": "ESLint", "icon": "eslint" },
+            { "title": "StyleLint", "icon": "stylelint" },
+            { "title": "Prettier", "icon": "prettier" },
+            { "title": "Gulp", "icon": "gulp" },
+            { "title": "Git", "icon": "git" }
+          ]
+        },
+        {
+          "title": "Prinzipien & Paradigmen",
+          "id": "principles",
+          "skillList": [
+            { "title": "Object Oriented Programming", "icon": "oop" },
+            { "title": "Functional Programming", "icon": "fp" },
+            { "title": "Barrierefreiheit", "icon": "accessibility" },
+            { "title": "Sicherheit", "icon": "security" },
+            {
+              "title": "Internationalisierung",
+              "icon": "internationalization"
+            },
+
+            { "title": "Atomic Design", "icon": "atomic-design" },
+            { "title": "Responsives Design", "icon": "responsive-design" },
+            { "title": "Fluides Design", "icon": "fluid-design" },
+            { "title": "SEO", "icon": "seo" }
+          ]
+        },
+        {
+          "title": "Methoden",
+          "id": "methologies",
+          "skillList": [
+            { "title": "Scrum", "icon": "scrum" },
+            { "title": "Test Driven Development", "icon": "tdd" },
+            { "title": "Design Thinking", "icon": "design-thinking" }
+          ]
+        },
+        {
+          "title": "Andere",
+          "id": "other",
+          "skillList": [
+            { "title": "PhpStorm", "icon": "phpstorm" },
+            { "title": "WebStorm", "icon": "webstorm" },
+            { "title": "Visuel Studio", "icon": "visual-studio" },
+            { "title": "Linux", "icon": "linux" },
+            { "title": "Mac OS", "icon": "mac-os" },
+            { "title": "Affinity Designer", "icon": "affinity" },
+            { "title": "Logic Pro X", "icon": "logic" },
+            { "title": "Word", "icon": "word" },
+            { "title": "PowerPoint", "icon": "powerpoint" },
+            { "title": "Excel", "icon": "excel" }
+          ]
+        }
+      ]
+    },
+    "stationBox": {
+      "headline": "Werdegang",
+      "openCloseAccordion": "Details öffnen/schließen",
+      "stationList": [
+        {
+          "id": "burda",
+          "title": "VOLLZEIT: FULLSTACK DEVELOPER",
+          "institution": "Hubert Burda Media",
+          "duration": "seit 08/2024",
+          "location": "Remote",
+          "icon": "burda",
+          "link": "https://www.burda.com/de/",
+          "linkTitle": "Hubert Burda Media Website",
+          "infos": ["Fullstack Development im Garden and Living Team"]
+        },
+        {
+          "id": "sirup-2",
+          "title": "VOLLZEIT: JUNIOR FRONTEND DEVELOPER",
+          "institution": "SIRUP GmbH",
+          "duration": "03/2022 - 07/2024",
+          "location": "Berlin",
+          "icon": "sirup",
+          "link": "https://www.sirup.com/",
+          "linkTitle": "SIRUP Website",
+          "infos": [
+            "Implementierungen in Next, React, Node, Strapi, Drupal, Symfony und vanilla TypeScript",
+            "Erstellung und Pflege von Bundling, Linting und Testing",
+            "Einführung wiederverwendbarer Packages, Komponentensystemen & Templates",
+            "Arbeit an Anwendungen mit besonderen Barrierefreiheits- und Sicherheitsanforderungen"
+          ]
+        },
+        {
+          "id": "sirup-1",
+          "title": "WERKSSTUDENT: FRONTEND DEVELOPMENT ",
+          "institution": "SIRUP GmbH",
+          "duration": "02/2021 - 02/2022",
+          "location": "Berlin",
+          "icon": "sirup",
+          "link": "https://www.sirup.com/",
+          "linkTitle": "SIRUP Website",
+          "infos": [
+            "Implementierungen mit React, Drupal, Symfony und Vanilla",
+            "Erstellung und Verbesserung von Bundling, Linting und Testing",
+            "Entwicklung von Newsletter Templates"
+          ]
+        },
+        {
+          "id": "hdm-1",
+          "title": "BACHELOR OF ARTS: ONLINE-MEDIEN-MANAGEMENT",
+          "institution": "Hochschule der Medien Stuttgart",
+          "duration": "2017 - 2022",
+          "location": "Stuttgart",
+          "icon": "hdm",
+          "link": "https://www.omm.hdm-stuttgart.de/",
+          "linkTitle": "Online Medien Management Studiengangs Website",
+          "infos": [
+            "Abschlussnote: 1,6",
+            "Abschlussarbeit: Prototypische Entwicklung eines WYSIWYG End-User Editors für Webpages nach Atomic Design Prinzipien mit React innerhalb einer JAMstack Architektur",
+            "IT-Grundlagen, Programmierung & Webentwicklung",
+            "Digitales Marketing & Datenanalyse",
+            "Digitale Inhalteerstellung"
+          ]
+        },
+        {
+          "id": "inpulse",
+          "title": "SELBSTÄNDIG: EVENT-MANAGEMENT AGENTUR",
+          "institution": "inPulse | Klummer und Tondera GbR",
+          "duration": "2018 - 2022",
+          "location": "Heilbronn",
+          "icon": "readyfortechno",
+          "infos": [
+            "Erstellung von digitalen Inhalten inklusive Grafikdesign und Entwicklung",
+            "Branding & Performancemarketing",
+            "Event- und Projektmanagement"
+          ]
+        },
+        {
+          "id": "vinos",
+          "title": "PRAKTIKUM: E-COMMERCE CRM MARKETING",
+          "institution": "Wein & Vinos GmbH",
+          "duration": "09/2019 - 02/2020",
+          "location": "Berlin",
+          "icon": "vinos",
+          "link": "https://www.vinos.de/",
+          "linkTitle": "Wein & Vinos Online Shop",
+          "infos": [
+            "E-Mail-Marketing, Templating und Analytics",
+            "Erstellung von Landingpages und Produktdatenmanagement mit Magento",
+            "Customer relationship management"
+          ]
+        }
+      ]
+    },
+    "projectShowcase": {
+      "headline": "Projekte",
+      "description": "Auswahl an öffentlich zugänglichen Seiten an denen ich mitgewirkt habe",
+      "swiper": {
+        "containerMessage": "Karrussell",
+        "firstSlideMessage": "Erste Folie wird angezeigt.",
+        "lastSlideMessage": "Letzte Folie wird angezeigt.",
+        "buttonNext": "Nächste Folie anzeigen",
+        "buttonPrev": "Vorherige Folie anzeigen"
+      },
+      "teaserList": [
+        {
+          "headline": "Cybersicherheit-BW",
+          "tooltip": "www.cybersicherheit-bw.de öffnen",
+          "url": "https://www.cybersicherheit-bw.de/",
+          "image": {
+            "srcId": "csbw",
+            "alt": "Website Screenshot der Cybersicherheits Agentur Baden-Württemberg"
+          }
+        },
+        {
+          "headline": "Berliner Ensemble",
+          "tooltip": "www.berliner-ensemble.de/magazin öffnen",
+          "url": "https://www.berliner-ensemble.de/magazin",
+          "image": {
+            "srcId": "berlinerensemble",
+            "alt": "Website Screenshot des Berliner Ensemble Magazins"
+          }
+        },
+        {
+          "headline": "Burgtheater",
+          "tooltip": "www.burgtheater.at öffnen",
+          "url": "https://www.burgtheater.at/",
+          "image": {
+            "srcId": "burgtheater",
+            "alt": "Website Screenshot des Burgtheaters"
+          }
+        },
+        {
+          "headline": "Wiener Symphoniker",
+          "tooltip": "www.wienersymphoniker.at öffnen",
+          "url": "https://www.wienersymphoniker.at/",
+          "image": {
+            "srcId": "wienersymphoniker",
+            "alt": "Website Screenshot der Wiener Symphoniker"
+          }
+        },
+        {
+          "headline": "Science Olympiaden",
+          "tooltip": "www.scienceolympiaden.de öffnen",
+          "url": "https://www.scienceolympiaden.de/",
+          "image": {
+            "srcId": "scienceolympiaden",
+            "alt": "Website Screenshot der Science Olympiaden"
+          }
+        },
+        {
+          "headline": "Bundesamt für Naturschutz",
+          "tooltip": "www.bfn.de öffnen",
+          "url": "https://www.bfn.de/",
+          "image": {
+            "srcId": "bfn",
+            "alt": "Website Screenshot des Bundesamts für Naturschutz"
+          }
+        },
+        {
+          "headline": "Aufbau Verlage",
+          "tooltip": "www.aufbau-verlage.de öffnen",
+          "url": "https://www.aufbau-verlage.de/edition-braus",
+          "image": {
+            "srcId": "aufbau",
+            "alt": "Website Screenshot Edition Braus des Aufbau Verlags"
+          }
+        }
+      ]
+    },
+    "legal": {
+      "label": "Impressum",
+      "alert": "Bitte senden Sie mir eine kurze Mail an contact@julianklummmer.de und ich sende Ihnen die benötigten Informationen."
+    }
+  }
+}

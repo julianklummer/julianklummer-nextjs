@@ -21,11 +21,9 @@
 
   @if $vw-part != 0vw and $maximum-size == null {
     @return max(#{$rem-vw-mix}, #{rem($minimum-size)});
-  }
-  @elseif $vw-part != 0vw and $maximum-size != null {
+  } @else if $vw-part != 0vw and $maximum-size != null {
     @return clamp(#{rem($minimum-size)}, #{$rem-vw-mix}, #{rem($maximum-size)});
-  }
-  @elseif $maximum-size != null and $size > $maximum-size {
+  } @else if $maximum-size != null and $size > $maximum-size {
     @return rem($maximum-size);
   } @else {
     @return rem($size);

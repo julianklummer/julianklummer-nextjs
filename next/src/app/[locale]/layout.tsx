@@ -1,23 +1,28 @@
 import { Background } from "@/components/utils/background/Background";
 import { ScrollResizeHelper } from "@/components/utils/scrollResizeHelper/ScrollResizeHelper";
+import { routing } from "@/i18n/routing";
 import "@/styles/main.scss";
 import "@/styles/normalize.scss";
-import { Locale } from "@/translations/types";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 
 type Props = {
   children: React.ReactNode;
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: string }>;
 };
 
-export default function RootLayout({ children, params: { locale } }: Props) {
+export default async function RootLayout({ children, params }: Props) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
     <html lang={locale}>
       <body>
         <Background />
         <ScrollResizeHelper />
-        {children}
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );
